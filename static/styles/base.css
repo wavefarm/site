@@ -61,12 +61,23 @@ footer nav {
 footer nav a {
   padding: 0 5px;
 }
+header {
+  margin: 0 auto;
+  max-width: 960px;
+}
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-#main {
-  padding: 20px 10px;
+.main {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 20px 0;
+}
+.main-container {
+  background: #eee;
+  overflow: auto;
+  padding: 20px 0;
 }
 .copyright {
   color: #aaa;
@@ -85,11 +96,29 @@ table {
   height: 140px;
   border-top: 1px solid white;
 }
+.listen {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+}
 .primary1 {
   float: left;
 }
 .primary2 {
   float: right;
+}
+.round {
+  /* 
+   * From http://css-tricks.com/almanac/properties/b/border-radius/
+   * Safari 3-4, iOS 1-3.2, Android 1.6- 
+   */
+  -webkit-border-radius: 12px; 
+
+  /* Firefox 1-3.6 */
+  -moz-border-radius: 12px; 
+  
+  /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+  border-radius: 12px;
 }
 .search {
   float: right;
@@ -102,6 +131,57 @@ table {
   border: 1px solid black;
   padding: 1px 2px;
   width: 250px;
+}
+.slidebar {
+  background: black;
+  color: white;
+  left: -20px;
+  padding: 5px 30px 5px 0;
+  position: relative;
+  top: 0px;
+  width: 300px;
+}
+.slidebar h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  padding: 10px 0 20px 0;
+}
+.slidebar-handle {
+  background: black;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  position: absolute;
+  width: 400px;
+  text-align: center;
+  top: 0;
+  left: -74px;
+  z-index: 0;
+
+  /* Rotate from http://css-tricks.com/snippets/css/text-rotation/ */
+  /* Safari */
+  -webkit-transform: rotate(-90deg);
+
+  /* Firefox */
+  -moz-transform: rotate(-90deg);
+
+  /* IE */
+  -ms-transform: rotate(-90deg);
+
+  /* Opera */
+  -o-transform: rotate(-90deg);
+
+  /* Rotate from top left corner (not default) */
+  -webkit-transform-origin: bottom right;
+  -moz-transform-origin:    bottom right;
+  -ms-transform-origin:     bottom right;
+  -o-transform-origin:      bottom right;
+}
+.slidebar-wf, .slidebar-wgxc {
+  background: white;
+  color: black;
+  height: 200px;
+  margin: 10px 0;
+  padding: 10px 5px 10px 25px;
 }
 .social {
   float: left;
