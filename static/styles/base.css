@@ -35,6 +35,9 @@ a {
 body {
   line-height: 1;
 }
+img {
+  max-width: 100%;
+}
 ol, ul {
   list-style: none;
 }
@@ -65,6 +68,16 @@ header {
   margin: 0 auto;
   max-width: 960px;
 }
+header div {
+  float: left;
+  padding: 90px 0;
+  width: 200px;
+}
+header h1 {
+  float: left;
+  padding: 90px 0;
+  width: 360px;
+}
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -82,6 +95,57 @@ table {
 .copyright {
   color: #aaa;
   font-size: 14px;
+}
+.edge {
+  background: black;
+  color: white;
+  left: -20px;
+  padding: 5px 30px 5px 0;
+  position: absolute;
+  top: 70px;
+  width: 300px;
+}
+.edge h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  padding: 10px 0 20px 0;
+}
+.edge-handle {
+  background: black;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  position: absolute;
+  width: 400px;
+  text-align: center;
+  top: 0;
+  left: -74px;
+  z-index: 0;
+
+  /* Rotate from http://css-tricks.com/snippets/css/text-rotation/ */
+  /* Safari */
+  -webkit-transform: rotate(-90deg);
+
+  /* Firefox */
+  -moz-transform: rotate(-90deg);
+
+  /* IE */
+  -ms-transform: rotate(-90deg);
+
+  /* Opera */
+  -o-transform: rotate(-90deg);
+
+  /* Rotate from top left corner (not default) */
+  -webkit-transform-origin: bottom right;
+  -moz-transform-origin:    bottom right;
+  -ms-transform-origin:     bottom right;
+  -o-transform-origin:      bottom right;
+}
+.edge-wf, .edge-wgxc {
+  background: white;
+  color: black;
+  height: 200px;
+  margin: 10px 0;
+  padding: 10px 5px 10px 25px;
 }
 .fineprint {
   float: left;
@@ -132,56 +196,8 @@ table {
   padding: 1px 2px;
   width: 250px;
 }
-.slidebar {
-  background: black;
-  color: white;
-  left: -20px;
-  padding: 5px 30px 5px 0;
-  position: relative;
-  top: 0px;
-  width: 300px;
-}
-.slidebar h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
-  padding: 10px 0 20px 0;
-}
-.slidebar-handle {
-  background: black;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  position: absolute;
-  width: 400px;
-  text-align: center;
-  top: 0;
-  left: -74px;
-  z-index: 0;
-
-  /* Rotate from http://css-tricks.com/snippets/css/text-rotation/ */
-  /* Safari */
-  -webkit-transform: rotate(-90deg);
-
-  /* Firefox */
-  -moz-transform: rotate(-90deg);
-
-  /* IE */
-  -ms-transform: rotate(-90deg);
-
-  /* Opera */
-  -o-transform: rotate(-90deg);
-
-  /* Rotate from top left corner (not default) */
-  -webkit-transform-origin: bottom right;
-  -moz-transform-origin:    bottom right;
-  -ms-transform-origin:     bottom right;
-  -o-transform-origin:      bottom right;
-}
-.slidebar-wf, .slidebar-wgxc {
-  background: white;
-  color: black;
-  height: 200px;
-  margin: 10px 0;
-  padding: 10px 5px 10px 25px;
+.slideshow img {
+  border: 1px solid black;
 }
 .social {
   float: left;
