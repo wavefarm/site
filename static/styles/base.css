@@ -1,6 +1,10 @@
 #main {
   padding: 20px 10px;
 }
+.footer-container {
+  background: black;
+  color: white;
+}
 .primary1 {
   float: left;
 }
