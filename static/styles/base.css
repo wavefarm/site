@@ -29,6 +29,8 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
+
+/* General styles */
 a {
   text-decoration: none;
 }
@@ -36,6 +38,7 @@ body {
   line-height: 1;
 }
 img {
+  border: 1px solid black;
   max-width: 100%;
 }
 ol, ul {
@@ -49,6 +52,104 @@ q:before, q:after {
   content: '';
   content: none;
 }
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.alt-text {
+  display: none;
+}
+.round {
+  /*
+   * From http://css-tricks.com/almanac/properties/b/border-radius/
+   * Safari 3-4, iOS 1-3.2, Android 1.6-
+   */
+  -webkit-border-radius: 12px;
+  /* Firefox 1-3.6 */
+  -moz-border-radius: 12px;
+  /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+  border-radius: 12px;
+}
+
+/* Header */
+header {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  line-height: 1.2em;
+  margin: 0 auto;
+  max-width: 960px;
+  overflow: auto;
+  padding: 30px 0;
+}
+header a {
+  color: black;
+  float: left;
+  margin: 80px 0 0 0;
+  text-align: center;
+  width: 210px;
+}
+.logo {
+  background: url('/images/logo-set.png') no-repeat;
+}
+.mag .logo {
+  background-position: -215px -305px;
+  height: 67px;
+  width: 68px;
+}
+.mag:hover .logo {
+  background-position: -218px -385px;
+}
+.search {
+  float: right;
+}
+.search form {
+  position: relative;
+  top: 22px;
+}
+.search input {
+  border: 1px solid black;
+  padding: 1px 2px;
+  width: 250px;
+}
+.subsite .logo {
+  margin: 16px auto;
+}
+.ta .logo {
+  background-position: 0px -303px;
+  height: 67px;
+  width: 76px;
+}
+.ta:hover .logo {
+  background-position: 0px -385px;
+}
+.tophead {
+  margin: 0 auto;
+  max-width: 960px;
+}
+.tophead-container {
+  background: url('/images/wf_header.gif') 50% 0% no-repeat black;
+  padding: 0 0 3px 0;
+}
+.tophead-fill {
+  height: 30px;
+  border-bottom: 1px solid #eee;
+}
+.wf.logo {
+  background-position: -2px 0px;
+  height: 284px;
+  width: 284px;
+  margin: 0 38px 0 0;
+}
+.wgxc .logo {
+  background-position: -110px -309px;
+  height: 67px;
+  width: 67px;
+}
+.wgxc:hover .logo {
+  background-position: -110px -387px;
+}
+
+/* Footer */
 footer {
   margin: 0 auto;
   max-width: 960px;
@@ -64,31 +165,46 @@ footer nav {
 footer nav a {
   padding: 0 5px;
 }
-header {
-  margin: 0 auto;
-  max-width: 960px;
-}
-header div {
-  float: left;
-  padding: 90px 0;
-  width: 200px;
-}
-header h1 {
-  float: left;
-  padding: 90px 0;
-  width: 360px;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-.alt-text {
-  display: none;
-}
 .copyright {
   color: #aaa;
   font-size: 14px;
 }
+.fineprint {
+  float: left;
+  padding: 30px 0 0 0;
+}
+.fineprint a {
+  padding: 0 5px;
+}
+.footer-container {
+  background: black;
+  color: white;
+  padding: 3px 0 0 0;
+}
+.footer-fill {
+  height: 140px;
+  border-top: 1px solid #eee;
+}
+.primary1 {
+  float: left;
+}
+.primary2 {
+  float: right;
+}
+.social {
+  float: left;
+  padding: 30px 0 0 20px;
+}
+.studio-info {
+  color: #aaa;
+}
+.studios {
+  clear: both;
+  float: right;
+  text-align: right;
+}
+
+/* Edge slider */
 .edge {
   background: black;
   color: white;
@@ -113,20 +229,15 @@ table {
   top: 0;
   left: -74px;
   z-index: 0;
-
   /* Rotate from http://css-tricks.com/snippets/css/text-rotation/ */
   /* Safari */
   -webkit-transform: rotate(-90deg);
-
   /* Firefox */
   -moz-transform: rotate(-90deg);
-
   /* IE */
   -ms-transform: rotate(-90deg);
-
   /* Opera */
   -o-transform: rotate(-90deg);
-
   /* Rotate from top left corner (not default) */
   -webkit-transform-origin: bottom right;
   -moz-transform-origin:    bottom right;
@@ -140,33 +251,13 @@ table {
   margin: 10px 0;
   padding: 10px 5px 10px 25px;
 }
-.fineprint {
-  float: left;
-  padding: 30px 0 0 0;
-}
-.fineprint a {
-  padding: 0 5px;
-}
-.footer-container {
-  background: black;
-  color: white;
-  padding: 3px 0 0 0;
-}
-.footer-fill {
-  height: 140px;
-  border-top: 1px solid #eee;
-}
 .listen {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 18px;
 }
-.logo a {
-  background: url('/images/logo-set.png');
-  display: block;
-  height: 284px;
-  width: 286px;
-}
+
+/* Main content area */
 .main {
   margin: 0 auto;
   max-width: 960px;
@@ -176,62 +267,4 @@ table {
   background: #eee;
   overflow: auto;
   padding: 20px 0;
-}
-.primary1 {
-  float: left;
-}
-.primary2 {
-  float: right;
-}
-.round {
-  /* 
-   * From http://css-tricks.com/almanac/properties/b/border-radius/
-   * Safari 3-4, iOS 1-3.2, Android 1.6- 
-   */
-  -webkit-border-radius: 12px; 
-
-  /* Firefox 1-3.6 */
-  -moz-border-radius: 12px; 
-  
-  /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
-  border-radius: 12px;
-}
-.search {
-  float: right;
-}
-.search form {
-  position: relative;
-  top: 22px;
-}
-.search input {
-  border: 1px solid black;
-  padding: 1px 2px;
-  width: 250px;
-}
-.slideshow img {
-  border: 1px solid black;
-}
-.social {
-  float: left;
-  padding: 30px 0 0 20px;
-}
-.studio-info {
-  color: #aaa;
-}
-.studios {
-  clear: both;
-  float: right;
-  text-align: right;
-}
-.tophead {
-  margin: 0 auto;
-  max-width: 960px;
-}
-.tophead-container {
-  background: url('/images/wf_header.gif') 50% 0% no-repeat black;
-  padding: 0 0 3px 0;
-}
-.tophead-fill {
-  height: 30px;
-  border-bottom: 1px solid #eee;
 }
