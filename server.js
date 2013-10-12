@@ -39,7 +39,7 @@ var resRender = function (req, res, next) {
   }
   res.render = function (template, data) {
     res.glue(template, data, function (inner) {
-      data['#main'] = {_html: inner}
+      data['.main'] = {_html: inner}
       res.glue('layout.html', data, function (out) {
         res.send(out)
       })
