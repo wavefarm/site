@@ -82,15 +82,8 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-.main {
-  margin: 0 auto;
-  max-width: 960px;
-  padding: 20px 0;
-}
-.main-container {
-  background: #eee;
-  overflow: auto;
-  padding: 20px 0;
+.alt-text {
+  display: none;
 }
 .copyright {
   color: #aaa;
@@ -167,6 +160,22 @@ table {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 18px;
+}
+.logo a {
+  background: url('/images/logo-set.png');
+  display: block;
+  height: 284px;
+  width: 286px;
+}
+.main {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 20px 0;
+}
+.main-container {
+  background: #eee;
+  overflow: auto;
+  padding: 20px 0;
 }
 .primary1 {
   float: left;
