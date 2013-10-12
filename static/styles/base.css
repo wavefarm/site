@@ -192,7 +192,7 @@ table {
 }
 .search form {
   position: relative;
-  top: 40px;
+  top: 22px;
 }
 .search input {
   border: 1px solid black;
@@ -219,10 +219,10 @@ table {
   max-width: 960px;
 }
 .tophead-container {
-  background: black;
+  background: url('/images/wf_header.gif') 50% 0% no-repeat black;
   padding: 0 0 3px 0;
 }
 .tophead-fill {
-  height: 50px;
+  height: 30px;
   border-bottom: 1px solid #eee;
 }
