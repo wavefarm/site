@@ -144,22 +144,20 @@ header {
   background-position: -110px -387px;
 }
 
-/* Nav */
-.nav {
+/* Primary nav */
+nav.primary {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
   color: black;
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   margin: 30px 0 80px 0;
-  text-align: center;
-}
-.nav a {
-  color: black;
-}
-nav.primary {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
   min-width: 960px;
   padding: 5px 0;
+  text-align: center;
+}
+nav.primary a {
+  color: black;
 }
 nav.ta {
   background: #ffcd32;
