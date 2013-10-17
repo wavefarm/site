@@ -31,6 +31,9 @@ var resRender = function (req, res, next) {
     res.writeHead(200, {'Content-Type': 'text/html', 'ETag': etag})
     res.end(out)
   }
+  res.template = function (name) {
+    return fs.readFileSync(__dirname + '/static/templates/' + name, {encoding: 'utf8'});
+  };
   res.glue = function (template, data, cb) {
     fs.readFile(__dirname + '/static/templates/' + template, {encoding: 'utf8'}, function (err, tmplt) {
       if (err) return next(err)
@@ -48,23 +51,23 @@ var resRender = function (req, res, next) {
   next()
 }
 
-//var getSchemas = function (req, res, next) {
-//  api.schemas(function (err, apiRes, schemas) {
-//    if (err) return next(err)
-//    req.schemas = schemas
-//    next()
-//  })
-//}
-
 http.createServer(stack(
   reqLog,
   ecstatic({root: __dirname + '/static', handleError: false}),
   resRender,
   scalpel,
-  //getSchemas,
-  rut.get('/', require('./routes'))
-  //rut.get(/^\/(\w{6})$/, require('./routes/itemGet')),
-  //rut.post(/^\/(\w{6})$/, require('./routes/itemPost'))
+
+  // Wave Farm routes
+  rut.get('/', require('./routes')),
+
+  //// Transmission Arts routes
+  rut.get('/ta', require('./routes/ta'))
+
+  //// WGXC routes
+  //rut.get('/wgxc', require('./routes/wgxc')),
+
+  //// Media Arts Grants routes
+  //rut.get('/mag', require('./routes/mag'))
 )).listen(port, function () {
   console.log('Listening on port', port)
 })
