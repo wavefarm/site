@@ -150,7 +150,7 @@ nav.primary {
   border-bottom: 1px solid black;
   color: black;
   font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   margin: 30px 0 80px 0;
   min-width: 960px;
   padding: 5px 0;
@@ -161,6 +161,9 @@ nav.primary a {
 }
 nav.ta {
   background: #ffcd32;
+}
+nav.wgxc {
+  background: #6fb43f;
 }
 
 /* Footer */

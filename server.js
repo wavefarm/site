@@ -31,9 +31,6 @@ var resRender = function (req, res, next) {
     res.writeHead(200, {'Content-Type': 'text/html', 'ETag': etag})
     res.end(out)
   }
-  res.template = function (name) {
-    return fs.readFileSync(__dirname + '/static/templates/' + name, {encoding: 'utf8'});
-  };
   res.glue = function (template, data, cb) {
     fs.readFile(__dirname + '/static/templates/' + template, {encoding: 'utf8'}, function (err, tmplt) {
       if (err) return next(err)
@@ -48,6 +45,16 @@ var resRender = function (req, res, next) {
       })
     })
   }
+
+  // Pass-along updates param for hyperglue
+  res.updates = {};
+  res.template = function (templateName) {
+    return fs.readFileSync(__dirname + '/static/templates/' + templateName, {encoding: 'utf8'});
+  };
+  res.rend = function (templateName) {
+    res.send(hyperglue(res.template(templateName), res.updates).innerHTML);
+  };
+
   next()
 }
 
@@ -61,10 +68,17 @@ http.createServer(stack(
   rut.get('/', require('./routes')),
 
   //// Transmission Arts routes
-  rut.get('/ta', require('./routes/ta'))
+  rut.get('/ta', require('./routes/ta')),
 
   //// WGXC routes
-  //rut.get('/wgxc', require('./routes/wgxc')),
+  rut(/^\/wgxc.*$/, stack(
+    function (req, res, next) {
+      res.updates['.head'] = {_html: res.template('wgxc/head.html')};
+      res.updates['.nav'] = {_html: res.template('wgxc/nav.html')};
+      next();
+    },
+    rut.get('/wgxc', require('./routes/wgxc'))
+  ))
 
   //// Media Arts Grants routes
   //rut.get('/mag', require('./routes/mag'))
