@@ -159,6 +159,9 @@ nav.primary {
 nav.primary a {
   color: black;
 }
+nav.mag {
+  background: #6dcff6;
+}
 nav.ta {
   background: #ffcd32;
 }
