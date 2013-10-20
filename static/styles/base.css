@@ -298,11 +298,11 @@ nav.wf2 {
 /* Slideshow */
 .pointer {
   border-top:0px solid transparent;
-  border-left:20px solid transparent;
-  border-right:20px solid transparent;
+  border-left:15px solid transparent;
+  border-right:15px solid transparent;
   border-bottom:20px solid black;
   height:0;
-  left: 406px;
+  left: 412px;
   position: relative;
   width:0; 
 }
