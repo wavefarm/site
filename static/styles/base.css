@@ -290,6 +290,7 @@ nav.wf2 {
 }
 .main-container {
   background: #eee;
+  color: #000;
   overflow: auto;
   padding: 20px 0;
 }
@@ -308,4 +309,12 @@ nav.wf2 {
 .slideshow img {
   height: 540px;
   width: 960px;
+}
+
+/* Pages */
+.page {
+  padding: 40px 0;
+}
+.page h1 {
+  border-bottom: 1px solid black;
 }

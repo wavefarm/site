@@ -35,6 +35,7 @@ var redirect = function (res, to) {
 };
 
 var sub, subsites = ['ta', 'wgxc', 'mag'];
+var page, wf_pages = ['about', 'contact'];
 
 http.createServer(function(req, res) {
   console.log(req.method, req.url);
@@ -64,6 +65,12 @@ http.createServer(function(req, res) {
   // Wave Farm routes
   render(res, {head: 'head.html'});
   if (req.url === '/') return require('./routes')(req, res);
+  for (var i=0; i<wf_pages.length; i++) {
+    page = wf_pages[i];
+    if (req.url === '/'+page) {
+      return res.render(page+'.html');
+    }
+  }
 
   ecstatic({root: __dirname + '/static'})(req, res, function() {
     console.log('Not Found');
