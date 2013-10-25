@@ -37,6 +37,7 @@ a {
 body {
   background: black;
   color: white;
+  font-family: 'Open Sans', sans-serif;
   line-height: 1;
 }
 img {
@@ -90,8 +91,8 @@ header {
 
 /* Head */
 .head {
-  font-family: 'Montserrat', sans-serif;
   font-size: 24px;
+  font-weight: 600;
   line-height: 1.2em;
   margin: 0 auto;
   max-width: 960px;
@@ -178,7 +179,7 @@ footer a {
   color: #ddd;
 }
 footer nav {
-  font-family: 'Montserrat', sans-serif;
+  font-family: Oswald, sans-serif;
   font-size: 18px;
   padding: 20px 0;
 }
@@ -279,7 +280,6 @@ nav.wf2 {
 }
 .listen-wf div, .listen-wgxc div {
   font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
   font-size: 18px;
 }
 
