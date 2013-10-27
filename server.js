@@ -4,6 +4,7 @@ var crypto = require('crypto');
 var http = require('http');
 var hyperglue = require('hyperglue');
 var templates = require('./templates');
+var url = require('url');
 
 // Timestamp logs
 require('logstamp')(console);
@@ -35,10 +36,21 @@ var redirect = function (res, to) {
 };
 
 var sub, subsites = ['ta', 'wgxc', 'mag'];
-var page, wf_pages = ['about', 'contact', 'support'];
+var page, wf_pages = [
+  'about',
+  'programs',
+  'events',
+  'archive',
+  'newsroom',
+  'support',
+  'contact',
+  'legal',
+  'privacy'
+];
 
 http.createServer(function(req, res) {
   console.log(req.method, req.url);
+  req.parsedUrl = url.parse(req.url);
 
   res.tag = function (out) {
     var h = crypto.createHash("sha1")
@@ -67,7 +79,7 @@ http.createServer(function(req, res) {
   if (req.url === '/') return require('./routes')(req, res);
   for (var i=0; i<wf_pages.length; i++) {
     page = wf_pages[i];
-    if (req.url === '/'+page) {
+    if (req.parsedUrl.pathname === '/'+page) {
       return res.render(page+'.html');
     }
   }
