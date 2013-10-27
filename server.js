@@ -35,7 +35,7 @@ var redirect = function (res, to) {
 };
 
 var sub, subsites = ['ta', 'wgxc', 'mag'];
-var page, wf_pages = ['about', 'contact'];
+var page, wf_pages = ['about', 'contact', 'support'];
 
 http.createServer(function(req, res) {
   console.log(req.method, req.url);
