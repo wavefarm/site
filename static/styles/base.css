@@ -37,7 +37,7 @@ a {
 body {
   background: black;
   color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Montserrat, sans-serif;
   line-height: 1;
 }
 img {
@@ -150,7 +150,6 @@ nav.primary {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   color: black;
-  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   margin: 30px 0 80px 0;
   min-width: 960px;
@@ -179,7 +178,6 @@ footer a {
   color: #ddd;
 }
 footer nav {
-  font-family: Oswald, sans-serif;
   font-size: 18px;
   padding: 20px 0;
 }
@@ -234,13 +232,11 @@ nav.wf2 {
   width: 300px;
 }
 .listen h1 {
-  font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   padding: 10px 0 20px 0;
 }
 .listen-handle {
   background: black;
-  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   position: absolute;
   width: 400px;
@@ -279,7 +275,6 @@ nav.wf2 {
   padding: 10px 5px 10px 25px;
 }
 .listen-wf div, .listen-wgxc div {
-  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
 }
 
