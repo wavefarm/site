@@ -178,7 +178,7 @@ footer a {
   color: #ddd;
 }
 footer nav {
-  font-size: 18px;
+  font-size: 24px;
   padding: 20px 0;
 }
 footer nav a {
@@ -192,11 +192,11 @@ nav.wf2 {
 }
 .copyright {
   color: #aaa;
-  font-size: 14px;
+  font-size: 10px;
 }
 .fineprint {
   float: left;
-  padding: 30px 0 0 0;
+  padding: 18px 0 0 0;
 }
 .fineprint a {
   padding: 0 5px;
@@ -210,7 +210,7 @@ nav.wf2 {
 }
 .social {
   float: left;
-  padding: 30px 0 0 20px;
+  padding: 18px 0 0 20px;
 }
 .studio-info {
   color: #aaa;
@@ -218,6 +218,7 @@ nav.wf2 {
 .studios {
   clear: both;
   float: right;
+  font-size: 11px;
   text-align: right;
 }
 
