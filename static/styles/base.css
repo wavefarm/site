@@ -101,48 +101,50 @@ header {
 .head a {
   color: black;
 }
-.logo {
-  background: url('/images/logo-set.png') no-repeat;
+.subicon {
+  background: url('/images/subicons.png') no-repeat;
+  background-size: 188px 120px;
 }
-.mag .logo {
-  background-position: -215px -305px;
-  height: 67px;
-  width: 68px;
+.mag .subicon {
+  background-position: -128px -60px;
+  height: 60px;
+  width: 60px;
 }
-.mag:hover .logo {
-  background-position: -218px -385px;
+.mag:hover .subicon {
+  background-position: -128px 0px;
 }
 .sub {
   float: left;
-  margin: 100px 0 0 0;
+  margin: 60px 0 0 0;
   text-align: center;
   width: 210px;
 }
-.sub .logo {
+.sub .subicon {
   margin: 16px auto;
 }
-.ta .logo {
-  background-position: 0px -303px;
-  height: 67px;
-  width: 76px;
+.ta .subicon {
+  background-position: 0px -60px;
+  height: 60px;
+  width: 68px;
 }
-.ta:hover .logo {
-  background-position: 0px -385px;
+.ta:hover .subicon {
+  background-position: 0px 0px;
 }
-.wf.logo {
-  background-position: -2px 0px;
+.wf-logo {
+  background: url('/images/wf-logo.png') no-repeat;
+  background-size: 220px 220px;
   float: left;
-  height: 284px;
-  width: 284px;
+  height: 220px;
+  width: 220px;
   margin: 0 38px 0 0;
 }
-.wgxc .logo {
-  background-position: -110px -309px;
-  height: 67px;
-  width: 67px;
+.wgxc .subicon {
+  background-position: -68px -60px;
+  height: 60px;
+  width: 60px;
 }
-.wgxc:hover .logo {
-  background-position: -110px -387px;
+.wgxc:hover .subicon {
+  background-position: -68px 0px;
 }
 
 /* Primary nav */
