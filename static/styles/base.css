@@ -104,11 +104,11 @@ header {
 .subicon {
   background: url('/images/subicons.png') no-repeat;
   background-size: 188px 120px;
+  height: 60px;
+  width: 60px;
 }
 .mag .subicon {
   background-position: -128px -60px;
-  height: 60px;
-  width: 60px;
 }
 .mag:hover .subicon {
   background-position: -128px 0px;
@@ -140,8 +140,6 @@ header {
 }
 .wgxc .subicon {
   background-position: -68px -60px;
-  height: 60px;
-  width: 60px;
 }
 .wgxc:hover .subicon {
   background-position: -68px 0px;
@@ -217,6 +215,24 @@ nav.wf2 {
 .social {
   float: left;
   padding: 18px 0 0 20px;
+}
+.social a {
+  background: url('/images/socialicons.png') no-repeat;
+  display: inline-block;
+  height: 19px;
+  width: 19px;
+}
+.social a span {
+  display: none;
+}
+.social .facebook {
+  background-position: -19px 0px;
+  margin-left: 5px;
+}
+.social .mailing {
+  background-position: -57px 0px;
+  margin-left: 15px;
+  width: 150px;
 }
 .studio-info {
   color: #999;
