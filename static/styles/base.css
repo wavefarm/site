@@ -113,6 +113,13 @@ header {
 .mag:hover .subicon {
   background-position: -128px 0px;
 }
+.mag-logo {
+  background: url('/images/mag-logo.png') no-repeat;
+  display: block;
+  float: right;
+  height: 178px;
+  width: 753px;
+}
 .sub {
   float: left;
   margin: 60px 0 0 0;
@@ -138,6 +145,15 @@ header {
   width: 220px;
   margin: 0 38px 0 0;
 }
+.wf-logo-smaller {
+  background: url('/images/wf-logo.png') no-repeat;
+  background-size: 100px 100px;
+  display: block;
+  float: left;
+  height: 100px;
+  width: 100px;
+  margin: 60px 38px 0 0;
+}
 .wgxc .subicon {
   background-position: -68px -60px;
 }
@@ -146,12 +162,14 @@ header {
 }
 
 /* Primary nav */
+.nav {
+  margin: 2px 0 80px 0;
+}
 nav.primary {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   color: black;
   font-size: 16px;
-  margin: 30px 0 80px 0;
   min-width: 960px;
   padding: 5px 0;
   text-align: center;
@@ -310,7 +328,7 @@ nav.wf2 {
   background: #eee;
   color: #000;
   overflow: auto;
-  padding: 20px 0;
+  padding: 2px 0 20px 0;
 }
 
 /* Slideshow */
