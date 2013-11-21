@@ -226,7 +226,9 @@ nav.wf2 {
   padding: 3px 0 0 0;
 }
 .footer-fill {
-  height: 140px;
+  background: url('/images/footer-bg.png') no-repeat;
+  background-position: 50% 6px;
+  height: 109px;
   border-top: 1px solid #eee;
 }
 .social {
