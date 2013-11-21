@@ -143,7 +143,7 @@ header {
   float: left;
   height: 220px;
   width: 220px;
-  margin: 0 38px 0 0;
+  margin: 10px 38px 0 0;
 }
 .wf-logo-smaller {
   background: url('/images/wf-logo.png') no-repeat;
@@ -162,14 +162,12 @@ header {
 }
 
 /* Primary nav */
-.nav {
-  margin: 2px 0 80px 0;
-}
 nav.primary {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   color: black;
   font-size: 16px;
+  margin: 2px 0 80px 0;
   min-width: 960px;
   padding: 5px 0;
   text-align: center;
@@ -338,13 +336,15 @@ nav.wf2 {
   border-right:15px solid transparent;
   border-bottom:20px solid black;
   height:0;
-  left: 412px;
+  left: 348px;
   position: relative;
   width:0; 
 }
 .slideshow img {
+  float: right;
+  margin: 0 20px 0 0;
   height: 540px;
-  width: 960px;
+  width: 760px;
 }
 
 /* Pages */
