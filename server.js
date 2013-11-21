@@ -47,6 +47,11 @@ var page, wf_pages = [
   'legal',
   'privacy'
 ];
+var mag_pages = [
+  'artists',
+  'organizations',
+  'map'
+];
 
 http.createServer(function(req, res) {
   console.log(req.method, req.url);
@@ -72,6 +77,14 @@ http.createServer(function(req, res) {
       render(res, {head: sub+'/head.html', nav: sub+'/nav.html'});
     }
     if (req.url === '/'+sub+'/') return require('./routes/'+sub)(req, res);
+  }
+
+  // MAG routes
+  for (var i=0; i<mag_pages.length; i++) {
+    page = mag_pages[i];
+    if (req.parsedUrl.pathname === '/mag/'+page) {
+      return res.render('mag/'+page+'.html');
+    }
   }
 
   // Wave Farm routes
