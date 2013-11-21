@@ -81,7 +81,7 @@ header {
   width: 250px;
 }
 .header-container {
-  background: url('/images/header.png') 50% 0% no-repeat;
+  background: url('/images/header-bg.png') 50% 0% no-repeat;
   padding: 0 0 3px 0;
 }
 .header-fill {
