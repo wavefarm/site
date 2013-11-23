@@ -343,11 +343,36 @@ nav.wf2 {
   position: relative;
   width:0; 
 }
-.slideshow img {
+.slideshow {
+  border: 1px solid black;
   float: right;
   margin: 0 20px 0 0;
-  height: 540px;
+  position: relative;
+  text-align: right;
+}
+.slideshow a {
+  display: block;
+  height: 428px;
   width: 760px;
+}
+.slideshow div {
+  position: absolute;
+  right: 0px;
+}
+.slide-credit {
+  background: rgba(256, 256, 256, .5);
+  color: #000;
+  bottom: 22px;
+  font-size: 10px;
+  padding: 4px 5px;
+}
+.slide-title {
+  background: rgba(0, 0, 0, .7);
+  bottom: 0px;
+  color: #fff;
+  font-size: 14px;
+  padding: 4px 5px;
+  width: 750px;
 }
 
 /* Pages */
