@@ -110,9 +110,6 @@ header {
 .mag .subicon {
   background-position: -128px -60px;
 }
-.mag:hover .subicon {
-  background-position: -128px 0px;
-}
 .mag-logo {
   background: url('/images/mag-logo.png') no-repeat;
   display: block;
@@ -134,9 +131,6 @@ header {
   height: 60px;
   width: 68px;
 }
-.ta:hover .subicon {
-  background-position: 0px 0px;
-}
 .wf-logo {
   background: url('/images/wf-logo.png') no-repeat;
   background-size: 220px 220px;
@@ -156,9 +150,6 @@ header {
 }
 .wgxc .subicon {
   background-position: -68px -60px;
-}
-.wgxc:hover .subicon {
-  background-position: -68px 0px;
 }
 
 /* Primary nav */
@@ -373,6 +364,9 @@ nav.wf2 {
   font-size: 14px;
   padding: 4px 5px;
   width: 750px;
+}
+a.wgxc.slide, a.mag.slide {
+  display: none;
 }
 
 /* Pages */
