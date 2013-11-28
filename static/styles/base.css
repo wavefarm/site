@@ -371,8 +371,39 @@ a.wgxc.slide, a.mag.slide {
 
 /* Pages */
 .page {
+  color: #222;
+  float: right;
+  line-height: 1.2em;
+  max-width: 760px;
+  min-height: 400px;
   padding: 40px 0;
 }
+.page a {
+  color: #777;
+}
+.page a:hover {
+  color: #444;
+}
 .page h1 {
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid black;
+  font-size: 30px;
+  margin: 60px 0 40px 0;
+  padding: 0 0 5px 0;
+}
+.page h2 {
+  font-size: 24px;
+  margin: 30px 0 5px 0;
+}
+.page i {
+  font-style: italic;
+}
+.page p {
+  margin: 5px 0 10px 0;
+}
+.page ul {
+  list-style: disc;
+  margin: 0 0 0 20px;
+}
+.page li {
+  margin: 0 0 10px 0;
 }
