@@ -406,3 +406,40 @@ a.wgxc.slide, a.mag.slide {
 .page li {
   margin: 0 0 10px 0;
 }
+
+/* Programs page */
+a.programs-header {
+  color: black;
+  display: block;
+}
+a.programs-header:hover {
+  color: black;
+}
+.programs-icon {
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  height: 45px;
+  margin: -10px 0 0 -70px;
+  width: 45px;
+}
+.ta.programs-header .programs-icon {
+  background-image: url('/images/ta-icon-light.png');
+  margin-left: -72px;
+  width: 50px;
+}
+.ta.programs-header:hover .programs-icon {
+  background-image: url('/images/ta-icon.png');
+}
+.wgxc.programs-header .programs-icon {
+  background-image: url('/images/wgxc-icon-light.png');
+}
+.wgxc.programs-header:hover .programs-icon {
+  background-image: url('/images/wgxc-icon.png');
+}
+.mag.programs-header .programs-icon {
+  background-image: url('/images/mag-icon-light.png');
+}
+.mag.programs-header:hover .programs-icon {
+  background-image: url('/images/mag-icon.png');
+}
