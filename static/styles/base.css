@@ -32,11 +32,11 @@ footer, header, hgroup, menu, nav, section {
 
 /* General styles */
 a {
-  color: #c00;
+  color: #999;
   text-decoration: none;
 }
 a:hover {
-  color: #222;
+  color: #600;
 } 
 body {
   background: black;
