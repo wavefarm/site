@@ -32,8 +32,12 @@ footer, header, hgroup, menu, nav, section {
 
 /* General styles */
 a {
+  color: #c00;
   text-decoration: none;
 }
+a:hover {
+  color: #222;
+} 
 body {
   background: black;
   color: white;
@@ -377,12 +381,6 @@ a.wgxc.slide, a.mag.slide {
   margin: 0 0 0 60px;
   min-height: 400px;
   padding: 40px 0;
-}
-.page a {
-  color: #777;
-}
-.page a:hover {
-  color: #444;
 }
 .page h1 {
   border-bottom: 2px solid black;
