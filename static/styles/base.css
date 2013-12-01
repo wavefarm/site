@@ -33,6 +33,7 @@ footer, header, hgroup, menu, nav, section {
 /* General styles */
 a {
   color: #000;
+  font-weight: 400;
   text-decoration: none;
 }
 a:hover {
