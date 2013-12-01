@@ -41,7 +41,8 @@ a:hover {
 body {
   background: black;
   color: white;
-  font-family: Montserrat, sans-serif;
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 100;
   line-height: 1;
 }
 img {
@@ -95,7 +96,7 @@ header {
 /* Head */
 .head {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.2em;
   margin: 0 auto;
   max-width: 960px;
@@ -189,6 +190,7 @@ footer a {
 }
 footer nav {
   font-size: 20px;
+  font-weight: 400;
   padding: 20px 0;
 }
 footer nav a {
@@ -350,6 +352,8 @@ nav.wf2 {
   width: 760px;
 }
 .slideshow div {
+  font-weight: 400;
+  padding: 4px 5px;
   position: absolute;
   right: 0px;
 }
@@ -358,14 +362,12 @@ nav.wf2 {
   color: #000;
   bottom: 22px;
   font-size: 10px;
-  padding: 4px 5px;
 }
 .slide-title {
   background: rgba(0, 0, 0, .7);
   bottom: 0px;
   color: #fff;
   font-size: 14px;
-  padding: 4px 5px;
   width: 750px;
 }
 a.wgxc.slide, a.mag.slide {
@@ -374,22 +376,22 @@ a.wgxc.slide, a.mag.slide {
 
 /* Pages */
 .page {
-  color: #222;
-  font-family: Arial, sans-serif;
-  line-height: 1.2em;
+  font-size: 18px;
+  line-height: 22px;
   width: 760px;
   margin: 0 0 0 60px;
   min-height: 400px;
   padding: 40px 0;
 }
 .page h1 {
-  border-bottom: 2px solid black;
-  font-size: 30px;
+  border-bottom: 1px solid black;
+  font-size: 32px;
   margin: 60px 0 40px 0;
   padding: 0 0 10px 0;
 }
 .page h2 {
-  font-size: 24px;
+  font-size: 18px;
+  font-weight: 400;
   margin: 30px 0 10px 0;
 }
 .page i {
