@@ -153,7 +153,6 @@ header {
 nav.primary {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
-  color: black;
   font-size: 16px;
   margin: 2px 0 80px 0;
   min-width: 960px;
@@ -162,6 +161,9 @@ nav.primary {
 }
 nav.primary a {
   color: black;
+}
+nav.primary a:hover {
+  color: white;
 }
 nav.mag {
   background: #6dcff6;
