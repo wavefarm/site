@@ -400,13 +400,6 @@ a.wgxc.slide, a.mag.slide {
 .page p {
   margin: 5px 0 10px 0;
 }
-.page ul {
-  list-style: disc;
-  margin: 0 0 0 20px;
-}
-.page li {
-  margin: 0 0 10px 0;
-}
 
 /* Programs page */
 a.programs-header {
