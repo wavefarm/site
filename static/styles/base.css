@@ -95,15 +95,9 @@ header {
 
 /* Head */
 .head {
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 1.2em;
   margin: 0 auto;
   max-width: 960px;
   overflow: auto;
-}
-.head a {
-  color: black;
 }
 .subicon {
   background: url('/images/subicons.png') no-repeat;
@@ -116,7 +110,6 @@ header {
 }
 .mag-logo {
   background: url('/images/mag-logo.png') no-repeat;
-  display: block;
   float: right;
   height: 178px;
   width: 753px;
@@ -146,7 +139,6 @@ header {
 .wf-logo-smaller {
   background: url('/images/wf-logo.png') no-repeat;
   background-size: 100px 100px;
-  display: block;
   float: left;
   height: 100px;
   width: 100px;
