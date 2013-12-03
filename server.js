@@ -89,7 +89,7 @@ http.createServer(function(req, res) {
 
   // Wave Farm routes
   render(res, {head: 'head.html'});
-  if (req.url === '/') return require('./routes')(req, res);
+  if (req.parsedUrl.pathname === '/') return require('./routes')(req, res);
   for (var i=0; i<wf_pages.length; i++) {
     page = wf_pages[i];
     if (req.parsedUrl.pathname === '/'+page) {
