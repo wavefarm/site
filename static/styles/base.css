@@ -177,7 +177,7 @@ nav.wgxc {
 
 /* Footer */
 footer {
-  font-weight: 300;
+  font-weight: 400;
   margin: 0 auto;
   max-width: 960px;
 }
@@ -189,7 +189,6 @@ footer a:hover {
 }
 footer nav {
   font-size: 20px;
-  font-weight: 400;
   padding: 20px 0;
 }
 footer nav a {
