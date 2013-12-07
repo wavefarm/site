@@ -11,6 +11,22 @@ require('logstamp')(console);
 
 var port = process.argv[2] || process.env.PORT || 1041;
 
+function shatag (req, res, next) {
+  res.shatag = function (data) {
+    var h = crypto.createHash("sha1")
+    h.update(data)
+    var etag = '"' + h.digest('base64') + '"'
+    if (req.headers['if-none-match'] === etag) {
+      res.statusCode = 304;
+      return res.end();
+    }
+    res.statusCode = 200;
+    res.setHeader('ETag', etag);
+    res.end(data);
+  };
+  if (next) next();
+};
+
 var glue = function(template, updates) {
   return hyperglue(templates(template), updates).innerHTML;
 };
@@ -24,7 +40,7 @@ var render = function (res, sections) {
     for (var section in sections) {
       updates['.'+section] = {_html: templates(sections[section])};
     }
-    res.tag(glue('layout.html', updates));
+    res.shatag(glue('layout.html', updates));
   };
 };
 
@@ -56,18 +72,8 @@ var mag_pages = [
 http.createServer(function(req, res) {
   console.log(req.method, req.url);
   req.parsedUrl = url.parse(req.url);
-
-  res.tag = function (out) {
-    var h = crypto.createHash("sha1")
-    h.update(out)
-    var etag = '"' + h.digest('base64') + '"'
-    if (req.headers['if-none-match'] === etag) {
-      res.writeHead(304)
-      return res.end()
-    }
-    res.writeHead(200, {'Content-Type': 'text/html', 'ETag': etag})
-    res.end(out)
-  };
+  res.setHeader('Content-Type', 'text/html');
+  shatag(req, res);
 
   // Subsite routes
   for (var i=0; i<subsites.length; i++) {
