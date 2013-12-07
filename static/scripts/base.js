@@ -30,9 +30,10 @@
   // Set event listeners for hover
   for (i=0; i<subs.length; i++) {
     subs[i].addEventListener('mouseenter', function (event) {
-      //console.log('selected');
-      //console.log(this);
       focusSub(event.toElement);
+    })
+    subs[i].addEventListener('mouseleave', function (event) {
+
     });
   }
 

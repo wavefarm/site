@@ -1,8 +1,8 @@
 //var api = require('./api')
-var ecstatic = require('ecstatic');
 var crypto = require('crypto');
 var http = require('http');
 var hyperglue = require('hyperglue');
+var st = require('st');
 var templates = require('./templates');
 var url = require('url');
 
@@ -10,6 +10,8 @@ var url = require('url');
 require('logstamp')(console);
 
 var port = process.argv[2] || process.env.PORT || 1041;
+
+var serveStatic = st({path: __dirname + '/static', url: '/static'});
 
 function shatag (req, res, next) {
   res.shatag = function (data) {
@@ -69,8 +71,12 @@ var mag_pages = [
   'map'
 ];
 
-http.createServer(function(req, res) {
+http.createServer(function (req, res) {
   console.log(req.method, req.url);
+
+  // Short circuit to serve static files
+  if (serveStatic(req, res)) return;
+
   req.parsedUrl = url.parse(req.url);
   res.setHeader('Content-Type', 'text/html');
   shatag(req, res);
@@ -103,11 +109,9 @@ http.createServer(function(req, res) {
     }
   }
 
-  ecstatic({root: __dirname + '/static'})(req, res, function() {
-    console.log('Not Found');
-    res.statusCode = 404;
-    return res.end('Not Found');
-  });
+  console.warn('Warning: Not Found');
+  res.statusCode = 404;
+  return res.end('Not Found');
 }).listen(port, function () {
   console.log('Listening on port', port);
 });
