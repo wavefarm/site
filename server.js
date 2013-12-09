@@ -42,7 +42,7 @@ var render = function (res, sections) {
     for (var section in sections) {
       updates['.'+section] = {_html: templates(sections[section])};
     }
-    res.shatag(glue('layout.html', updates));
+    res.shatag(glue('/layout.html', updates));
   };
 };
 
@@ -83,28 +83,28 @@ http.createServer(function (req, res) {
 
   // Subsite routes
   for (var i=0; i<subsites.length; i++) {
-    sub = subsites[i];
-    if (req.url === '/'+sub) return redirect(res, '/'+sub+'/');
-    if (RegExp('^/'+sub).test(req.url)) {
+    sub = '/'+subsites[i];
+    if (req.url === sub) return redirect(res, sub+'/');
+    if (RegExp('^'+sub).test(req.url)) {
       render(res, {head: sub+'/head.html', nav: sub+'/nav.html'});
     }
-    if (req.url === '/'+sub+'/') return require('./routes/'+sub)(req, res);
+    if (req.url === sub+'/') return require('./routes'+sub)(req, res);
   }
 
   // MAG routes
   for (var i=0; i<mag_pages.length; i++) {
     page = mag_pages[i];
     if (req.parsedUrl.pathname === '/mag/'+page) {
-      return res.render('mag/'+page+'.html');
+      return res.render('/mag/'+page+'.html');
     }
   }
 
   // Wave Farm routes
-  render(res, {head: 'head.html'});
+  render(res, {head: '/head.html'});
   if (req.parsedUrl.pathname === '/') return require('./routes')(req, res);
   for (var i=0; i<wf_pages.length; i++) {
-    page = wf_pages[i];
-    if (req.parsedUrl.pathname === '/'+page) {
+    page = '/'+wf_pages[i];
+    if (req.parsedUrl.pathname === page) {
       return res.render(page+'.html');
     }
   }
