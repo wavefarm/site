@@ -1,5 +1,7 @@
 var fs = require('fs');
 
-module.exports = function (templateName) {
-  return fs.readFileSync(__dirname + templateName, {encoding: 'utf8'});
+var tPath;
+module.exports = function (tName) {
+  tPath = __dirname + tName;
+  return fs.existsSync(tPath) && fs.createReadStream(tPath, {encoding: 'utf8'});
 };
