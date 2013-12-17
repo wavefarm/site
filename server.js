@@ -80,7 +80,7 @@ var redirect = function (res, to) {
 var subRe = RegExp('(/.+/).*')
 
 http.createServer(function (req, res) {
-  var head, layout, main, nav, pn, sub, template;
+  var head, layout, main, nav, pn, sub;
 
   console.log(req.method, req.url);
 
@@ -92,11 +92,11 @@ http.createServer(function (req, res) {
 
   // If path ends in a slash look for template at index.html
   if (pn.charAt(pn.length - 1) == '/') {
-    template = templates(pn+'index.html');
+    main = templates(pn+'index.html');
   } else {
-    template = templates(pn+'.html');
+    main = templates(pn+'.html');
   }
-  if (!template) {
+  if (!main) {
     // Try a redirect with a slash if path doesn't end in one
     if (pn.charAt(pn.length - 1) != '/') return redirect(res, pn+'/');
     // Else 404
@@ -120,9 +120,7 @@ http.createServer(function (req, res) {
   layout = trumpet();
   layout.pipe(res);
   templates('/layout.html').pipe(layout);
-  main = trumpet();
   main.pipe(layout.createWriteStream('.main'));
-  template.pipe(main);
   head.pipe(layout.createWriteStream('.head'));
   if (nav) {
     nav.pipe(layout.createWriteStream('.nav'));
