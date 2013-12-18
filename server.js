@@ -70,12 +70,18 @@ var serveStatic = st({path: __dirname + '/static', url: '/static'});
 //  };
 //};
 
-var redirect = function (res, to) {
+function redirect (res, to) {
   console.warn('Warning: Moved Permanently');
   res.statusCode = 301;
   res.setHeader('location', to);
   res.end('Moved Permanently');
-};
+}
+
+function notFound (res) {
+  console.warn('Warning: Not Found');
+  res.statusCode = 404;
+  return res.end('Not Found');
+}
 
 var subRe = RegExp('(/.+/).*')
 
@@ -90,6 +96,11 @@ http.createServer(function (req, res) {
   req.parsedUrl = url.parse(req.url);
   pn = req.parsedUrl.pathname;
 
+  // No part of these paths should have an extension
+  if (pn.indexOf('.') !== -1) {
+    return notFound(res);
+  }
+
   // If path ends in a slash look for template at index.html
   if (pn.charAt(pn.length - 1) == '/') {
     main = templates(pn+'index.html');
@@ -100,9 +111,7 @@ http.createServer(function (req, res) {
     // Try a redirect with a slash if path doesn't end in one
     if (pn.charAt(pn.length - 1) != '/') return redirect(res, pn+'/');
     // Else 404
-    console.warn('Warning: Not Found');
-    res.statusCode = 404;
-    return res.end('Not Found');
+    return notFound(res);
   }
 
   res.setHeader('Content-Type', 'text/html');
