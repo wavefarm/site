@@ -101,6 +101,15 @@ http.createServer(function (req, res) {
     return notFound(res);
   }
 
+  // Set head and nav sections
+  sub = subRe.exec(pn)
+  if (sub) {
+    head = templates(sub[1]+'head.html')
+    nav = templates(sub[1]+'nav.html')
+  } else {
+    head = templates('/head.html');
+  }
+
   // If path ends in a slash look for template at index.html
   if (pn.charAt(pn.length - 1) == '/') {
     main = templates(pn+'index.html');
@@ -115,15 +124,6 @@ http.createServer(function (req, res) {
   }
 
   res.setHeader('Content-Type', 'text/html');
-
-  // Set head and nav sections
-  sub = subRe.exec(pn)
-  if (sub) {
-    head = templates(sub[1]+'head.html')
-    nav = templates(sub[1]+'nav.html')
-  } else {
-    head = templates('/head.html');
-  }
 
   // Streams and streams
   layout = trumpet();
