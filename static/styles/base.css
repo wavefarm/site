@@ -143,10 +143,18 @@ header {
   float: left;
   height: 100px;
   width: 100px;
-  margin: 60px 38px 0 0;
+  margin: 60px 38px 20px 0;
 }
 .wgxc .subicon {
   background-position: -68px -60px;
+}
+.wgxc-logo {
+  background: url('/static/images/wgxc-logo.png') no-repeat;
+  height: 206px;
+  width: 755px;
+  margin-left: 68px;
+  position: absolute;
+  top: 4px;
 }
 
 /* Primary nav */
