@@ -101,6 +101,9 @@ http.createServer(function (req, res) {
     return notFound(res);
   }
 
+  // Local proxy for org tweets
+  if (pn === '/tweets') return require('./tweets')(req, res);
+
   // Set head and nav sections
   sub = subRe.exec(pn)
   if (sub) {
