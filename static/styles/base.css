@@ -183,6 +183,32 @@ nav.wgxc {
   background: #6fb43f;
 }
 
+/* Tweets */
+.tweets-container {
+  background: #FBF9FA;
+}
+.tweets {
+  font-size: 12px;
+  margin: auto;
+  overflow: hidden;
+  padding: 6px 0;
+  white-space: nowrap;
+  width: 960px;
+}
+.tweet {
+  display: none;
+}
+.tweets a.twitter {
+  background: url('/static/images/socialicons.png') no-repeat;
+  display: inline-block;
+  margin: 0 8px -4px;
+  height: 19px;
+  width: 19px;
+}
+.tweets a.twitter span {
+  display: none;
+}
+
 /* Footer */
 footer {
   font-weight: 400;
@@ -328,7 +354,6 @@ nav.wf2 {
 .main-container {
   background: #f4f1f1;
   color: #000;
-  min-height: 800px;
   overflow: auto;
   padding: 2px 0 20px 0;
 }
