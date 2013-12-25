@@ -1,10 +1,8 @@
 //var api = require('./api')
-//var crypto = require('crypto');
+var etagres = require('./etagres');
 var http = require('http');
-//var hyperglue = require('hyperglue');
 var st = require('st');
 var templates = require('./templates');
-//var through = require('through');
 var trumpet = require('trumpet');
 var url = require('url');
 
@@ -14,61 +12,6 @@ require('logstamp')(console);
 var port = process.argv[2] || process.env.PORT || 1041;
 
 var serveStatic = st({path: __dirname + '/static', url: '/static'});
-
-//function shaetag (req, res) {
-//  var h = crypto.createHash("sha1")
-//  var resBuf = through();
-//  var tee = through();
-//  resBuf.pipe(res);
-//  resBuf.pause();
-//  tee.pipe(h);
-//  tee.pipe(resBuf);
-//  tee.on('end', function () {
-//    var etag = '"' + h.digest('base64') + '"'
-//    if (req.headers['if-none-match'] === etag) {
-//      res.statusCode = 304;
-//      res.end();
-//    } else {
-//      res.statusCode = 200;
-//      res.setHeader('ETag', etag);
-//      resBuf.resume();
-//    }
-//  });
-//  return tee;
-//}
-
-//function shatag (req, res, next) {
-//  res.shatag = function (data) {
-//    var h = crypto.createHash("sha1")
-//    h.update(data)
-//    var etag = '"' + h.digest('base64') + '"'
-//    if (req.headers['if-none-match'] === etag) {
-//      res.statusCode = 304;
-//      return res.end();
-//    }
-//    res.statusCode = 200;
-//    res.setHeader('ETag', etag);
-//    res.end(data);
-//  };
-//  if (next) next();
-//};
-//
-//var glue = function(template, updates) {
-//  return hyperglue(templates(template), updates).innerHTML;
-//};
-//
-//var render = function (res, sections) {
-//  sections = sections || {};
-//  res.render = function (template, updates) {
-//    updates = updates || {};
-//    var main = glue(template, updates);
-//    updates['.main'] = {_html: main};
-//    for (var section in sections) {
-//      updates['.'+section] = {_html: templates(sections[section])};
-//    }
-//    res.shatag(glue('/layout.html', updates));
-//  };
-//};
 
 function redirect (res, to) {
   console.warn('Warning: Moved Permanently');
@@ -86,7 +29,7 @@ function notFound (res) {
 var subRe = RegExp('(/.+/).*')
 
 http.createServer(function (req, res) {
-  var head, layout, main, nav, pn, sub;
+  var head, layout, main, nav, pn, sub, tres;
 
   console.log(req.method, req.url);
 
@@ -126,22 +69,18 @@ http.createServer(function (req, res) {
     return notFound(res);
   }
 
+  tres = etagres(req, res);
   res.setHeader('Content-Type', 'text/html');
 
   // Streams and streams
   layout = trumpet();
-  layout.pipe(res);
+  layout.pipe(tres);
   templates('/layout.html').pipe(layout);
   main.pipe(layout.createWriteStream('.main'));
   head.pipe(layout.createWriteStream('.head'));
   if (nav) {
     nav.pipe(layout.createWriteStream('.nav'));
   }
-
-  return;
-
-  // TODO Figure out streaming etagging
-  //shatag(req, res);
 }).listen(port, function () {
   console.log('Listening on port', port);
 });
