@@ -7,7 +7,7 @@ var trumpet = require('trumpet');
 var url = require('url');
 
 // Timestamp logs
-require('logstamp')(console);
+require('logstamp')();
 
 var port = process.argv[2] || process.env.PORT || 1041;
 
