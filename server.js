@@ -47,6 +47,9 @@ http.createServer(function (req, res) {
     return notFound(res);
   }
 
+  // Redirect to slashless if we aren't at the root
+  if (pn != '/' && pn.charAt(pn.length - 1) == '/') return redirect(res, pn.slice(0, -1));
+
   // Local proxy for org tweets
   if (pn === '/tweets') return require('./tweets')(req, res);
 
@@ -59,18 +62,8 @@ http.createServer(function (req, res) {
     head = templates('/head.html');
   }
 
-  // If path ends in a slash look for template at index.html
-  if (pn.charAt(pn.length - 1) == '/') {
-    main = templates(pn+'index.html');
-  } else {
-    main = templates(pn+'.html');
-  }
-  if (!main) {
-    // Try a redirect with a slash if path doesn't end in one
-    if (pn.charAt(pn.length - 1) != '/') return redirect(res, pn+'/');
-    // Else 404
-    return notFound(res);
-  }
+  main = templates(pn+'.html') || templates(pn+'/index.html');
+  if (!main) return notFound(res);
 
   tres = etagres(req, res);
   res.setHeader('Content-Type', 'text/html');
