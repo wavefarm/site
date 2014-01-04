@@ -9,9 +9,12 @@ var url = require('url');
 // Timestamp logs
 require('logstamp')();
 
-var port = process.argv[2] || process.env.PORT || 1041;
+var dev = (process.env.NODE_ENV === 'dev');
+var port = process.env.PORT || 1041;
 
-var serveStatic = st({path: __dirname + '/static', url: '/static'});
+var staticOpts = {path: __dirname + '/static', url: '/static'};
+if (dev) staticOpts.cache = false;
+var serveStatic = st(staticOpts);
 
 function redirect (res, to) {
   console.warn('Warning: Moved Permanently');
@@ -81,6 +84,10 @@ http.createServer(function (req, res) {
   if (nav) {
     nav.pipe(layout.createWriteStream('.nav'));
   }
+  if (dev) {
+    templates('/sse.js').pipe(layout.createWriteStream('#sse'));
+  }
 }).listen(port, function () {
   console.log('Listening on port', port);
+  if (process.send) process.send('online')
 });
