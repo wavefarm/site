@@ -9,6 +9,12 @@
     "hyperglue": "~1.3.0",
     "st": "~0.2.3",
     "trumpet": "~1.6.3",
-    "twit": "~1.1.11"
+    "twit": "~1.1.11",
+    "browserify": "~3.18.0",
+    "fade": "~0.1.0",
+    "concat-stream": "~1.3.1"
+  },
+  "scripts": {
+    "postinstall": "browserify browser/main.js -o static/script.js"
   }
 }
