@@ -109,6 +109,9 @@ header {
 .mag .subicon {
   background-position: -128px -60px;
 }
+.mag .subicon:hover {
+  background-position: -128px 0px;
+}
 .mag-logo {
   background: url('/static/images/mag-logo.png') no-repeat;
   float: right;
@@ -129,6 +132,9 @@ header {
   height: 60px;
   width: 68px;
 }
+.ta .subicon:hover {
+  background-position: 0px 0px;
+}
 .wf-logo {
   background: url('/static/images/wf-logo.png') no-repeat;
   background-size: 220px 220px;
@@ -147,6 +153,9 @@ header {
 }
 .wgxc .subicon {
   background-position: -68px -60px;
+}
+.wgxc .subicon:hover {
+  background-position: -68px 0px;
 }
 .wgxc-logo {
   background: url('/static/images/wgxc-logo.png') no-repeat;
