@@ -8,6 +8,11 @@ module.exports = function () {
   var subPos; // subsite pointer positions
   var subs; // subsite elements
 
+  pointer = document.getElementById('pointer');
+
+  // Do nothing on pages without the pointer
+  if (!pointer) return;
+
   // Pointer positions for subsites (each element is 210px wide)
   subPos = {
     ta: 348,
@@ -22,8 +27,6 @@ module.exports = function () {
   // (stopped by mouse hover)
   rotate = true;
 
-  // Pointer, slide, and subsite elements
-  pointer = document.getElementById('pointer');
   slides = document.getElementsByClassName('slide');
   subs = document.getElementsByClassName('sub');
 
@@ -64,7 +67,6 @@ module.exports = function () {
     slide = slides[subIndex];
 
     // Show corresponding slide
-    // TODO fade in?
     slide.style.display = 'block';
 
     // Move pointer
