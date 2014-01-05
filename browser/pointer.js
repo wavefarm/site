@@ -1,10 +1,11 @@
 module.exports = function () {
   var dest; // pointer destination number of pixels
   var i; // iterator
+  var intervalID; // ID for the rotation interval
   var loc; // current location of pointer
   var pointer; // pointer element
-  var rotate; // boolean for start/stop of auto-rotation
   var slides; // slide image elements
+  var subIndex; // index for current sub
   var subPos; // subsite pointer positions
   var subs; // subsite elements
 
@@ -12,6 +13,10 @@ module.exports = function () {
 
   // Do nothing on pages without the pointer
   if (!pointer) return;
+
+  slides = document.getElementsByClassName('slide');
+  slideshow = document.getElementsByClassName('slideshow')[0];
+  subs = document.getElementsByClassName('sub');
 
   // Pointer positions for subsites (each element is 210px wide)
   subPos = {
@@ -23,27 +28,47 @@ module.exports = function () {
   // Pointer location and destination
   loc = dest = subPos.ta;
 
-  // Whether to rotate through the subsites automatically
-  // (stopped by mouse hover)
-  rotate = true;
+  subIndex = 0;
 
-  slides = document.getElementsByClassName('slide');
-  subs = document.getElementsByClassName('sub');
+  function nextSub () {
+    var i = subIndex + 1;
+    return subs[i < subs.length ? i : 0]
+  }
+
+  function rotate () {
+    focusSub(nextSub());
+  }
+
+  function startRotate () {
+    intervalID = setInterval(rotate, 7000);
+  }
+
+  function stopRotate () {
+    clearInterval(intervalID);
+  }
+
+  startRotate();
 
   // Set event listeners for hover
   for (i=0; i<subs.length; i++) {
     subs[i].addEventListener('mouseenter', function (event) {
       focusSub(event.toElement);
-    })
+      stopRotate();
+    });
     subs[i].addEventListener('mouseleave', function (event) {
-
+      startRotate();
     });
   }
+  slideshow.addEventListener('mouseenter', function (event) {
+    stopRotate();
+  });
+  slideshow.addEventListener('mouseleave', function (event) {
+    startRotate();
+  });
 
   function focusSub (sub) {
     var i;
     var icon;
-    var subIndex;
 
     for (i=0; i<subs.length; i++) {
       // Fade all icons
