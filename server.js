@@ -29,7 +29,7 @@ function notFound (res) {
   return res.end('Not Found');
 }
 
-var subRe = RegExp('(/.+/).*')
+var subRe = RegExp('/(ta|wgxc|mag)')
 
 http.createServer(function (req, res) {
   var head, layout, main, nav, pn, sub, tres;
@@ -56,8 +56,8 @@ http.createServer(function (req, res) {
   // Set head and nav sections
   sub = subRe.exec(pn)
   if (sub) {
-    head = templates(sub[1]+'head.html')
-    nav = templates(sub[1]+'nav.html')
+    head = templates('/'+sub[1]+'/head.html')
+    nav = templates('/'+sub[1]+'/nav.html')
   } else {
     head = templates('/head.html');
   }
