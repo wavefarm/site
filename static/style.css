@@ -439,10 +439,25 @@ a.wgxc.slide, a.mag.slide {
   margin: 5px 0 10px 0;
 }
 .page .answer {
-  color: #777;
 }
 .page .biglink {
   font-size: 28px;
+  margin: 30px 0;
+}
+.page dl.qa {
+  margin: 0 0 10px;
+}
+.page dl.qa dd {
+  color: #777;
+}
+.page dl.qa dd a {
+  color: #555;
+}
+.page dl.qa dd a:hover {
+  color: #600;
+} 
+.page dl.qa dd ul {
+  margin: 0 0 0 1em;
 }
 
 /* Programs page */
