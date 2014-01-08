@@ -460,6 +460,26 @@ a.wgxc.slide, a.mag.slide {
   margin: 0 0 0 1em;
 }
 
+/* WGXC pages */
+/* TODO Split out subsite styles into their own CSS/LESS */
+.page.wgxc {
+  margin: 0 40px 0 0;
+  width: 640px;
+  float: right;
+}
+.side {
+  float: left;
+  margin: 0 0 0 40px;
+  padding: 140px 0 40px 0;
+  width: 200px;
+}
+.side h3 {
+  color: #6fb43f;
+  font-size: 26px;
+  font-weight: bold;
+  margin: 20px 0 10px 0;
+}
+
 /* Programs page */
 a.programs-header {
   color: black;
