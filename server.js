@@ -74,12 +74,8 @@ http.createServer(function (req, res) {
   templates('/layout.html').pipe(layout);
   main.pipe(layout.createWriteStream('.main'));
   head.pipe(layout.createWriteStream('.head'));
-  if (nav) {
-    nav.pipe(layout.createWriteStream('.nav'));
-  }
-  if (dev) {
-    templates('/sse.js').pipe(layout.createWriteStream('#sse'));
-  }
+  if (nav) nav.pipe(layout.createWriteStream('.nav'));
+  if (dev) templates('/sse.js').pipe(layout.createWriteStream('#sse'));
 }).listen(port, function () {
   console.log('Listening on port', port);
   if (process.send) process.send('online')
