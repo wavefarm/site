@@ -475,7 +475,8 @@ a.wgxc.slide, a.mag.slide {
 }
 .side h3 {
   color: #6fb43f;
-  font-size: 26px;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 22px;
   font-weight: bold;
   margin: 20px 0 10px 0;
 }
