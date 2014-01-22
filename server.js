@@ -50,6 +50,9 @@ http.createServer(function (req, res) {
   // Redirect to slashless if we aren't at the root
   if (pn != '/' && pn.charAt(pn.length - 1) == '/') return redirect(res, pn.slice(0, -1));
 
+  // Local proxy for api.wavefarm.org
+  if (pn.indexOf('/api') == 0) return require('./api')(req, res);
+
   // Local proxy for org tweets
   if (pn === '/tweets') return require('./tweets')(req, res);
 
