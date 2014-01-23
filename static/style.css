@@ -481,6 +481,37 @@ a.wgxc.slide, a.mag.slide {
   margin: 20px 0 10px 0;
 }
 
+/* WGXC Schedule */
+.schedule {
+  margin-top: 40px;
+}
+.calendar-card-topbar {
+  background-color: #096E8C;
+  border-radius: 8px 8px 0 0;
+  height: 12px;
+  width: 120px;
+}
+.calendar-card {
+  background-color: #1AB7EA;
+  border-radius: 8px;
+  color: #fff;
+  float: left;
+  font-weight: 400;
+  text-align: center;
+  width: 120px;
+}
+.calendar-card .weekday {
+  font-size: 12px;
+  margin: 6px 0 0 0;
+}
+.calendar-card .monthday {
+  font-size: 48px;
+  margin: 10px 0 40px;
+}
+.showlist {
+  margin-left: 200px;
+}
+
 /* Programs page */
 a.programs-header {
   color: black;
