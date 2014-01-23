@@ -508,8 +508,21 @@ a.wgxc.slide, a.mag.slide {
   font-size: 48px;
   margin: 10px 0 40px;
 }
-.showlist {
+.show-list {
   margin-left: 200px;
+}
+.show {
+}
+.show-time {
+  float: left;
+  text-align: right;
+  width: 80px;
+}
+.show-name {
+  border-left: 1px dashed #000;
+  height: 40px;
+  margin-left: 100px;
+  padding-left: 20px;
 }
 
 /* Programs page */
