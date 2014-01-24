@@ -15,7 +15,6 @@ module.exports = function () {
   }, function (res) {
     res.pipe(concat(function (data) {
       var result = JSON.parse(data);
-      console.log(result);
       var day = $('.day');
       day.find('.month').html(now.format('MMMM'));
       day.find('.monthday').html(now.format('DD'));
