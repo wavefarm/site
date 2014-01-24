@@ -32,7 +32,7 @@ function notFound (res) {
 var subRe = RegExp('/(ta|wgxc|mag)')
 
 http.createServer(function (req, res) {
-  var head, layout, main, nav, pn, sub, tres;
+  var head, layout, main, nav, p, sub, tres;
 
   console.log(req.method, req.url);
 
@@ -40,24 +40,24 @@ http.createServer(function (req, res) {
   if (serveStatic(req, res)) return;
 
   req.parsedUrl = url.parse(req.url);
-  pn = req.parsedUrl.pathname;
+  p = req.parsedUrl.pathname;
 
   // No part of these paths should have an extension
-  if (pn.indexOf('.') !== -1) {
+  if (p.indexOf('.') !== -1) {
     return notFound(res);
   }
 
   // Redirect to slashless if we aren't at the root
-  if (pn != '/' && pn.charAt(pn.length - 1) == '/') return redirect(res, pn.slice(0, -1));
+  if (p != '/' && p.charAt(p.length - 1) == '/') return redirect(res, p.slice(0, -1));
 
   // Local proxy for api.wavefarm.org
-  if (pn.indexOf('/api') == 0) return require('./api')(req, res);
+  if (p.indexOf('/api') == 0) return require('./api')(req, res);
 
   // Local proxy for org tweets
-  if (pn === '/tweets') return require('./tweets')(req, res);
+  if (p === '/tweets') return require('./tweets')(req, res);
 
   // Set head and nav sections
-  sub = subRe.exec(pn)
+  sub = subRe.exec(p)
   if (sub) {
     head = templates('/'+sub[1]+'/head.html')
     nav = templates('/'+sub[1]+'/nav.html')
@@ -65,7 +65,7 @@ http.createServer(function (req, res) {
     head = templates('/head.html');
   }
 
-  main = templates(pn+'.html') || templates(pn+'/index.html');
+  main = templates(p+'.html') || templates(p+'/index.html');
   if (!main) return notFound(res);
 
   tres = etagres(req, res);
