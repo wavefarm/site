@@ -11,7 +11,7 @@ module.exports = function (req, res) {
     auth: u.auth,
     // Only allow GET requests for now
     //method: req.method, 
-    path: req.url.replace(/^\/api/, ''),
+    path: req.parsedUrl.path.replace(/^\/api/, ''),
     headers: req.headers
   }, function (clientRes) {
     res.writeHead(clientRes.statusCode, clientRes.headers)
