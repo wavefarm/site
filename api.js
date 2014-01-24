@@ -17,5 +17,10 @@ module.exports = function (req, res) {
     res.writeHead(clientRes.statusCode, clientRes.headers)
     clientRes.pipe(res)
   })
+  clientReq.on('error', function (err) {
+    console.error('Error: Cannot connect to ' + u.href)
+    res.writeHead(502)
+    res.end('Bad Gateway')
+  })
   req.pipe(clientReq)
 };
