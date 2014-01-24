@@ -10,10 +10,10 @@ module.exports = function () {
 
   var now = moment();
   http.get({
-    // TODO Extend API with endpoint to return a day's schedule sorted by time
-    path: '/api/search?q=type%3Aevent+startDate%3A' + now.format('YYYY-MM-DD') + '+categories%3A"WGXC%3A+Hands-on+Radio"'
+    path: '/api/wgxc/schedule/' + now.format('YYYY-MM-DD')
   }, function (res) {
     res.pipe(concat(function (data) {
+      console.log(data)
       var result = JSON.parse(data);
       var day = $('.day');
       day.find('.month').html(now.format('MMMM'));
