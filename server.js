@@ -7,7 +7,9 @@ var trumpet = require('trumpet');
 var url = require('url');
 
 // Timestamp logs
-require('logstamp')();
+require('logstamp')(function () {
+  return new Date().toISOString() + ' [wavefarm.org] ';
+});
 
 var dev = (process.env.NODE_ENV === 'dev');
 var port = process.env.PORT || 1041;
