@@ -40,13 +40,21 @@ module.exports = function () {
           show.find('.show-name').html(hit.name);
           showList.append(show);
         });
+
+        // And around again!
+        date = date.add('days', 1);
         if (--daysToGet) {
-          date = date.add('days', 1);
           renderDay();
         }
       }));
     });
   }
 
+  // Run on page load
   renderDay();
+
+  $('#more').on('click', function () {
+    daysToGet = 7;
+    renderDay();
+  });
 };

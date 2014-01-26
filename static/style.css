@@ -528,6 +528,18 @@ a.wgxc.slide, a.mag.slide {
   margin-left: 100px;
   padding: 0 0 15px 20px;
 }
+.more {
+  text-align: center;
+}
+.more input {
+  background-color: #1AB7EA;
+  border: 1px solid #1AB7EA;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 10px 40px;
+}
 
 /* Programs page */
 a.programs-header {
