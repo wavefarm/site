@@ -28,7 +28,7 @@ module.exports = function (req, res) {
     trim_user: true
   }, function (err, reply) {
     if (err) {
-      console.error(err.stack);
+      console.error(err.message);
       res.statusCode = 500;
       return res.end(JSON.stringify({
         error: err.message
