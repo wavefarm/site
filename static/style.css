@@ -485,6 +485,11 @@ a.wgxc.slide, a.mag.slide {
 .schedule {
   margin-top: 40px;
 }
+.day {
+  clear: both;
+  margin: 0 0 40px;
+  overflow: auto;
+}
 .calendar-card-topbar {
   background-color: #096E8C;
   border-radius: 8px 8px 0 0;
@@ -509,9 +514,9 @@ a.wgxc.slide, a.mag.slide {
   margin: 10px 0 40px;
 }
 .show-list {
+  border-bottom: 2px solid #bbb;
   margin-left: 200px;
-}
-.show {
+  padding: 0 0 30px;
 }
 .show-time {
   float: left;
