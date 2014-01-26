@@ -520,9 +520,8 @@ a.wgxc.slide, a.mag.slide {
 }
 .show-name {
   border-left: 1px dashed #000;
-  height: 40px;
   margin-left: 100px;
-  padding-left: 20px;
+  padding: 0 0 15px 20px;
 }
 
 /* Programs page */
