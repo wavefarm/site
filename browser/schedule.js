@@ -13,7 +13,6 @@ module.exports = function () {
     path: '/api/wgxc/schedule/' + now.format('YYYY-MM-DD')
   }, function (res) {
     res.pipe(concat(function (data) {
-      console.log(data.toString())
       var result = JSON.parse(data);
       var day = $('.day');
       day.find('.month').html(now.format('MMMM'));
