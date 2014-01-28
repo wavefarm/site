@@ -23,7 +23,6 @@ module.exports = function () {
     }, function (res) {
       res.pipe(concat(function (data) {
         var result = JSON.parse(data);
-        console.log(result)
         if (today) {
           today = false;
         } else {
