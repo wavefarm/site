@@ -42,9 +42,7 @@ module.exports = function () {
 
         // And around again!
         date = date.add('days', 1);
-        if (--daysToGet) {
-          renderDay();
-        }
+        if (--daysToGet > 0) renderDay();
       }));
     });
   }
