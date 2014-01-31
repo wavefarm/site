@@ -17,6 +17,8 @@ module.exports = function () {
   var daysToGet = 7;
   var today = true;
 
+  date.subtract('hours', 10);
+  console.log(date);
   function renderDay () {
     http.get({
       path: '/api/wgxc/schedule/' + date.format('YYYY-MM-DD')
@@ -35,12 +37,21 @@ module.exports = function () {
         var showList = day.find('.show-list');
         result.hits.forEach(function (hit) {
           var show = showTemplate.clone();
+          var name = show.find('.show-name');
           var description = show.find('.show-description');
-          show.find('.show-time').html(moment(hit.start).format('h:mma'));
-          show.find('.show-name span').html(hit.name).on('click', function () {
+          var start = moment(hit.start);
+          show.find('.show-time').html(start.format('h:mma'));
+          name.find('span').html(hit.name).on('click', function () {
             description.slideToggle();
           });
           description.find('p').html(hit.briefDescription);
+
+          // Highlight the broadcast happening now
+          if (start.isBefore(date) && moment(hit.end).isAfter(date)) {
+            name.addClass('current');
+            description.addClass('current');
+          }
+
           showList.append(show);
         });
 

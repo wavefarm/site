@@ -528,6 +528,9 @@ a.wgxc.slide, a.mag.slide {
   margin-left: 100px;
   padding: 0 0 15px 20px;
 }
+.show-name.current {
+  border-left: 1px dashed #1AB7EA;
+}
 .show-name span {
   cursor: pointer;
 }
@@ -539,6 +542,10 @@ a.wgxc.slide, a.mag.slide {
   display: none;
   margin-left: 100px;
   padding: 0 0 15px 20px;
+}
+.show-description.current {
+  display: block;
+  border-left: 1px dashed #1AB7EA;
 }
 .more {
   text-align: center;
