@@ -35,8 +35,12 @@ module.exports = function () {
         var showList = day.find('.show-list');
         result.hits.forEach(function (hit) {
           var show = showTemplate.clone();
+          var description = show.find('.show-description');
           show.find('.show-time').html(moment(hit.start).format('h:mma'));
-          show.find('.show-name').html(hit.name);
+          show.find('.show-name span').html(hit.name).on('click', function () {
+            description.slideToggle();
+          });
+          description.find('p').html(hit.briefDescription);
           showList.append(show);
         });
 

@@ -528,6 +528,18 @@ a.wgxc.slide, a.mag.slide {
   margin-left: 100px;
   padding: 0 0 15px 20px;
 }
+.show-name span {
+  cursor: pointer;
+}
+.show-name span:hover {
+  color: #1AB7EA;
+}
+.show-description {
+  border-left: 1px dashed #000;
+  display: none;
+  margin-left: 100px;
+  padding: 0 0 15px 20px;
+}
 .more {
   text-align: center;
 }
