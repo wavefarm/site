@@ -17,8 +17,6 @@ module.exports = function () {
   var daysToGet = 7;
   var today = true;
 
-  date.subtract('hours', 10);
-  console.log(date);
   function renderDay () {
     http.get({
       path: '/api/wgxc/schedule/' + date.format('YYYY-MM-DD')
