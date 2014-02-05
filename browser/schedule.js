@@ -10,7 +10,8 @@ module.exports = function () {
 
   // Fill in existing .day with today's shows, but also use it
   // as a template for future days.
-  var date = moment();
+  var now = moment();
+  var date = moment(); // This one will be changed for each get
   var day = $('.day');
   var dayTemplate = day.clone();
   var showTemplate = day.find('.show').detach().clone();
@@ -45,7 +46,7 @@ module.exports = function () {
           description.find('p').html(hit.briefDescription);
 
           // Highlight the broadcast happening now
-          if (start.isBefore(date) && moment(hit.end).isAfter(date)) {
+          if (start.isBefore(now) && moment(hit.end).isAfter(now)) {
             name.addClass('current');
             description.addClass('current');
           }
