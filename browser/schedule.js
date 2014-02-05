@@ -1,6 +1,7 @@
 var concat = require('concat-stream');
 var http = require('http')
 var moment = require('moment')
+var strip = require('strip')
 
 
 module.exports = function () {
@@ -39,11 +40,13 @@ module.exports = function () {
           var name = show.find('.show-name');
           var description = show.find('.show-description');
           var start = moment(hit.start);
+          var hd = strip(hit.description);
+          if (hd.length > 140) hd = hd.substr(0, 140) + '...';
           show.find('.show-time').html(start.format('h:mma'));
           name.find('span').html(hit.name).on('click', function () {
             description.slideToggle();
           });
-          description.find('p').html(hit.briefDescription);
+          description.find('p').html(hd);
 
           // Highlight the broadcast happening now
           if (start.isBefore(now) && moment(hit.end).isAfter(now)) {
