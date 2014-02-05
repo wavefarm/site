@@ -40,7 +40,8 @@ module.exports = function () {
           var name = show.find('.show-name');
           var description = show.find('.show-description');
           var start = moment(hit.start);
-          var hd = strip(hit.description);
+          var hd = hit.description || '';
+          hd = strip(hd);
           if (hd.length > 140) hd = hd.substr(0, 140) + '...';
           show.find('.show-time').html(start.format('h:mma'));
           name.find('span').html(hit.name).on('click', function () {
