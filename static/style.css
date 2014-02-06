@@ -462,7 +462,10 @@ a.wgxc.slide, a.mag.slide {
 
 /* WGXC pages */
 /* TODO Split out subsite styles into their own CSS/LESS */
-.page.wgxc {
+.page.wgxc a:hover {
+  color: #1AB7EA;
+}
+.page.split {
   margin: 0 40px 0 0;
   width: 640px;
   float: right;
@@ -479,6 +482,9 @@ a.wgxc.slide, a.mag.slide {
   font-size: 22px;
   font-weight: bold;
   margin: 20px 0 10px 0;
+}
+.side.wgxc a:hover {
+  color: #1AB7EA;
 }
 
 /* WGXC Schedule */
