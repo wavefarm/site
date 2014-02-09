@@ -519,39 +519,38 @@ a.wgxc.slide, a.mag.slide {
   font-size: 48px;
   margin: 10px 0 40px;
 }
-.show-list {
+.broadcast-list {
   border-bottom: 2px solid #bbb;
   margin-left: 200px;
   padding: 0 0 30px;
 }
-.show-time {
+.broadcast-time {
   float: left;
   text-align: right;
   width: 80px;
 }
-.show-name {
+.broadcast-info {
   border-left: 1px dashed #000;
   margin-left: 100px;
-  padding: 0 0 15px 20px;
+  padding: 0 0 20px 20px;
 }
-.show-name.current {
-  border-left: 1px dashed #1AB7EA;
+.show-name {
+  font-size: 22px;
 }
 .show-name span {
   cursor: pointer;
 }
-.show-name span:hover {
-  color: #1AB7EA;
+.broadcast-name {
+  padding: 0 0 15px;
 }
-.show-description {
-  border-left: 1px dashed #000;
+.broadcast-name span {
+  cursor: pointer;
+}
+.broadcast-description {
   display: none;
-  margin-left: 100px;
-  padding: 0 0 15px 20px;
 }
-.show-description.current {
+.broadcast-description.current {
   display: block;
-  border-left: 1px dashed #1AB7EA;
 }
 .more {
   text-align: center;

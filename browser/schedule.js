@@ -9,13 +9,13 @@ module.exports = function () {
   var schedule = $('.schedule');
   if (!schedule.length) return;
 
-  // Fill in existing .day with today's shows, but also use it
-  // as a template for future days.
+  // Grab .day as a template for future days, then fill it in with
+  // today's broadcasts
   var now = moment();
   var date = moment(); // This one will be changed for each get
   var day = $('.day');
   var dayTemplate = day.clone();
-  var showTemplate = day.find('.show').detach().clone();
+  var broadcastTemplate = day.find('.broadcast').detach().clone();
   var daysToGet = 7;
   var today = true;
 
@@ -34,16 +34,20 @@ module.exports = function () {
         }
         day.find('.month').html(date.format('MMMM'));
         day.find('.monthday').html(date.format('DD'));
-        var showList = day.find('.show-list');
+        var broadcastList = day.find('.broadcast-list');
         result.hits.forEach(function (hit) {
-          var show = showTemplate.clone();
-          var name = show.find('.show-name');
-          var description = show.find('.show-description');
+          var broadcast = broadcastTemplate.clone();
+          var name = broadcast.find('.broadcast-name');
+          var showName = broadcast.find('.show-name');
+          var description = broadcast.find('.broadcast-description');
           var start = moment(hit.start);
           var hd = hit.description || '';
           hd = strip(hd);
           if (hd.length > 140) hd = hd.substr(0, 140) + '...';
-          show.find('.show-time').html(start.format('h:mma'));
+          broadcast.find('.broadcast-time').html(start.format('h:mma'));
+          showName.find('span').html(hit.shows ? hit.shows[0].main : '').on('click', function () {
+            description.slideToggle();
+          });
           name.find('span').html(hit.name).on('click', function () {
             description.slideToggle();
           });
@@ -55,7 +59,7 @@ module.exports = function () {
             description.addClass('current');
           }
 
-          showList.append(show);
+          broadcastList.append(broadcast);
         });
 
         // And around again!
