@@ -38,16 +38,12 @@ module.exports = function () {
         result.hits.forEach(function (hit) {
           var broadcast = broadcastTemplate.clone();
           var name = broadcast.find('.broadcast-name');
-          var showName = broadcast.find('.show-name');
           var description = broadcast.find('.broadcast-description');
           var start = moment(hit.start);
           var hd = hit.description || '';
           hd = strip(hd);
           if (hd.length > 140) hd = hd.substr(0, 140) + '...';
           broadcast.find('.broadcast-time').html(start.format('h:mma'));
-          showName.find('span').html(hit.shows ? hit.shows[0].main : '').on('click', function () {
-            description.slideToggle();
-          });
           name.find('span').html(hit.name).on('click', function () {
             description.slideToggle();
           });
