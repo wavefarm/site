@@ -38,10 +38,6 @@ http.createServer(function (req, res) {
 
   console.log(req.method, req.url);
 
-  // Need to parse URL before calling serveStatic
-  // https://github.com/isaacs/st/issues/30
-  req.parsedUrl = url.parse(req.url);
-
   // Short circuit to serve static files
   if (serveStatic(req, res)) return;
 
