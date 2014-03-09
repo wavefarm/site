@@ -18,14 +18,14 @@ var staticOpts = {path: __dirname + '/static', url: '/static'};
 if (dev) staticOpts.cache = false;
 var serveStatic = st(staticOpts);
 
-function redirect (res, to) {
+var redirect = function (res, to) {
   console.warn('Warning: Moved Permanently');
   res.statusCode = 301;
   res.setHeader('location', to);
   res.end('Moved Permanently');
 }
 
-function notFound (res) {
+var notFound = function (res) {
   console.warn('Warning: Not Found');
   res.statusCode = 404;
   return res.end('Not Found');
@@ -56,7 +56,10 @@ http.createServer(function (req, res) {
   if (p.indexOf('/api') == 0) return require('./api')(req, res);
 
   // Local proxy for org tweets
-  if (p === '/tweets') return require('./tweets')(req, res);
+  if (p == '/tweets') return require('./tweets')(req, res);
+
+  // Archive items
+  if (/\/archive\/\w{6}/.test(p)) return require('./routes/item')(req, res);
 
   // Set head and nav sections
   sub = subRe.exec(p)
@@ -77,9 +80,9 @@ http.createServer(function (req, res) {
   layout = trumpet();
   layout.pipe(tres);
   templates('/layout.html').pipe(layout);
-  main.pipe(layout.createWriteStream('.main'));
   head.pipe(layout.createWriteStream('.head'));
   if (nav) nav.pipe(layout.createWriteStream('.nav'));
+  main.pipe(layout.createWriteStream('.main'));
 }).listen(port, function () {
   console.log('Listening on port', port);
   if (process.send) process.send('online')
