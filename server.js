@@ -1,10 +1,8 @@
-//var api = require('./api')
-var etagres = require('./etagres');
-var http = require('http');
-var st = require('st');
-var templates = require('./templates');
-var trumpet = require('trumpet');
-var url = require('url');
+var http = require('http')
+, hyperstream = require('hyperstream')
+, st = require('st')
+, templates = require('./templates')
+, url = require('url')
 
 // Timestamp logs
 require('logstamp')(function () {
@@ -34,7 +32,7 @@ var notFound = function (res) {
 var subRe = RegExp('/(ta|wgxc|mag)')
 
 http.createServer(function (req, res) {
-  var head, layout, main, nav, p, sub, tres;
+  var head, layout, main, nav, p, sub
 
   console.log(req.method, req.url);
 
@@ -73,16 +71,14 @@ http.createServer(function (req, res) {
   main = templates(p+'.html') || templates(p+'/index.html');
   if (!main) return notFound(res);
 
-  tres = etagres(req, res);
   res.setHeader('Content-Type', 'text/html');
 
   // Streams and streams
-  layout = trumpet();
-  layout.pipe(tres);
-  templates('/layout.html').pipe(layout);
-  head.pipe(layout.createWriteStream('.head'));
-  if (nav) nav.pipe(layout.createWriteStream('.nav'));
-  main.pipe(layout.createWriteStream('.main'));
+  templates('/layout.html').pipe(hyperstream(
+  { '.head': head
+  , '.nav': nav
+  , '.main': main
+  })).pipe(res)
 }).listen(port, function () {
   console.log('Listening on port', port);
   if (process.send) process.send('online')
