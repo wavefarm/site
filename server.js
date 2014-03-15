@@ -51,10 +51,10 @@ http.createServer(function (req, res) {
   if (p != '/' && p.charAt(p.length - 1) == '/') return redirect(res, p.slice(0, -1));
 
   // Local proxy for api.wavefarm.org
-  if (p.indexOf('/api') == 0) return require('./api')(req, res);
+  if (p.indexOf('/api') == 0) return require('./routes/api')(req, res);
 
   // Local proxy for org tweets
-  if (p == '/tweets') return require('./tweets')(req, res);
+  if (p == '/tweets') return require('./routes/tweets')(req, res);
 
   // Archive items
   if (/\/archive\/\w{6}/.test(p)) return require('./routes/item')(req, res);
