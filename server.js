@@ -30,9 +30,10 @@ var decorate = function (res) {
     return res.end('Not Found');
   }
 
-  res.error = function () {
-    res.statusCode = 500;
-    return res.end('Server Error');
+  res.error = function (err) {
+    console.error(err.stack)
+    res.statusCode = 500
+    return res.end('Server Error')
   }
 }
 

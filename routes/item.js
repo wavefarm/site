@@ -15,8 +15,7 @@ module.exports = function (req, res) {
   var id = idRe.exec(req.url)[1]
   api.get(id, function (err, apiRes, item) {
     if (err) {
-      console.error(err)
-      return res.error()
+      return res.error(err)
     }
 
     if (archiveTypes.indexOf(item.type) == -1) {
