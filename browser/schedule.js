@@ -48,6 +48,7 @@ module.exports = function () {
             description.slideToggle();
           });
           description.find('p').html(hd);
+          broadcast.find('.more').attr('href', '/wgxc/schedule/' + hit.id)
 
           // Highlight the broadcast happening now
           if (start.isBefore(now) && moment(hit.end).isAfter(now)) {

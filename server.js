@@ -69,6 +69,10 @@ http.createServer(function (req, res) {
   // Archive items
   if (/\/archive\/\w{6}/.test(p)) return require('./routes/item')(req, res);
 
+  // WGXC broadcasts and shows
+  if (/\/wgxc\/schedule\/\w{6}$/.test(p)) return require('./routes/wgxc/item')(req, res);
+
+  // Default template handling from here on out
   // Set head and nav sections
   sub = subRe.exec(p)
   if (sub) {
