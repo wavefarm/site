@@ -12,9 +12,11 @@ require('logstamp')(function () {
 var dev = (process.env.NODE_ENV === 'dev');
 var port = process.env.PORT || 1041;
 
-var staticOpts = {path: __dirname + '/static', url: '/static'};
-if (dev) staticOpts.cache = false;
-var serveStatic = st(staticOpts);
+var mount = st({
+  cache: false,
+  path: __dirname + '/static', 
+  url: '/static'
+});
 
 var decorate = function (res) {
   res.redirect = function (to) {
@@ -45,7 +47,7 @@ http.createServer(function (req, res) {
   console.log(req.method, req.url);
 
   // Short circuit to serve static files
-  if (serveStatic(req, res)) return;
+  if (mount(req, res)) return;
 
   req.parsedUrl = url.parse(req.url);
   p = req.parsedUrl.pathname;
