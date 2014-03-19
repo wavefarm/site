@@ -146,10 +146,10 @@ header {
 .wf-logo-smaller {
   background: url('/static/images/wf-logo.png') no-repeat;
   background-size: 100px 100px;
-  float: right;
+  float: left;
   height: 100px;
   width: 100px;
-  margin: 60px 38px 20px 0;
+  margin: 160px 38px 20px 0;
 }
 .wgxc .subicon {
   background-position: -68px -60px;
