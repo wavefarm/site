@@ -9,7 +9,6 @@ require('logstamp')(function () {
   return new Date().toISOString() + ' [wavefarm.org] ';
 });
 
-var dev = (process.env.NODE_ENV === 'dev');
 var port = process.env.PORT || 1041;
 
 var mount = st({
