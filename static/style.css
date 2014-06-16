@@ -79,6 +79,7 @@ header {
 .search form {
   position: relative;
   top: 22px;
+  z-index: 3;
 }
 .search input {
   border: 1px solid black;
