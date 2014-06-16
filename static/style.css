@@ -193,6 +193,20 @@ nav.wgxc {
   background: #6fb43f;
 }
 
+/* WGXC secondary nav */
+nav.secondary.wgxc {
+  background: #000;
+  border-bottom: 1px solid black;
+  font-size: 16px;
+  min-width: 960px;
+  padding: 5px 0;
+  text-align: center;
+}
+nav.secondary.wgxc a {
+  color: #fff;
+  display: none;
+}
+
 /* Tweets */
 .tweets-container {
   background: #FBF9FA;
