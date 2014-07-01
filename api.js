@@ -1,2 +1,7 @@
 var wf = require('wavefarm')
-module.exports = wf({url: process.env.API_URL || 'http://localhost:1039'})
+
+module.exports = wf({
+  host: process.env.API_HOST,
+  port: process.env.API_PORT,
+  withCredentials: false
+})
