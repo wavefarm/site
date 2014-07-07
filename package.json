@@ -17,7 +17,8 @@
     "wavefarm": "0.0.1"
   },
   "scripts": {
-    "postinstall": "browserify browser/main.js -o static/scripts/bundle.js"
+    "build": "browserify browser/main.js -o static/scripts/bundle.js",
+    "watch": "watchify browser/main.js -o static/scripts/bundle.js -dv"
   },
   "devDependencies": {
     "browserify": "^3.18.0"
