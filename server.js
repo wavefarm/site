@@ -11,11 +11,7 @@ require('logstamp')(function () {
 
 var port = process.env.PORT || 1041;
 
-var mount = st({
-  cache: false,
-  path: __dirname + '/static', 
-  url: '/static'
-});
+var mount = st({path: __dirname + '/static'});
 
 var decorate = function (res) {
   res.redirect = function (to) {
@@ -45,18 +41,10 @@ http.createServer(function (req, res) {
 
   console.log(req.method, req.url);
 
-  // Short circuit to serve static files
-  if (mount(req, res)) return;
-
   req.parsedUrl = url.parse(req.url);
   p = req.parsedUrl.pathname;
 
   decorate(res)
-
-  // No part of these paths should have an extension
-  if (p.indexOf('.') !== -1) {
-    return res.notFound();
-  }
 
   // Redirect to slashless if we aren't at the root
   if (p != '/' && p.charAt(p.length - 1) == '/') return res.redirect(p.slice(0, -1));
@@ -73,7 +61,6 @@ http.createServer(function (req, res) {
   // WGXC broadcasts and shows
   if (/^\/wgxc\/schedule\/\w{6}$/.test(p)) return require('./routes/wgxc/item')(req, res);
 
-  // Default template handling from here on out
   // Set head and nav sections
   sub = subRe.exec(p)
   if (sub) {
@@ -84,7 +71,9 @@ http.createServer(function (req, res) {
   }
 
   main = templates(p+'.html') || templates(p+'/index.html');
-  if (!main) return res.notFound();
+
+  // No template found so check static
+  if (!main) return mount(req, res);
 
   res.setHeader('Content-Type', 'text/html');
 

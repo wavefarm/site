@@ -87,7 +87,7 @@ header {
   width: 250px;
 }
 .header-container {
-  background: url('/static/images/header-bg.png') 50% 0% no-repeat;
+  background: url('/images/header-bg.png') 50% 0% no-repeat;
   padding: 0 0 3px 0;
 }
 .header-fill {
@@ -102,7 +102,7 @@ header {
   overflow: auto;
 }
 .subicon {
-  background: url('/static/images/subicons.png') no-repeat;
+  background: url('/images/subicons.png') no-repeat;
   background-size: 188px 120px;
   height: 60px;
   width: 60px;
@@ -114,7 +114,7 @@ header {
   background-position: -128px 0px;
 }
 .mag-logo {
-  background: url('/static/images/mag-logo.png') no-repeat;
+  background: url('/images/mag-logo.png') no-repeat;
   float: right;
   height: 178px;
   width: 753px;
@@ -137,7 +137,7 @@ header {
   background-position: 0px 0px;
 }
 .wf-logo {
-  background: url('/static/images/wf-logo.png') no-repeat;
+  background: url('/images/wf-logo.png') no-repeat;
   background-size: 220px 220px;
   float: left;
   height: 220px;
@@ -145,7 +145,7 @@ header {
   margin: 10px 38px 0 0;
 }
 .wf-logo-smaller {
-  background: url('/static/images/wf-logo.png') no-repeat;
+  background: url('/images/wf-logo.png') no-repeat;
   background-size: 100px 100px;
   float: left;
   height: 100px;
@@ -159,7 +159,7 @@ header {
   background-position: -68px 0px;
 }
 .wgxc-logo {
-  background: url('/static/images/wgxc-logo.png') no-repeat;
+  background: url('/images/wgxc-logo.png') no-repeat;
   height: 206px;
   width: 755px;
   margin-left: 68px;
@@ -223,7 +223,7 @@ nav.secondary.wgxc a {
   display: none;
 }
 .tweets a.twitter {
-  background: url('/static/images/socialicons.png') no-repeat;
+  background: url('/images/socialicons.png') no-repeat;
   display: inline-block;
   margin: 0 8px -4px;
   height: 19px;
@@ -276,7 +276,7 @@ nav.wf2 {
   padding: 3px 0 0 0;
 }
 .footer-fill {
-  background: url('/static/images/footer-bg.png') no-repeat;
+  background: url('/images/footer-bg.png') no-repeat;
   background-position: 50% 6px;
   height: 109px;
   border-top: 1px solid #eee;
@@ -286,7 +286,7 @@ nav.wf2 {
   padding: 18px 0 0 20px;
 }
 .social a {
-  background: url('/static/images/socialicons.png') no-repeat;
+  background: url('/images/socialicons.png') no-repeat;
   display: inline-block;
   height: 19px;
   width: 19px;
@@ -597,22 +597,22 @@ a.programs-header:hover {
   width: 45px;
 }
 .ta.programs-header .programs-icon {
-  background-image: url('/static/images/ta-icon-light.png');
+  background-image: url('/images/ta-icon-light.png');
   margin-left: -72px;
   width: 50px;
 }
 .ta.programs-header:hover .programs-icon {
-  background-image: url('/static/images/ta-icon.png');
+  background-image: url('/images/ta-icon.png');
 }
 .wgxc.programs-header .programs-icon {
-  background-image: url('/static/images/wgxc-icon-light.png');
+  background-image: url('/images/wgxc-icon-light.png');
 }
 .wgxc.programs-header:hover .programs-icon {
-  background-image: url('/static/images/wgxc-icon.png');
+  background-image: url('/images/wgxc-icon.png');
 }
 .mag.programs-header .programs-icon {
-  background-image: url('/static/images/mag-icon-light.png');
+  background-image: url('/images/mag-icon-light.png');
 }
 .mag.programs-header:hover .programs-icon {
-  background-image: url('/static/images/mag-icon.png');
+  background-image: url('/images/mag-icon.png');
 }
