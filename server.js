@@ -4,10 +4,6 @@ var st = require('st')
 var templates = require('./templates')
 var url = require('url')
 
-// Timestamp logs
-require('logstamp')(function () {
-  return new Date().toISOString() + ' [wavefarm.org] ';
-});
 
 var port = process.env.PORT || 1041;
 
