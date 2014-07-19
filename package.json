@@ -18,6 +18,6 @@
   },
   "scripts": {
     "build": "browserify browser/main.js | uglifyjs > static/script.js",
-    "watch": "watchify browser/main.js -o static/script.js -dv & deva"
+    "watch": "watchify browser/main.js -o static/script.js -dv"
   }
 }
