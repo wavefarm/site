@@ -17,7 +17,7 @@
     "wavefarm": "0.0.1"
   },
   "scripts": {
-    "build": "browserify browser/main.js -o static/scripts/bundle.js",
-    "watch": "watchify browser/main.js -o static/scripts/bundle.js -dv & deva"
+    "build": "browserify browser/main.js | uglifyjs > static/script.js",
+    "watch": "watchify browser/main.js -o static/script.js -dv & deva"
   }
 }
