@@ -14,7 +14,7 @@
     "st": "~0.3.1",
     "strip": "0.0.6",
     "twit": "~1.1.11",
-    "wavefarm": "0.0.1"
+    "wavefarm": "0.0.4"
   },
   "scripts": {
     "build": "browserify browser/main.js | uglifyjs > static/script.js",
