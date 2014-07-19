@@ -1,11 +1,9 @@
 var api = require('../api');
 var h = require('hyperscript');
 var qs = require('querystring');
-var url = require('url');
 
 module.exports = function () {
   var q = qs.parse(window.location.search.substr(1)).q
-  //var q = url.parse(window.location.href, true).query.q;
   console.log(q)
   //api.search(q, function (err, results) {
   //  if (err) return console.error(err);
