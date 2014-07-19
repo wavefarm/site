@@ -5,6 +5,7 @@ var templates = require('./templates')
 var url = require('url')
 
 
+var env = process.env.ENV;
 var port = process.env.PORT || 1041;
 
 var mount = st({path: __dirname + '/static'});
@@ -41,6 +42,15 @@ http.createServer(function (req, res) {
   p = req.parsedUrl.pathname;
 
   decorate(res)
+
+  if (p == '/robots.txt') {
+    res.statusCode = 200;
+    if (env == 'prod') {
+      return res.end('User-agent: *\nDisallow:\n');
+    } else {
+      return res.end('User-agent: *\nDisallow: /\n');
+    }
+  }
 
   // Redirect to slashless if we aren't at the root
   if (p != '/' && p.charAt(p.length - 1) == '/') return res.redirect(p.slice(0, -1));
