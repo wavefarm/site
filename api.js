@@ -1,8 +1,19 @@
 var wf = require('wavefarm')
 
-module.exports = wf({
-  host: 'localhost',
-  port: 1041,
-  path: '/api',
-  withCredentials: false
-})
+
+var options;
+
+if (window) {
+  options = {
+    host: window.location.hostname,
+    port: window.location.port,
+    path: '/api'
+  };
+} else {
+  options = {
+    host: 'localhost',
+    port: 1039
+  };
+}
+
+module.exports = wf(options);
