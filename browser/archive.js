@@ -4,9 +4,9 @@ var qs = require('querystring');
 
 module.exports = function () {
   var q = qs.parse(window.location.search.substr(1)).q
-  console.log(q)
-  //api.search(q, function (err, results) {
-  //  if (err) return console.error(err);
+  api.search(q, function (err, results) {
+    if (err) return console.error(err);
+    console.log(results);
   //  $total.html(results.total);
   //  $main.html('');
   //  for (var i = 0; i < results.hits.length; i++) {
@@ -15,5 +15,5 @@ module.exports = function () {
   //    $item.append(require('../render/archive/item/link')(item));
   //    $main.append($item);
   //  }
-  //});
+  });
 };
