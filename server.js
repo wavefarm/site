@@ -1,3 +1,4 @@
+var helpres = require('./helpres');
 var hs = require('hyperstream')
 var http = require('http')
 var st = require('st')
@@ -10,27 +11,6 @@ var port = process.env.PORT || 1041;
 
 var mount = st({path: __dirname + '/static'});
 
-var decorate = function (res) {
-  res.redirect = function (to) {
-    console.warn('Warning: Moved Permanently');
-    res.statusCode = 301;
-    res.setHeader('location', to);
-    res.end('Moved Permanently');
-  }
-
-  res.notFound = function () {
-    console.warn('Warning: Not Found');
-    res.statusCode = 404;
-    return res.end('Not Found');
-  }
-
-  res.error = function (err) {
-    console.error(err.stack)
-    res.statusCode = 500
-    return res.end('Server Error')
-  }
-}
-
 var subRe = RegExp('/(ta|wgxc|mag)')
 
 http.createServer(function (req, res) {
@@ -41,7 +21,7 @@ http.createServer(function (req, res) {
   req.parsedUrl = url.parse(req.url);
   p = req.parsedUrl.pathname;
 
-  decorate(res)
+  helpres(res);
 
   if (p == '/robots.txt') {
     res.statusCode = 200;
