@@ -19,7 +19,7 @@
     "wavefarm": "0.0.5"
   },
   "scripts": {
-    "build": "browserify browser/main.js | uglifyjs > static/script.js",
+    "postinstall": "browserify browser/main.js | uglifyjs -m -c unsafe > static/script.js",
     "watch": "watchify browser/main.js -o static/script.js -dv"
   }
 }
