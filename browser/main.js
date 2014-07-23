@@ -8,7 +8,10 @@ var tweets = require('./tweets');
 // SSE reload
 require('deva');
 
-archive();
+// THE STATE
+var state = {};
+
+archive(state);
 pointer();
 schedule();
 subnav();
