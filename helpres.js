@@ -1,7 +1,7 @@
 var http = require('http');
 
 
-module.exports = function deco (res) {
+module.exports = function helpres (res) {
   res.error = function (code, err) {
     console.error(err.stack);
     res.statusCode = code;
