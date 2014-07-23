@@ -8,6 +8,14 @@ module.exports = function (state) {
   state.q = o();
   state.results = o();
 
+  state.q(function (curr) {
+    document.getElementById('q2').value = curr || '';
+    api.search(curr, function (err, results) {
+      if (err) return console.error(err);
+      state.results.set(results);
+    });
+  });
+
   state.results(function (curr) {
     $('.total').html('Total: ' + curr.total);
     $results = $('.results').html('');
@@ -17,15 +25,6 @@ module.exports = function (state) {
       $item.append(require('../render/archive/item/link')(item));
       $results.append($item);
     }
-  });
-
-  state.q(function (curr) {
-    console.log('q', curr);
-    api.search(curr, function (err, results) {
-      if (err) return console.error(err);
-      console.log(results);
-      state.results.set(results);
-    });
   });
 
   // Set q from window.location on page load
