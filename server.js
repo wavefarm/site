@@ -6,7 +6,7 @@ var templates = require('./templates')
 var url = require('url')
 
 
-var env = process.env.ENV;
+var env = process.env.NODE_ENV;
 var port = process.env.PORT || 1041;
 
 var mount = st({path: __dirname + '/static'});
