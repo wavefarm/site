@@ -5,8 +5,10 @@ var subnav = require('./subnav');
 var tweets = require('./tweets');
 
 
-// SSE reload
-require('deva');
+var env = process.env.NODE_ENV;
+
+// SSE reload on dev
+if (env == 'dev') require('deva');
 
 // THE STATE
 var state = {};
