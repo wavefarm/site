@@ -39,6 +39,9 @@ a {
 a:hover {
   color: #C00;
 } 
+b {
+  font-weight: 400;
+}
 body {
   background: black;
   color: white;
@@ -473,6 +476,15 @@ a.wgxc.slide, a.mag.slide {
 } 
 .page dl.qa dd ul {
   margin: 0 0 0 1em;
+}
+
+/* Archive page */
+.page.archive .summary {
+  margin: 4px 0 10px;
+  font-size: 14px;
+}
+.page.archive input[type=search] {
+  width: 300px;
 }
 
 /* WGXC pages */

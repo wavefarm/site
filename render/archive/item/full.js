@@ -1,4 +1,4 @@
-var h = require('hyperscript')
+var h = require('virtual-hyperscript')
 
 
 // Need map because browserify can't handle dynamic requires

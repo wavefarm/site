@@ -1,4 +1,5 @@
 var archive = require('./archive');
+var struct = require('observ-struct')
 var pointer = require('./pointer');
 var schedule = require('./schedule');
 var subnav = require('./subnav');
@@ -11,9 +12,10 @@ var env = process.env.NODE_ENV;
 if (env == 'dev') require('deva');
 
 // THE STATE
-var state = {};
+window.state = struct({
+  archive: archive()
+})
 
-archive(state);
 pointer();
 schedule();
 subnav();
