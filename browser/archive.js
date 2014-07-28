@@ -45,8 +45,9 @@ module.exports = function () {
   })
 
   // Set state on form submit
-  document.getElementById('archive-search').addEventListener('submit', function (ev) {
-    var qVal = document.getElementById('q2').value
+  var q2 = document.getElementById('q2')
+  q2.parentNode.addEventListener('submit', function (ev) {
+    var qVal = q2.value
     ev.preventDefault()
     if (qVal != state.q()) {
       state.q.set(qVal)
