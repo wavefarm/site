@@ -496,6 +496,15 @@ a.wgxc.slide, a.mag.slide {
   margin-left: -22px;
   font-size: 12px;
 }
+.archive .more {
+  border: 1px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  float: right;
+  padding: 2px 6px;
+}
 .archive .results {
   counter-reset: item-counter;
 }
@@ -592,10 +601,10 @@ a.wgxc.slide, a.mag.slide {
 .broadcast-description.current {
   display: block;
 }
-.more {
+.wgxc .more {
   text-align: center;
 }
-.more input {
+.wgxc .more input {
   background-color: #1AB7EA;
   border: 1px solid #1AB7EA;
   border-radius: 8px;
