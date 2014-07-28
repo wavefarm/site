@@ -479,12 +479,25 @@ a.wgxc.slide, a.mag.slide {
 }
 
 /* Archive page */
-.page.archive .summary {
+.archive .summary {
   margin: 4px 0 10px;
   font-size: 14px;
 }
-.page.archive input[type=search] {
+.archive input[type=search] {
   width: 300px;
+}
+.archive .item {
+  margin-bottom: 10px;
+}
+.archive .item:before {
+  content: counter(item-counter);
+  counter-increment: item-counter;
+  position: absolute;
+  margin-left: -22px;
+  font-size: 12px;
+}
+.archive .results {
+  counter-reset: item-counter;
 }
 
 /* WGXC pages */
