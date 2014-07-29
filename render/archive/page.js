@@ -6,6 +6,7 @@ var renderItem = require('./item/wrap')
 module.exports = function (state) {
   var hitLength = (state.results && state.results.hits &&
     state.results.hits.length) || 0
+  var total = (state.results && state.results.total) || 0
   return h('.archive.page', [
     h('h1', 'ARCHIVE'),
     h('form#archive-search', [
@@ -16,13 +17,13 @@ module.exports = function (state) {
       'A search for ',
       h('b', escape(state.q)),
       ' returned ',
-      h('b', ''+state.results.total),
+      h('b', ''+total),
       ' items.'
     ] : [
-      h('b', ''+state.results.total),
+      h('b', ''+total),
       ' total items.'
     ]) : ''),
     hitLength ? h('.results', state.results.hits.map(renderItem)) : '',
-    hitLength ? h('.more', 'Next ten') : ''
+    (hitLength && hitLength < total) ? h('.more', 'Next ten') : ''
   ])
 }
