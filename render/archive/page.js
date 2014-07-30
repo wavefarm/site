@@ -24,6 +24,6 @@ module.exports = function (state) {
       ' total items.'
     ]) : ''),
     hitLength ? h('.results', state.results.hits.map(renderItem)) : '',
-    (hitLength && hitLength < total) ? h('.more', 'Next ten') : ''
+    (hitLength && hitLength < total) ? h('.more', 'More') : ''
   ])
 }
