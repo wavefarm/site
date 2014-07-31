@@ -1,6 +1,7 @@
 var escape = require('escape-html')
 var h = require('virtual-hyperscript')
-var renderItem = require('./item/wrap')
+var renderItem = require('./item')
+var renderLink = require('./item/link')
 
 
 module.exports = function (state) {
@@ -23,7 +24,8 @@ module.exports = function (state) {
       h('b', ''+total),
       ' total items.'
     ]) : ''),
-    hitLength ? h('.results', state.results.hits.map(renderItem)) : '',
-    (hitLength && hitLength < total) ? h('.more', 'More') : ''
+    hitLength ? h('.results', state.results.hits.map(renderLink)) : '',
+    (hitLength && hitLength < total) ? h('.more', 'More') : '',
+    renderItem(state.item)
   ])
 }

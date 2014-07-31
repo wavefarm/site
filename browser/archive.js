@@ -27,6 +27,7 @@ module.exports = function () {
   // Initialize from window.location on page load
   var params = getParams()
   var state = struct({
+    item: o(),
     q: o(params.q || ''),
     results: o()
   })
@@ -36,13 +37,17 @@ module.exports = function () {
 
   getResults(params, function (results) {
     state.results.set(results)
-    history.replaceState(results)
+    history.replaceState({results: results})
   })
 
   state.q(function (curr) {
   })
 
   state.results(function (curr) {
+    loop.update(state())
+  })
+
+  state.item(function (curr) {
     loop.update(state())
   })
 
@@ -56,7 +61,7 @@ module.exports = function () {
       var params = {q: qVal}
       getResults(params, function (results) {
         state.results.set(results)
-        history.pushState(results, '', '?' + qs.stringify(params))
+        history.pushState({results: results}, '', '?' + qs.stringify(params))
       })
     }
   })
@@ -67,14 +72,29 @@ module.exports = function () {
       var params = {q: state.q(), size: state.results().hits.length + 10}
       getResults(params, function (results) {
         state.results.set(results)
-        history.pushState(results, '', '?' + qs.stringify(params))
+        history.pushState({results: results}, '', '?' + qs.stringify(params))
       })
     }
   })
 
+  del.addGlobalEventListener('click', function (ev) {
+    var el = ev.target
+    // Ugh. Grabbed from page.js. Works but ugly. Put it in the render?
+    while (el && el.className != 'item-link') el = el.parentNode
+    if (!el || el.className != 'item-link') return
+    ev.preventDefault()
+    api.get(el.id, function (err, item) {
+      if (err) return console.error(err)
+      state.results.set(null)
+      state.item.set(item)
+      history.pushState({item: item}, '', '/archive/' + item.id)
+    })
+  })
+
   window.onpopstate = function (ev) {
     state.q.set(getParams().q || '')
-    state.results.set(ev.state)
+    state.item.set(ev.state.item)
+    state.results.set(ev.state.results)
   }
 
   return state

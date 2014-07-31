@@ -487,9 +487,10 @@ a.wgxc.slide, a.mag.slide {
   width: 300px;
 }
 .archive .item {
+  display: block;
   margin-bottom: 10px;
 }
-.archive .item:before {
+.archive .results .item:before {
   content: counter(item-counter);
   counter-increment: item-counter;
   position: absolute;
