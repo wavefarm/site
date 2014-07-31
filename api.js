@@ -3,7 +3,7 @@ var wf = require('wavefarm')
 
 var options;
 
-if (window) {
+if (typeof window !== "undefined") {
   options = {
     host: window.location.hostname,
     port: window.location.port,
