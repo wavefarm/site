@@ -20,6 +20,7 @@
     "strip": "0.0.6",
     "twit": "~1.1.11",
     "uglifyify": "^2.5.0",
+    "vdom-virtualize": "0.0.3",
     "virtual-dom": "0.0.14",
     "virtual-hyperscript": "^4.4.0",
     "wavefarm": "^0.1.0"
