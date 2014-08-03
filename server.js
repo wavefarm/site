@@ -14,7 +14,7 @@ var mount = st({path: __dirname + '/static'});
 var subRe = RegExp('/(ta|wgxc|mag)')
 
 http.createServer(function (req, res) {
-  var head, layout, main, nav, p, sub
+  var head, idMatch, main, nav, p, sub
 
   console.log(req.method, req.url);
 
@@ -42,7 +42,8 @@ http.createServer(function (req, res) {
   if (p == '/tweets') return require('./routes/tweets')(req, res);
 
   // Archive items
-  if (/^\/archive\/\w{6}$/.test(p)) return require('./routes/item')(req, res);
+  idMatch = /^\/archive\/(\w{6})$/.exec(p)
+  if (idMatch) return require('./routes/item')(req, res, idMatch[1])
 
   // WGXC broadcasts and shows
   if (/^\/wgxc\/schedule\/\w{6}$/.test(p)) return require('./routes/wgxc/item')(req, res);
