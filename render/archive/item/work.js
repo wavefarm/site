@@ -8,6 +8,9 @@ module.exports = function (item) {
       ' ',
       h('span.item-type', '(' + item.type + ')')
     ]),
-    fromHTML('<div class="description">'+item.description+'</div>')
+    // vdom-virtualize breaks everything when run on the server
+    (typeof window !== 'undefined' ?
+      fromHTML('<div class="description">'+item.description+'</div>') :
+      h('.description', item.description))
   ])
 }
