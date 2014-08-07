@@ -1,4 +1,5 @@
 var api = require('../api')
+var elemify = require('virtual-dom/create-element')
 var render = require('../render')
 var stringify = require('virtual-dom-stringify')
 
@@ -10,8 +11,8 @@ module.exports = function (req, res, id) {
       return res.error(500, err)
     }
 
-    var state = {archive: {item: item}}
+    var state = {archive: {item: item}, section: "archive", title: item.main}
     res.setHeader('Content-Type', 'text/html');
-    res.end('<!doctype html>' + stringify(render(state)))
+    res.end('<!doctype html>' + String(elemify(render(state))))
   })
 }

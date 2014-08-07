@@ -1,7 +1,8 @@
 var archive = require('./archive');
-var struct = require('observ-struct')
+var o = require('observ')
 var pointer = require('./pointer');
 var schedule = require('./schedule');
+var struct = require('observ-struct')
 var subnav = require('./subnav');
 var tweets = require('./tweets');
 
@@ -13,7 +14,9 @@ if (env == 'dev') require('deva');
 
 // THE STATE
 window.state = struct({
-  archive: archive()
+  archive: archive(),
+  section: o(),
+  title: o()
 })
 
 pointer();

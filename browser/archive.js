@@ -5,7 +5,7 @@ var h = require('virtual-dom/h')
 var mainLoop = require('main-loop')
 var qs = require('querystring')
 var o = require('observ')
-var render = require('../render/archive/page')
+var render = require('../render/archive/main')
 var struct = require('observ-struct')
 
 
@@ -20,25 +20,35 @@ function getResults (params, cb) {
   })
 }
 
+var initialState = window.initialState
+
+var state = struct({
+  item: o(),
+  q: o(),
+  results: o()
+})
+
 module.exports = function () {
-  // Bail if we're not loading the archive page
+  // Bail if we're not loading the archive section
+  // TODO Should react to {section: "archive"} put in window.state by route
   if (window.location.pathname.indexOf('/archive') != 0) return
 
-  // Initialize from window.location on page load
-  var params = getParams()
-  var state = struct({
-    item: o(),
-    q: o(params.q || ''),
-    results: o()
-  })
+  // Initialize on page load
+  if (initialState && initialState.archive.item) {
+    state.item.set(initialState.archive.item)
+  } else {
+    var params = getParams()
+    state.q.set(params.q || '')
+  
+    getResults(params, function (results) {
+      state.results.set(results)
+      history.replaceState({results: results})
+    })
+  }
+
   var loop = mainLoop(state(), render)
   var elem = document.querySelector('.archive.page')
   elem.parentNode.replaceChild(loop.target, elem)
-
-  getResults(params, function (results) {
-    state.results.set(results)
-    history.replaceState({results: results})
-  })
 
   state.q(function (curr) {
   })
