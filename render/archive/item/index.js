@@ -7,6 +7,7 @@ var renderMap = {
   location: require('./location'),
   show: require('./show'),
   text: require('./text'),
+  video: require('./video'),
   work: require('./work')
 }
 
