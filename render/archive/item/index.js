@@ -1,5 +1,6 @@
 // Need map because browserify can't handle dynamic requires
 var renderMap = {
+  artist: require('./artist'),
   audio: require('./audio'),
   broadcast: require('./broadcast'),
   event: require('./event'),
