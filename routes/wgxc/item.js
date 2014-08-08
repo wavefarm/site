@@ -11,7 +11,7 @@ var wgxcTypes = [
   
 module.exports = function (req, res) {
   var id = idRe.exec(req.url)[1]
-  api.get(id, function (err, apiRes, item) {
+  api.get(id, function (err, item) {
     if (err) {
       return res.error(500, err)
     }
