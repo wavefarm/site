@@ -2,7 +2,7 @@ var http = require('http');
 var url = require('url');
 
 
-var u = url.parse(process.env.API_URL || 'http://api.wavefarm.org');
+var u = url.parse('http://localhost:1039');
 
 module.exports = function (req, res) {
   var clientReq = http.request({
