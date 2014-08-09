@@ -13,6 +13,6 @@ var renderMap = {
 }
 
 module.exports = function (item) {
-  //console.log(item)
+  console.log(item)
   return item ? renderMap[item.type](item) : ''
 }

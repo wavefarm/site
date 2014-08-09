@@ -7,9 +7,6 @@ module.exports = function (item) {
       ' ',
       h('span.item-type', '(' + item.type + ')')
     ]),
-    h('.caption', item.caption),
-    h('.download',
-      h('a', {href: item.url, download: true}, 'Download (' + item.mimetype + ')')
-    )
+    h('.start', ''+new Date(item.start))
   ])
 }

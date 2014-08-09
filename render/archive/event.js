@@ -1,4 +1,5 @@
 var h = require('virtual-hyperscript')
+var fromHTML = require('vdom-virtualize').fromHTML
 
 module.exports = function (item) {
   return h('.item#' + item.id, [
@@ -7,9 +8,10 @@ module.exports = function (item) {
       ' ',
       h('span.item-type', '(' + item.type + ')')
     ]),
-    h('.caption', item.caption),
-    h('.download',
-      h('a', {href: item.url, download: true}, 'Download (' + item.mimetype + ')')
-    )
+    h('.start', ''+new Date(item.start)),
+    // vdom-virtualize breaks everything when run on the server
+    item.longDescription ? (typeof window !== 'undefined' ?
+      fromHTML('<div class="longDescription">'+item.longDescription+'</div>') :
+      h('.longDescription', item.longDescription)) : ''
   ])
 }
