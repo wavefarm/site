@@ -1,7 +1,7 @@
 var escape = require('escape-html')
 var h = require('virtual-hyperscript')
 var renderItem = require('./item')
-var renderLink = require('./item/link')
+var renderLink = require('./link')
 
 
 module.exports = function (state) {
