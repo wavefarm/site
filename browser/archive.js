@@ -5,7 +5,7 @@ var h = require('virtual-dom/h')
 var mainLoop = require('main-loop')
 var qs = require('querystring')
 var o = require('observ')
-var render = require('../render/archive/main')
+var render = require('../render/archive')
 var struct = require('observ-struct')
 
 
