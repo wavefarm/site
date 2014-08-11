@@ -18,7 +18,7 @@ http.createServer(function (req, res) {
 
   console.log(req.method, req.url);
 
-  req.parsedUrl = url.parse(req.url);
+  req.parsedUrl = url.parse(req.url, true);
   p = req.parsedUrl.pathname;
 
   helpres(res);
@@ -41,9 +41,12 @@ http.createServer(function (req, res) {
   // Local proxy for org tweets
   if (p == '/tweets') return require('./routes/tweets')(req, res);
 
+  // Archive
+  if (p == '/archive') return require('./routes/archive')(req, res);
+
   // Archive items
   idMatch = /^\/archive\/(\w{6})$/.exec(p)
-  if (idMatch) return require('./routes/item')(req, res, idMatch[1])
+  if (idMatch) return require('./routes/archive/item')(req, res, idMatch[1])
 
   // WGXC broadcasts and shows
   if (/^\/wgxc\/schedule\/\w{6}$/.test(p)) return require('./routes/wgxc/item')(req, res);

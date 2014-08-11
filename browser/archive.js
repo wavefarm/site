@@ -21,27 +21,22 @@ function getResults (params, cb) {
 }
 
 var initialState = window.initialState
-
-var state = struct({
-  item: o(),
-  q: o(),
-  results: o()
-})
+var state = window.state
+console.log(state)
 
 module.exports = function () {
   // Bail if we're not loading the archive section
-  // TODO Should react to {section: "archive"} put in window.state by route
-  if (window.location.pathname.indexOf('/archive') != 0) return
+  if (!(initialState && initialState.section == 'archive')) return
 
   // Initialize on page load
-  if (initialState && initialState.archive.item) {
-    state.item.set(initialState.archive.item)
+  if (initialState.archive && initialState.archive.item) {
+    state.archive.item.set(initialState.archive.item)
   } else {
     var params = getParams()
-    state.q.set(params.q || '')
+    state.archive.q.set(params.q || '')
   
     getResults(params, function (results) {
-      state.results.set(results)
+      state.archive.results.set(results)
       history.replaceState({results: results})
     })
   }
@@ -50,14 +45,14 @@ module.exports = function () {
   var elem = document.querySelector('.archive.page')
   elem.parentNode.replaceChild(loop.target, elem)
 
-  state.q(function (curr) {
+  state.archive.q(function (curr) {
   })
 
-  state.results(function (curr) {
+  state.archive.results(function (curr) {
     loop.update(state())
   })
 
-  state.item(function (curr) {
+  state.archive.item(function (curr) {
     loop.update(state())
   })
 
@@ -66,11 +61,11 @@ module.exports = function () {
   del.addEventListener(q2.parentNode, 'submit', function (ev) {
     var qVal = q2.value
     ev.preventDefault()
-    if (qVal != state.q()) {
-      state.q.set(qVal)
+    if (qVal != state.archive.q()) {
+      state.archive.q.set(qVal)
       var params = {q: qVal}
       getResults(params, function (results) {
-        state.results.set(results)
+        state.archive.results.set(results)
         history.pushState({results: results}, '', '/archive?' + qs.stringify(params))
       })
     }
@@ -79,9 +74,12 @@ module.exports = function () {
   // Global because these elements don't exist on page load
   del.addGlobalEventListener('click', function (ev) {
     if (ev.target.className == 'more') {
-      var params = {q: state.q(), size: state.results().hits.length + 10}
+      var params = {
+        q: state.archive.q(),
+        size: state.archive.results().hits.length + 10
+      }
       getResults(params, function (results) {
-        state.results.set(results)
+        state.archive.results.set(results)
         history.pushState({results: results}, '', '?' + qs.stringify(params))
       })
     }
@@ -95,18 +93,16 @@ module.exports = function () {
     ev.preventDefault()
     api.get(el.id, function (err, item) {
       if (err) return console.error(err)
-      state.q.set(null)
-      state.results.set(null)
-      state.item.set(item)
+      state.archive.q.set(null)
+      state.archive.results.set(null)
+      state.archive.item.set(item)
       history.pushState({item: item}, '', '/archive/' + item.id)
     })
   })
 
   window.onpopstate = function (ev) {
-    state.q.set(getParams().q || '')
-    state.item.set(ev.state.item)
-    state.results.set(ev.state.results)
+    state.archive.q.set(getParams().q || '')
+    state.archive.item.set(ev.state.archive.item)
+    state.archive.results.set(ev.state.archive.results)
   }
-
-  return state
 }

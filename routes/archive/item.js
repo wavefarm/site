@@ -1,6 +1,6 @@
 var api = require('../api')
 var elemify = require('virtual-dom/create-element')
-var render = require('../render')
+var render = require('../../render')
 var stringify = require('virtual-dom-stringify')
 
 
