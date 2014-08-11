@@ -95,6 +95,7 @@ module.exports = function () {
     ev.preventDefault()
     api.get(el.id, function (err, item) {
       if (err) return console.error(err)
+      state.q.set(null)
       state.results.set(null)
       state.item.set(item)
       history.pushState({item: item}, '', '/archive/' + item.id)
