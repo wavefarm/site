@@ -14,5 +14,6 @@ var renderMap = {
 
 module.exports = function (item) {
   console.log(item)
-  return item ? renderMap[item.type](item) : ''
+  return (item && item.type && renderMap[item.type]) ?
+    renderMap[item.type](item) : ''
 }
