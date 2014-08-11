@@ -12,7 +12,7 @@ module.exports = function (state) {
   return h('.main', [
     h('.archive.page', [
       h('h1', 'ARCHIVE'),
-      h('form#archive-search', [
+      h('form#archive-search', {action: '/archive'}, [
         h('input#q2', {type: 'search', name: 'q', value: state.q}),
         h('input', {type: 'submit'})
       ]),

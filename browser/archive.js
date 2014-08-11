@@ -71,7 +71,7 @@ module.exports = function () {
       var params = {q: qVal}
       getResults(params, function (results) {
         state.results.set(results)
-        history.pushState({results: results}, '', '?' + qs.stringify(params))
+        history.pushState({results: results}, '', '/archive?' + qs.stringify(params))
       })
     }
   })
