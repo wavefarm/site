@@ -18,8 +18,8 @@ window.state = struct({
   title: o()
 })
 
-require('./archive')()
-require('./pointer')()
-require('./schedule')()
-require('./subnav')()
-require('./tweets')()
+require('./lib/archive')()
+require('./lib/pointer')()
+require('./lib/schedule')()
+require('./lib/subnav')()
+require('./lib/tweets')()
