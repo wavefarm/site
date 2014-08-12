@@ -2,11 +2,10 @@ var api = require('../api')
 var create = require('virtual-dom/create-element')
 var del = require('dom-delegator')()
 var h = require('virtual-dom/h')
-var mainLoop = require('main-loop')
+var main = require('main-loop')
 var qs = require('querystring')
-var o = require('observ')
-var render = require('../render/archive')
-var struct = require('observ-struct')
+var render = require('../render')
+var virtualize = require('vdom-virtualize')
 
 
 function getParams () {
@@ -22,13 +21,22 @@ function getResults (params, cb) {
 
 var initialState = window.initialState
 var state = window.state
-console.log(state)
+//console.log(state)
+
+// TODO move to main browser file when all pages rendered virtually
+var target = document.body.firstChild
+var loop = main(state(), render, {
+  initialTree: virtualize(target),
+  target: target
+})
+state(loop.update)
 
 module.exports = function () {
   // Bail if we're not loading the archive section
   if (!(initialState && initialState.section == 'archive')) return
 
   // Initialize on page load
+  state.section.set('archive')
   if (initialState.archive && initialState.archive.item) {
     state.archive.item.set(initialState.archive.item)
   } else {
@@ -37,42 +45,28 @@ module.exports = function () {
   
     getResults(params, function (results) {
       state.archive.results.set(results)
-      history.replaceState({results: results})
+      history.replaceState(state())
     })
   }
 
-  var loop = mainLoop(state(), render)
-  var elem = document.querySelector('.archive.page')
-  elem.parentNode.replaceChild(loop.target, elem)
-
-  state.archive.q(function (curr) {
-  })
-
-  state.archive.results(function (curr) {
-    loop.update(state())
-  })
-
-  state.archive.item(function (curr) {
-    loop.update(state())
-  })
-
-  // Set state on form submit
-  var q2 = document.getElementById('q2')
-  del.addEventListener(q2.parentNode, 'submit', function (ev) {
-    var qVal = q2.value
-    ev.preventDefault()
-    if (qVal != state.archive.q()) {
-      state.archive.q.set(qVal)
-      var params = {q: qVal}
-      getResults(params, function (results) {
-        state.archive.item.set(null)
-        state.archive.results.set(results)
-        history.pushState({results: results}, '', '/archive?' + qs.stringify(params))
-      })
+  // TODO Move these to render
+  del.addGlobalEventListener('submit', function (ev) {
+    if (ev.target.id == 'archive-search') {
+      var qVal = ev.target.firstChild.value
+      ev.preventDefault()
+      if (qVal != state.archive.q()) {
+        state.archive.q.set(qVal)
+        state.archive.results.set({hits: [], total: '...'})
+        var params = {q: qVal}
+        getResults(params, function (results) {
+          state.archive.item.set(null)
+          state.archive.results.set(results)
+          history.pushState(state(), '', '/archive?' + qs.stringify(params))
+        })
+      }
     }
   })
 
-  // Global because these elements don't exist on page load
   del.addGlobalEventListener('click', function (ev) {
     if (ev.target.className == 'more') {
       var params = {
@@ -81,7 +75,7 @@ module.exports = function () {
       }
       getResults(params, function (results) {
         state.archive.results.set(results)
-        history.pushState({results: results}, '', '?' + qs.stringify(params))
+        history.pushState(state(), '', '?' + qs.stringify(params))
       })
     }
   })
@@ -97,7 +91,7 @@ module.exports = function () {
       state.archive.q.set(null)
       state.archive.results.set(null)
       state.archive.item.set(item)
-      history.pushState({item: item}, '', '/archive/' + item.id)
+      history.pushState(state(), '', '/archive/' + item.id)
     })
   })
 

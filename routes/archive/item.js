@@ -1,7 +1,6 @@
-var api = require('../api')
+var api = require('../../api')
 var elemify = require('virtual-dom/create-element')
-var render = require('../../render')
-var stringify = require('virtual-dom-stringify')
+var render = require('../../render/layout')
 
 
 module.exports = function (req, res, id) {

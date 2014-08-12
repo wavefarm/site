@@ -1,5 +1,5 @@
 var elemify = require('virtual-dom/create-element')
-var render = require('../../render')
+var render = require('../../render/layout')
 
 
 module.exports = function (req, res) {
