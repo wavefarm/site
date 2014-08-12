@@ -65,6 +65,7 @@ module.exports = function () {
       state.archive.q.set(qVal)
       var params = {q: qVal}
       getResults(params, function (results) {
+        state.archive.item.set(null)
         state.archive.results.set(results)
         history.pushState({results: results}, '', '/archive?' + qs.stringify(params))
       })
