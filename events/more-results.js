@@ -12,6 +12,6 @@ module.exports = ev(function () {
   api.search(params, function (err, results) {
     if (err) return console.error(err)
     state.archive.results.set(results)
-    history.pushState(state(), '', '?' + qs.stringify(params))
+    history.replaceState(state(), '', '?' + qs.stringify(params))
   })
 })
