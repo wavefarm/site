@@ -1,9 +1,7 @@
-var api = require('../../api')
 var h = require('virtual-hyperscript')
-var qs = require('querystring')
 var renderItem = require('./item')
 var renderLink = require('./link')
-var ve = require('value-event/value')
+var searchSubmit = require('../../events/search-submit')
 
 
 module.exports = function (data) {
@@ -16,22 +14,7 @@ module.exports = function (data) {
       h('h1', 'ARCHIVE'),
       h('form#archive-search', {
         action: '/archive',
-        'ev-submit': ve(function (formData) {
-          var q = formData.q
-          var state = window.state
-          if (q != state.archive.q()) {
-            state.archive.q.set(q)
-            state.archive.results.set({hits: [], total: '...'})
-            state.title.set('Search for ' + q)
-            var params = {q: q}
-            api.search(params, function (err, results) {
-              if (err) return console.error(err)
-              state.archive.item.set(null)
-              state.archive.results.set(results)
-              history.pushState(window.state(), '', '/archive?' + qs.stringify(params))
-            })
-          }
-        })
+        'ev-submit': searchSubmit
       }, [
         h('input#q2', {type: 'search', name: 'q', value: archive.q}),
         h('input', {type: 'submit'})
