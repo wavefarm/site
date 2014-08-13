@@ -3,11 +3,11 @@ var h = require('virtual-hyperscript')
 var qs = require('querystring')
 var renderItem = require('./item')
 var renderLink = require('./link')
-var valueEvent = require('value-event/value')
+var ve = require('value-event/value')
 
 
-module.exports = function (state) {
-  var archive = state.archive || {}
+module.exports = function (data) {
+  var archive = data.archive || {}
   var hitLength = (archive.results && archive.results.hits &&
     archive.results.hits.length) || 0
   var total = (archive.results && archive.results.total) || 0
@@ -16,17 +16,18 @@ module.exports = function (state) {
       h('h1', 'ARCHIVE'),
       h('form#archive-search', {
         action: '/archive',
-        'ev-submit': valueEvent(function (data) {
-          var q = data.q
-          if (q != window.state.archive.q()) {
-            window.state.archive.q.set(q)
-            window.state.archive.results.set({hits: [], total: '...'})
-            window.state.title.set('Search for ' + q)
+        'ev-submit': ve(function (formData) {
+          var q = formData.q
+          var state = window.state
+          if (q != state.archive.q()) {
+            state.archive.q.set(q)
+            state.archive.results.set({hits: [], total: '...'})
+            state.title.set('Search for ' + q)
             var params = {q: q}
             api.search(params, function (err, results) {
               if (err) return console.error(err)
-              window.state.archive.item.set(null)
-              window.state.archive.results.set(results)
+              state.archive.item.set(null)
+              state.archive.results.set(results)
               history.pushState(window.state(), '', '/archive?' + qs.stringify(params))
             })
           }
