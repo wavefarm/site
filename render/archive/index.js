@@ -1,4 +1,5 @@
 var h = require('virtual-hyperscript')
+var moreResults = require('../../events/more-results')
 var renderItem = require('./item')
 var renderLink = require('./link')
 var searchSubmit = require('../../events/search-submit')
@@ -30,7 +31,8 @@ module.exports = function (data) {
         ' total items.'
       ]) : ''),
       hitLength ? h('.results', archive.results.hits.map(renderLink)) : '',
-      (hitLength && hitLength < total) ? h('.more', 'More') : '',
+      (hitLength && hitLength < total) ?
+        h('.more', {'ev-click': moreResults}, 'More') : '',
       renderItem(archive.item)
     ])
   ])
