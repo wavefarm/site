@@ -1,4 +1,3 @@
-var escape = require('escape-html')
 var h = require('virtual-hyperscript')
 var renderItem = require('./item')
 var renderLink = require('./link')
@@ -18,7 +17,7 @@ module.exports = function (state) {
       ]),
       h('.summary', archive.results ? (archive.q ? [
         'A search for ',
-        h('b', escape(archive.q)),
+        h('b', archive.q),
         ' returned ',
         h('b', ''+total),
         ' items.'
