@@ -1,9 +1,8 @@
 var api = require('../api')
-var ev = require('value-event/event')
 var qs = require('querystring')
 
 
-module.exports = ev(function () {
+module.exports = function () {
   var state = window.state
   var params = {
     q: state.archive.q(),
@@ -14,4 +13,4 @@ module.exports = ev(function () {
     state.archive.results.set(results)
     history.replaceState(state(), '', '?' + qs.stringify(params))
   })
-})
+}
