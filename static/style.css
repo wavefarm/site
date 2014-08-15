@@ -483,6 +483,9 @@ a.wgxc.slide, a.mag.slide {
   margin: 4px 0 10px;
   font-size: 14px;
 }
+.archive .image {
+  margin: 10px 0;
+}
 .archive input[type=search] {
   width: 300px;
 }
