@@ -5,7 +5,7 @@ module.exports = function (item) {
   return h('.item',
     h('a.item-link#' + item.id, {
       'href': '/archive/' + item.id,
-      'ev-click': itemClick(item.id)
+      'ev-click': itemClick
     }, [
       h('span.item-main', item.main),
       ' ',
