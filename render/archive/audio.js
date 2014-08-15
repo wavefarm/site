@@ -12,6 +12,9 @@ module.exports = function (item) {
     h('.date', h('time', {dateTime: item.date},
       moment(item.date).format('ll')
     )),
+    h('.player', h('audio', {controls: true},
+      h('source', {src: item.url, type: item.mimetype})
+    )),
     h('.download',
       h('a', {href: item.url, download: true}, 'Download (' + item.mimetype + ')')
     )

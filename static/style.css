@@ -506,6 +506,9 @@ a.wgxc.slide, a.mag.slide {
   float: right;
   padding: 2px 6px;
 }
+.archive .player {
+  margin: 10px 0;
+}
 .archive .results {
   counter-reset: item-counter;
 }
