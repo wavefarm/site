@@ -1,5 +1,7 @@
 var h = require('virtual-hyperscript')
 var itemClick = require('../../events/item-click')
+var renderDate = require('../date')
+
 
 module.exports = function (item) {
   return h('.item',
@@ -7,9 +9,12 @@ module.exports = function (item) {
       'href': '/archive/' + item.id,
       'ev-click': itemClick
     }, [
-      h('span.item-main', item.main),
-      ' ',
-      h('span.type', '(' + item.type + ')')
+      h('h3', [
+        h('span.item-main', item.main),
+        ' ',
+        h('span.type', '(' + item.type + ')')
+      ]),
+      h('.date', renderDate(item))
     ])
   )
 }

@@ -479,26 +479,18 @@ a.wgxc.slide, a.mag.slide {
 }
 
 /* Archive page */
-.archive .summary {
-  margin: 4px 0 10px;
-  font-size: 14px;
+.archive input[type=search] {
+  width: 300px;
+}
+.archive .date {
+  font-size: 16px;
 }
 .archive .image {
   margin: 10px 0;
 }
-.archive input[type=search] {
-  width: 300px;
-}
 .archive .item {
   display: block;
   margin-bottom: 10px;
-}
-.archive .results .item:before {
-  content: counter(item-counter);
-  counter-increment: item-counter;
-  position: absolute;
-  margin-left: -22px;
-  font-size: 12px;
 }
 .archive .more {
   border: 1px solid black;
@@ -514,6 +506,17 @@ a.wgxc.slide, a.mag.slide {
 }
 .archive .results {
   counter-reset: item-counter;
+}
+.archive .results .item:before {
+  content: counter(item-counter);
+  counter-increment: item-counter;
+  position: absolute;
+  margin-left: -22px;
+  font-size: 12px;
+}
+.archive .summary {
+  margin: 4px 0 10px;
+  font-size: 14px;
 }
 
 /* WGXC pages */
