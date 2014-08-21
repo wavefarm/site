@@ -39,6 +39,7 @@ module.exports = function (req, res) {
     cache.tweets = JSON.stringify(reply.map(function (tweet) {
       return {
         id: tweet.id_str,
+        timestamp: tweet.created_at,
         text: tweet.text
       };
     }));

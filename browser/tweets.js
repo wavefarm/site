@@ -1,6 +1,7 @@
 var fade = require('fade');
 var concat = require('concat-stream');
 var http = require('http')
+var moment = require('moment')
 
 
 module.exports = function () {
@@ -15,7 +16,7 @@ module.exports = function () {
         a.setAttribute('class', 'tweet');
         a.setAttribute('target', '_blank');
         a.setAttribute('href', '//twitter.com/free103point9/status/' + t.id);
-        a.innerHTML = t.text;
+        a.innerHTML = t.text + ' (' + moment(t.timestamp).fromNow() + ')';
         tweetsDiv.appendChild(a);
       }
       // Cycle through them, displaying one at a time
