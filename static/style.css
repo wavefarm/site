@@ -494,18 +494,18 @@ a.wgxc.slide, a.mag.slide {
 }
 .archive .item-subsites {
   position: absolute;
-  margin: -10px 0 0 -120px;
+  margin: -5px 0 0 -95px;
 }
 .archive .site-icon {
   background-repeat: no-repeat;
   background-size: contain;
-  height: 37px;
+  height: 30px;
   position: absolute;
-  width: 45px;
+  width: 35px;
 }
 .archive .site-icon.ta {
   background-image: url('/images/ta-icon-light.png');
-  left: 45px;
+  left: 35px;
 }
 .archive .site-icon.wgxc {
   background-image: url('/images/wgxc-icon-light.png');
