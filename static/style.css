@@ -482,6 +482,10 @@ a.wgxc.slide, a.mag.slide {
 .archive input[type=search] {
   width: 300px;
 }
+.archive .content {
+  font-size: 16px;
+  margin: 0 0 30px 0;
+}
 .archive .date {
   font-size: 16px;
 }
