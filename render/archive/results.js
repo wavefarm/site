@@ -9,7 +9,7 @@ module.exports = function (results) {
   var q = results && results.q || ''
   var total = results && results.total || 0
   return h('.results', [
-    h('.content', "This Archive provides access to Wave Farm (aka free103point9)'s organizational history and current programs (1997 to the present). Search results include ephemera from the microradio movement in the mid-nineties, live event recordings from free103point9's Project Space (2000 - 2005), transmission art works produced by resident and collaborating artists, and Wave Farm's creative community radio station WGXC 90.7-FM. Enter a search term below to search the master "),
+    h('.content', "This Archive provides access to Wave Farm (aka free103point9)'s organizational history and current programs (1997 to the present). Search results include ephemera from the microradio movement in the mid-nineties, live event recordings from free103point9's Project Space (2000 - 2005), transmission art works produced by resident and collaborating artists, and Wave Farm's creative community radio station WGXC 90.7-FM. Enter a search term below to search the master archive."),
     h('form#archive-search', {
       action: '/archive',
       'ev-submit': searchSubmit
