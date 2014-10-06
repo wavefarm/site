@@ -76,15 +76,15 @@ header {
   margin: 0 auto;
   max-width: 960px;
 }
-.search {
+header .search {
   float: right;
 }
-.search form {
+header .search form {
   position: relative;
   top: 22px;
   z-index: 3;
 }
-.search input {
+header .search input {
   border: 1px solid black;
   padding: 1px 2px;
   width: 250px;
@@ -480,7 +480,25 @@ a.wgxc.slide, a.mag.slide {
 
 /* Archive page */
 .archive input[type=search] {
-  width: 300px;
+  width: 320px;
+}
+.archive .date-filter {
+  float: left;
+}
+.archive .filter-text {
+  font-size: 14px;
+  position: relative;
+  top: 4px;
+}
+.archive .action {
+  background-color: #c00;
+  border: none;
+  border-radius: 4px;
+  color: #FBF9FA;
+  font-size: 16px;
+  margin: 16px 0 0 0;
+  padding: 4px 20px;
+  width: 200px;
 }
 .archive .content {
   font-size: 16px;

@@ -11,7 +11,7 @@ if (env == 'dev') require('deva');
 window.state = struct({
   archive: struct({
     item: o(),
-    q: o(),
+    params: o(),
     results: o()
   }),
   section: o(),

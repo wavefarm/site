@@ -5,7 +5,7 @@ var renderResults = require('./results')
 
 module.exports = function (data) {
   var archive = data.archive || {}
-  if (archive.results) archive.results.q = archive.q
+  if (archive.results) archive.results.params = archive.params
   return h('.main', [
     h('.archive.page', [
       h('h1', 'ARCHIVE'),
