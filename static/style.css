@@ -515,6 +515,12 @@ a.wgxc.slide, a.mag.slide {
   display: block;
   margin-bottom: 20px;
 }
+.archive .item .briefDescription {
+  margin: 10px 0;
+}
+.archive .item .longDescription {
+  margin: 30px 0 0 0;
+}
 .archive .item-subsites {
   position: absolute;
   margin: -2px 0 0 -100px;
