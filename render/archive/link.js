@@ -20,6 +20,8 @@ function getSites (item) {
 }
 
 module.exports = function (item) {
+  var desc = item.description || item.briefDescription || item.longDescription || ''
+  desc = desc.replace(/<[^>]*>/ig, '')
   return h('.item', [
     h('.item-subsites', getSites(item)),
     h('a.item-link#' + item.id, {
@@ -31,7 +33,9 @@ module.exports = function (item) {
         ' ',
         h('span.type', '(' + item.type + ')')
       ]),
-      h('.date', renderDate(item))
+      h('.date', renderDate(item)),
+      h('.credit', item.credit),
+      h('.description', desc.length > 60 ? desc.substr(0, 60) + '...' : desc)
     ])
   ])
 }
