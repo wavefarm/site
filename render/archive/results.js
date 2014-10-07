@@ -22,7 +22,7 @@ module.exports = function (results) {
         h('.filter-text', 'filter by date'),
         h('input#date', {type: 'text', name: 'date', value: params.date, placeholder: 'YYYY-MM-DD'})
       ]),
-      h('div', [
+      h('.date2-filter', [
         h('.filter-text', 'or date range'),
         h('input#date2', {type: 'text', name: 'date2', value: params.date2, placeholder: 'YYYY-MM-DD'})
       ]),
