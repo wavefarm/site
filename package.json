@@ -22,6 +22,7 @@
     "uglifyify": "^2.5.0",
     "value-event": "^2.2.1",
     "vdom-virtualize": "0.0.3",
+    "vdomify": "0.0.3",
     "virtual-dom": "0.0.14",
     "virtual-dom-stringify": "^0.5.0",
     "virtual-hyperscript": "^4.4.0",
