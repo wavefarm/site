@@ -1,5 +1,6 @@
 var h = require('virtual-hyperscript')
 var renderDate = require('../date')
+var vdomify = require('vdomify')
 
 module.exports = function (item) {
   return h('.item#' + item.id, [
@@ -10,6 +11,7 @@ module.exports = function (item) {
     ]),
     h('.caption', item.caption),
     h('.date', renderDate(item)),
+    vdomify('.description', item.description),
     h('.player', h('audio', {controls: true},
       h('source', {src: item.url, type: item.mimetype})
     )),
