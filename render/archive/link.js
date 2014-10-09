@@ -21,7 +21,8 @@ function getSites (item) {
 
 module.exports = function (item) {
   var desc = item.description || item.briefDescription || item.longDescription || ''
-  desc = desc.replace(/<[^>]*>/ig, '')
+  // Strip HTML tags from description for excerpt display
+  desc = desc.replace(/<[^>]*>/g, '')
   return h('.item', [
     h('.item-subsites', getSites(item)),
     h('a.item-link#' + item.id, {
