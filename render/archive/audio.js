@@ -9,7 +9,7 @@ module.exports = function (item) {
       ' ',
       h('span.item-type', '(' + item.type + ')')
     ]),
-    h('.caption', item.caption),
+    h('.credit', item.credit),
     h('.date', renderDate(item)),
     vdomify('.description', item.description),
     h('.player', h('audio', {controls: true},
