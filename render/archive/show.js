@@ -1,4 +1,6 @@
 var h = require('virtual-hyperscript')
+var renderDate = require('../date')
+
 
 module.exports = function (item) {
   return h('.item#' + item.id, [
@@ -7,6 +9,7 @@ module.exports = function (item) {
       ' ',
       h('span.item-type', '(' + item.type + ')')
     ]),
+    h('.date', renderDate(item)),
     h('.credit', item.credit)
   ])
 }
