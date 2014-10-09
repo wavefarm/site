@@ -9,8 +9,8 @@ module.exports = function (item) {
       ' ',
       h('span.item-type', '(' + item.type + ')')
     ]),
-    h('.credit', item.credit),
     h('.date', renderDate(item)),
+    h('.credit', item.credit),
     vdomify('.description', item.description),
     h('.player', h('audio', {controls: true},
       h('source', {src: item.url, type: item.mimetype})
