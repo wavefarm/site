@@ -521,6 +521,9 @@ a.wgxc.slide, a.mag.slide {
 .archive .item .credit {
   margin: 0 0 10px 0;
 }
+.archive .item .description {
+  margin: 10px 0;
+}
 .archive .item .briefDescription {
   margin: 10px 0;
 }
