@@ -507,6 +507,7 @@ a.wgxc.slide, a.mag.slide {
 }
 .archive .date {
   font-size: 16px;
+  margin: 0 0 10px 0;
 }
 .archive .image {
   margin: 10px 0;
