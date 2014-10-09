@@ -2,6 +2,7 @@ var h = require('virtual-hyperscript')
 var renderDate = require('../date')
 var vdomify = require('vdomify')
 
+
 module.exports = function (item) {
   return h('.item#' + item.id, [
     h('h2', [
