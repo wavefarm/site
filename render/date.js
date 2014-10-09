@@ -5,6 +5,9 @@ var moment = require('moment')
 module.exports = function (item) {
   var m, m2, f, f2
 
+  // For shows just display airtime
+  if (item.type == 'show') return item.airtime
+
   if (item.date) {
     m = moment(item.date)
     f = item.yearOnly ? m.format('YYYY') : m.format('ll')

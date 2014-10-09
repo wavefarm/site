@@ -1,5 +1,4 @@
 var h = require('virtual-hyperscript')
-var renderDate = require('../date')
 var vdomify = require('vdomify')
 
 
@@ -10,7 +9,7 @@ module.exports = function (item) {
       ' ',
       h('span.item-type', '(' + item.type + ')')
     ]),
-    h('.date', renderDate(item)),
+    h('.airtime', item.airtime),
     h('.credit', item.credit),
     vdomify('.description', item.description)
   ])
