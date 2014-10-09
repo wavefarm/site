@@ -1,4 +1,5 @@
 var api = require('../../api')
+var hs = require('hyperstream')
 var t = require('../../templates')
 
 

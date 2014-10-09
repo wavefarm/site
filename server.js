@@ -1,4 +1,5 @@
 var helpres = require('./helpres');
+var hs = require('hyperstream')
 var http = require('http')
 var st = require('st')
 var templates = require('./templates')
