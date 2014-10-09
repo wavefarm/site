@@ -505,9 +505,15 @@ a.wgxc.slide, a.mag.slide {
   font-size: 16px;
   margin: 0 0 30px 0;
 }
+.archive .item-link div {
+  font-size: 14px;
+  font-weight: 300;
+}
+.archive .credit {
+  margin: 0 0 10px 0;
+}
 .archive .date {
   font-size: 16px;
-  margin: 0 0 10px 0;
 }
 .archive .image {
   margin: 10px 0;
@@ -515,6 +521,9 @@ a.wgxc.slide, a.mag.slide {
 .archive .item {
   display: block;
   margin-bottom: 20px;
+}
+.archive .item .date {
+  margin: 0 0 10px 0;
 }
 .archive .item .briefDescription {
   margin: 10px 0;

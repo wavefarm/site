@@ -23,7 +23,7 @@ module.exports = function (item) {
   var desc = item.description || item.briefDescription || item.longDescription || ''
   // Strip HTML tags from description for excerpt display
   desc = desc.replace(/<[^>]*>/g, '')
-  return h('.item', [
+  return h('.result', [
     h('.item-subsites', getSites(item)),
     h('a.item-link#' + item.id, {
       'href': '/archive/' + item.id,

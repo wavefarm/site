@@ -30,7 +30,7 @@ module.exports = function (results) {
         h('input.action', {type: 'submit', value: 'GO'})
       ])
     ]),
-    h('.results', [
+    h('.results-head', [
       h('h2', 'Results'),
       h('.summary', params.q ? [
         'A search for ',
