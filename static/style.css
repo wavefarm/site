@@ -509,20 +509,16 @@ a.wgxc.slide, a.mag.slide {
   font-size: 14px;
   font-weight: 300;
 }
-.archive .credit {
-  margin: 0 0 10px 0;
-}
 .archive .date {
   font-size: 16px;
 }
 .archive .image {
   margin: 10px 0;
 }
-.archive .item {
-  display: block;
-  margin-bottom: 20px;
-}
 .archive .item .date {
+  margin: 0 0 10px 0;
+}
+.archive .item .credit {
   margin: 0 0 10px 0;
 }
 .archive .item .briefDescription {
@@ -564,7 +560,11 @@ a.wgxc.slide, a.mag.slide {
 .archive .results {
   counter-reset: item-counter;
 }
-.archive .results .item:before {
+.archive .result {
+  display: block;
+  margin-bottom: 20px;
+}
+.archive .result:before {
   content: counter(item-counter);
   counter-increment: item-counter;
   position: absolute;
