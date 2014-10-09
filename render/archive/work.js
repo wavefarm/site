@@ -1,6 +1,6 @@
 var h = require('virtual-hyperscript')
-var fromHTML = require('vdom-virtualize').fromHTML
 var renderDate = require('../date')
+var vdomify = require('vdomify')
 
 
 module.exports = function (item) {
@@ -11,9 +11,7 @@ module.exports = function (item) {
       h('span.item-type', '(' + item.type + ')')
     ]),
     h('.date', renderDate(item)),
-    // vdom-virtualize breaks everything when run on the server
-    (typeof window !== 'undefined' ?
-      fromHTML('<div class="description">'+item.description+'</div>') :
-      h('.description', item.description))
+    h('.credit', item.credit),
+    vdomify('.description', item.description)
   ])
 }

@@ -515,20 +515,8 @@ a.wgxc.slide, a.mag.slide {
 .archive .image {
   margin: 10px 0;
 }
-.archive .item .date {
-  margin: 0 0 10px 0;
-}
-.archive .item .credit {
-  margin: 0 0 10px 0;
-}
-.archive .item .description {
+.archive .item div {
   margin: 10px 0;
-}
-.archive .item .briefDescription {
-  margin: 10px 0;
-}
-.archive .item .longDescription {
-  margin: 30px 0 0 0;
 }
 .archive .item-subsites {
   position: absolute;
