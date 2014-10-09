@@ -58,6 +58,7 @@ http.createServer(function (req, res) {
     nav = templates('/'+sub[1]+'/nav.html')
   } else {
     head = templates('/head.html');
+    nav = ''
   }
 
   main = templates(p+'.html') || templates(p+'/index.html');
