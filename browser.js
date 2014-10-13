@@ -15,11 +15,13 @@ window.state = struct({
     results: o()
   }),
   section: o(),
+  schemas: o(),
   title: o()
 })
 
 require('./lib/archive')()
 require('./lib/pointer')()
 require('./lib/schedule')()
+require('./lib/schemas')()
 require('./lib/subnav')()
 require('./lib/tweets')()
