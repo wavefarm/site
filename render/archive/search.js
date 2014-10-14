@@ -2,7 +2,16 @@ var h = require('virtual-hyperscript')
 var moreResults = require('../../events/more-results')
 var renderLink = require('./link')
 var searchSubmit = require('../../events/search-submit')
+var typeClick = require('../../events/type-click')
 
+
+function typeSearchLinks (data) {
+  if (data && data.schemas) {
+    return Object.keys(data.schemas).map(function (type) {
+      return h('a', {href: '/archive?q=type:' + type, 'ev-click': typeClick}, type)
+    })
+  }
+}
 
 module.exports = function (data) {
   var results = data && data.archive && data.archive.results
@@ -11,6 +20,8 @@ module.exports = function (data) {
   var total = results && results.total || 0
   return h('.search', [
     h('.content', "This Archive provides access to Wave Farm (aka free103point9)'s organizational history and current programs (1997 to the present). Search results include ephemera from the microradio movement in the mid-nineties, live event recordings from free103point9's Project Space (2000 - 2005), transmission art works produced by resident and collaborating artists, and Wave Farm's creative community radio station WGXC 90.7-FM. Enter a search term below to search the master archive."),
+    h('h2', 'Item Types'),
+    h('.types', typeSearchLinks(data)),
     h('h2', 'Search'),
     h('form#archive-search', {
       action: '/archive',

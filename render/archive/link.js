@@ -26,7 +26,7 @@ module.exports = function (item) {
   return h('.result', [
     h('.item-subsites', getSites(item)),
     h('a.item-link#' + item.id, {
-      'href': '/archive/' + item.id,
+      href: '/archive/' + item.id,
       'ev-click': itemClick
     }, [
       h('h3', [
