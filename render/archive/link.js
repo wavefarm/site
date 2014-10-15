@@ -9,8 +9,8 @@ function getSites (item) {
     if (sites.indexOf(site) == -1) sites.push(site)
   }
   if (item.sites) {
-    if (item.sites.indexOf('transmissionarts.org') != -1) pushSite('ta')
-    if (item.sites.indexOf('wgxc.org') != -1) pushSite('wgxc')
+    if (item.sites.indexOf('transmissionarts') != -1) pushSite('ta')
+    if (item.sites.indexOf('wgxc') != -1) pushSite('wgxc')
   }
   if (item.type == 'broadcast') pushSite('wgxc')
   if (item.type == 'show') pushSite('wgxc')
