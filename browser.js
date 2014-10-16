@@ -16,6 +16,8 @@ window.state = struct({
   }),
   section: o(),
   schemas: o(),
+  scrollX: o(),
+  scrollY: o(),
   title: o()
 })
 
