@@ -3,6 +3,7 @@ var h = require('virtual-hyperscript')
 
 var wgxcTypeMap = {
   artist: 'people',
+  broadcast: 'events',
   collaborator: 'people',
   event: 'events',
   location: 'places',
