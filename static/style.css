@@ -521,6 +521,9 @@ a.wgxc.slide, a.mag.slide {
 .archive .item div {
   margin: 10px 0;
 }
+.archive .item .more-info {
+  font-size: 14px;
+}
 .archive .item-subsites {
   position: absolute;
   margin: -2px 0 0 -100px;

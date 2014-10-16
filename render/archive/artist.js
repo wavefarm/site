@@ -1,4 +1,5 @@
 var h = require('virtual-hyperscript')
+var renderMoreInfo = require('../more-info')
 var vdomify = require('vdomify')
 
 module.exports = function (item) {
@@ -8,6 +9,7 @@ module.exports = function (item) {
       ' ',
       h('span.item-type', '(' + item.type + ')')
     ]),
+    renderMoreInfo(item),
     vdomify('.bio', item.bio)
   ])
 }
