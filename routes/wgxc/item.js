@@ -21,7 +21,7 @@ module.exports = function (req, res) {
     }
 
     console.log(item)
-    res.setHeader('Content-Type', 'text/html');
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
     t('/layout.html').pipe(hs({
       'title': item.main,
       '.head': t('/wgxc/head.html'),

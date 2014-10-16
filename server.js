@@ -66,7 +66,7 @@ http.createServer(function (req, res) {
   // No template found so check static
   if (!main) return mount(req, res);
 
-  res.setHeader('Content-Type', 'text/html');
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
 
   // Streams and streams
   templates('/layout.html').pipe(hs({

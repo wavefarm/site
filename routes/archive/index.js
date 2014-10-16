@@ -7,6 +7,6 @@ module.exports = function (req, res) {
     section: 'archive',
     title: 'Archive'
   }
-  res.setHeader('Content-Type', 'text/html');
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
   res.end('<!doctype html>' + String(elemify(render(state))))
 }
