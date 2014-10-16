@@ -479,7 +479,7 @@ a.wgxc.slide, a.mag.slide {
 }
 
 /* Archive page */
-.archive .types a {
+.archive .types a, .archive .sites a {
   margin: 0 10px 0 0;
 }
 .archive input[type=search] {
