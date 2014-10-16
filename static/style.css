@@ -483,10 +483,13 @@ a.wgxc.slide, a.mag.slide {
   margin: 0 10px 0 0;
 }
 .archive input[type=search] {
-  width: 320px;
+  font-size: 20px;
+  padding: 5px;
+  width: 100%;
 }
 .archive .date-filter {
   float: left;
+  margin-right: 10px;
 }
 .archive .filter-text {
   font-size: 14px;
