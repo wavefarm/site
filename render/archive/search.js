@@ -13,6 +13,28 @@ function typeSearchLinks (data) {
   }
 }
 
+function composeSummary (params, total) {
+  var sum = []
+  if (params.q || params.date) sum.push('A search')
+  if (params.q) {
+    sum.push(' for ')
+    sum.push(h('b', params.q))
+  }
+  if (params.date && params.date2) {
+    sum.push(' between ')
+    sum.push(h('b', params.date))
+    sum.push(' and ')
+    sum.push(h('b', params.date2))
+  } else if (params.date) {
+    sum.push(' on ')
+    sum.push(h('b', params.date))
+  }
+  if (params.q || params.date) sum.push(' returned ')
+  sum.push(h('b', ''+total))
+  sum.push(' items.')
+  return sum
+}
+
 module.exports = function (data) {
   var results = data && data.archive && data.archive.results
   var hitLength = (results && results.hits && results.hits.length) || 0
@@ -44,16 +66,7 @@ module.exports = function (data) {
     ]),
     h('.results-head', [
       h('h2', 'Results'),
-      h('.summary', params.q ? [
-        'A search for ',
-        h('b', params.q),
-        ' returned ',
-        h('b', ''+total),
-        ' items.'
-      ] : [
-        h('b', ''+total),
-        ' total items.'
-      ])
+      h('.summary', composeSummary(params, total)),
     ]),
     hitLength ? h('.results', results.hits.map(renderLink)) : '',
     (hitLength && hitLength < total) ?
