@@ -11,6 +11,7 @@
     "envify": "^2.0.1",
     "escape-html": "^1.0.1",
     "fade": "~0.1.0",
+    "graceful-fs": "^3.0.4",
     "hyperstream": "^0.5.0",
     "main-loop": "^2.3.0",
     "moment": "^2.8.3",

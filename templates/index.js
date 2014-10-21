@@ -1,4 +1,4 @@
-var fs = require('fs')
+var fs = require('graceful-fs')
 
 var t, tPath
 module.exports = function (tName) {
