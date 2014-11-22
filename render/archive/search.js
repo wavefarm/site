@@ -52,7 +52,6 @@ module.exports = function (data) {
     //  h('a', {href: '/archive?q=sites:transmissionarts', 'ev-click': paramClick}, 'Transmission Arts'),
     //  h('a', {href: '/archive?q=sites:wgxc', 'ev-click': paramClick}, 'WGXC')
     //]),
-    h('h2', 'Search'),
     h('form#archive-search', {
       action: '/archive',
       'ev-submit': searchSubmit
