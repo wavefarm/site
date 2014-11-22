@@ -1,1 +1,2 @@
+port = 1041
 include = static/** templates/**
