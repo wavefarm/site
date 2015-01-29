@@ -16,7 +16,7 @@ module.exports = function (state) {
       require('./')(state),
       h('script', 'window.initialState = ' + JSON.stringify(state)),
       h('script', {src: '/scripts/jquery.js'}),
-      h('script', {src: '/script.js'})
+      h('script', {src: '/bundle.js'})
     ])
   ])
 }

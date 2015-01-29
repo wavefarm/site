@@ -30,12 +30,11 @@
     "wavefarm": "^0.1.0"
   },
   "scripts": {
-    "postinstall": "browserify -t envify -g uglifyify browser.js > static/script.js",
-    "watch": "watchify -t envify browser.js -o static/script.js -dv"
+    "postinstall": "browserify -t envify -g uglifyify browser.js > static/bundle.js",
+    "watch": "watchify -t envify browser.js -o static/bundle.js -dv"
   },
   "standard": {
     "ignore": [
-      "static/script.js",
       "static/scripts/*",
       "static/ua.js"
     ]
