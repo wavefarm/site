@@ -2,16 +2,16 @@ var http = require('http');
 var url = require('url');
 
 
-var u = url.parse('http://localhost:1039');
+var u = url.parse(process.env.APIURL || 'http://wavefarm.org/api');
 
 module.exports = function (req, res) {
   var clientReq = http.request({
     hostname: u.hostname,
     port: u.port,
     auth: u.auth,
-    path: req.parsedUrl.path.replace(/^\/api/, ''),
+    path: u.pathname + req.parsedUrl.path.replace(/^\/api/, ''),
     // Only allow GET requests for now
-    //method: req.method, 
+    //method: req.method,
     // Do we need to pass headers?
     //headers: req.headers
   }, function (clientRes) {
