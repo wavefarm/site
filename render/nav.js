@@ -1,6 +1,3 @@
-var h = require('virtual-hyperscript')
-
-
 module.exports = function (state) {
   if (state.ta) {
     // TODO Render ta nav
