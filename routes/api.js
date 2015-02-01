@@ -1,7 +1,7 @@
 var http = require('http')
 var url = require('url')
 
-var u = url.parse(process.env.APIURL || 'http://wavefarm.org/api')
+var u = url.parse(process.env.APIURL || 'https://wavefarm.org/api')
 
 module.exports = function (req, res) {
   var clientReq = http.request({
