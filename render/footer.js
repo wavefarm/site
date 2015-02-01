@@ -49,7 +49,7 @@ module.exports = function (state) {
       h('a.facebook', {href: '//facebook.com/wavefarm.org', target: '_blank'},
         h('span', 'F')
       ),
-      h('a.mailing', {href: '//eepurl.com/yRqVP', target: '_blank'},
+      h('a.mailing', {href: 'http://eepurl.com/yRqVP', target: '_blank'},
         h('span', 'MAILING LIST')
       ),
     ])
