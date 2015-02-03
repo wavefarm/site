@@ -1,7 +1,4 @@
-wavefarm.org
-============
-
-Home of the Wave Farm
+# wavefarm.org: Home of the Wave Farm
 
 For local dev, set the following environment variables:
 
@@ -11,3 +8,5 @@ For local dev, set the following environment variables:
 - TWITTER_ACCESS_TOKEN_SECRET
 
 The APIURL can also be set to override the default of http://wavefarm.org/api.
+
+Before running `npm install` get dependencies with `npm install -g browserify envify uglifyify`.
