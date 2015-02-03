@@ -8,7 +8,7 @@ module.exports = function (ev) {
     if (err) return console.error(err)
     state.scrollX.set(window.scrollX)
     state.scrollY.set(window.scrollY)
-    history.replaceState(state())
+    history.replaceState(state(), 'scrolled results')
     state.archive.params.set(null)
     state.archive.results.set(null)
     state.archive.item.set(item)
