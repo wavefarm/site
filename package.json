@@ -14,7 +14,7 @@
     "graceful-fs": "^3.0.4",
     "hyperstream": "^0.5.0",
     "main-loop": "^2.3.0",
-    "moment": "^2.8.3",
+    "moment": "^2.9.0",
     "observ": "^0.2.0",
     "observ-struct": "^5.0.1",
     "st": "^0.5.2",
