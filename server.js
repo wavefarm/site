@@ -50,6 +50,9 @@ http.createServer(function (req, res) {
   // WGXC broadcasts and shows
   if (/^\/wgxc\/schedule\/\w{6}$/.test(p)) return require('./routes/wgxc/item')(req, res)
 
+  // WGXC events
+  if (/^\/wgxc\/calendar\/\w{6}$/.test(p)) return require('./routes/wgxc/event')(req, res)
+
   // Set head and nav sections
   sub = subRe.exec(p)
   if (sub) {
