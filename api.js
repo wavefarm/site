@@ -1,6 +1,5 @@
-var wf = require('wavefarm')
+var apiUrl = typeof window === 'undefined' ?
+  process.env.APIURL :
+  window.location.origin + '/api/'
 
-var options = {}
-
-
-module.exports = wf(options)
+module.exports = require('wavefarm')(apiUrl)
