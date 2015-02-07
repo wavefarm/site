@@ -18,10 +18,10 @@ module.exports = function (item) {
     item.sites.map(function (site) {
       var link
       if (site === 'transmissionarts') {
-        link = '//' + site + '.org/' + item.type + '/' + item.id
+        link = 'http://' + site + '.org/' + item.type + '/' + item.id
       } else if (site === 'wgxc') {
         if (!wgxcTypeMap[item.type]) link = ''
-        else link = '//' + site + '.org/' + wgxcTypeMap[item.type] + '/' + item.oldId
+        else link = 'http://' + site + '.org/' + wgxcTypeMap[item.type] + '/' + item.oldId
       }
       return h('li', [
         'More info at ',
