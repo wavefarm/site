@@ -27,7 +27,7 @@
     "virtual-dom": "0.0.14",
     "virtual-dom-stringify": "^0.5.0",
     "virtual-hyperscript": "^4.4.0",
-    "wavefarm": "^0.3.0"
+    "wavefarm": "^0.4.0"
   },
   "scripts": {
     "postinstall": "browserify -t envify -g uglifyify browser.js > static/bundle.js",
