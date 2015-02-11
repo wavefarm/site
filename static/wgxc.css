@@ -1,0 +1,265 @@
+
+
+/* overrides of stlyle.css */
+
+.wgxc-calendar {
+  width: 700px;
+}
+
+
+.page.wgxc.wgxc-calendar a:hover {
+  color: #cc0302;
+}
+
+/* new styles */
+
+
+/* calendar page */
+
+.wgxc-calendar p {
+	padding-right:20px;
+}
+
+
+.datepicker-container {
+	margin-top:90px;
+	float:right;
+	width: 200px;
+}
+
+.calendar-container {
+	margin-right:200px;
+}	
+
+
+
+.ui-datepicker-group {
+	background-color:white;
+	border: 1px solid black;
+	margin-bottom: 5px;
+}
+
+.ui-state-active {
+	/*color: #cc0302;*/
+}
+.ui-datepicker-group {
+	width: 100%;
+}
+.ui-datepicker-today a {
+	/*background-color: #cc0302;*/
+	color: #cc0302;
+}
+
+
+.ui-datepicker-current-day {
+	/*background-color: #03cc02;*/
+	background-color: #cc0302;
+}
+.ui-datepicker-current-day a {
+	color:white;
+}
+
+.ui-datepicker-current {
+	display:none;
+}
+
+.datepicker-controls {
+	width: 196px;
+	margin: 0 1px 3px 3px;
+	padding-top: 5px;
+	border-top: 1px solid black; 
+}
+.datepicker-controls a {
+	background-color:#cc0302;
+	color: white;
+	padding: 2px 5px;
+	border: 1px solid black;
+	line-height: 22px;
+}
+.datepicker-controls a:hover {
+	background-color:#a70000;
+}
+.datepicker-prev {
+}
+.datepicker-today {
+	margin-left:38px;
+}
+.datepicker-next {
+	margin-left:45px;
+
+}
+
+.calendar {
+	margin-top:20px;
+	margin-right:10px;
+	padding-top:20px;
+	/*border-top:2px solid #bbb;*/
+}
+.calendar .calendar-card-topbar {
+  background-color: #990303;
+}
+.calendar .calendar-card {
+  background-color: #cc0302;
+}
+
+.calendar .calendar-card .time {
+  font-size: 12px;
+}
+
+.calendar-card .tag {
+  font-size: 12px;
+  margin: 0px 0 0 0;
+}
+
+.wgxc .more input {
+  background-color: #cc0302;
+  border: 1px solid #cc0302;
+}
+
+.event {
+  clear: left;
+  margin: 0 0 40px;
+  overflow: auto;
+}
+
+
+
+
+.event-icons {
+	margin-top:10px;
+	float:right;
+}
+
+.event-icons img {
+	margin:0 4px 0 4px;
+	width:40px;
+	height: 40px;
+}
+
+.event-info {
+  /*border-bottom: 2px solid #bbb;*/
+  border-top: 2px solid #bbb;
+  margin: 0 70px 0 140px;
+  padding: 10px 0 20px 0px;
+}
+
+.event-info-first,
+.event-info-ongoing {
+  border-top: 0px solid #bbb;
+  padding-bottom: 5px;
+}
+
+.event-info-ongoing-last {
+  /*border-bottom: 2px solid #bbb;*/
+  padding-bottom: 5px;
+  margin-bottom: 40px;
+}
+
+.event-name {
+  font-size:28px;
+  line-height:32px;
+  padding: 0px;
+}
+.event-name span {
+  cursor: pointer;
+}
+
+.item-dates strong,
+.item-detail strong,
+.event-dates strong {
+	font-weight: 500;
+	font-size: 18px;
+	line-height:22px;
+}
+.event-location strong {
+	font-weight: 500;
+	font-size: 18px;
+	line-height:22px;
+}
+.event-location p {
+	margin: 0px;
+	padding: 0px;
+	font-size: 18px;
+	line-height:22px;
+	
+}
+
+.event-description {
+  padding: 5px 0 0 0;
+}
+
+.event-description-short {
+	display:block;
+}
+
+.event-description-long {
+	display:none;
+}
+
+.event-description.current {
+  display: block;
+}
+.event-category {
+	margin-top:20px;
+}
+.event-category ul li {
+	list-style-type: circle;
+}
+
+.ongoing-event {
+	min-height: 90px; 
+}
+.ongoing-events h4 {
+	font-size: 28px;
+	line-height: 32px;
+	margin:0 70px 10px 140px;
+	border-bottom: 2px solid #bbb;
+}
+
+/* Individual Item and Event Pages */
+
+.wgxc-event h1.item-main,
+.wgxc-item h1.item-main {
+	margin-bottom: 5px;
+	line-height: 100%;
+}
+
+.wgxc-item h1.item-main strong {
+	font-weight:bold;
+}
+
+.wgxc-item h1.item-main img,
+.wgxc-event h1.item-main img  {
+	margin: 0 0 3px 5px;
+	width: 34px;
+	height: 34px;
+	vertical-align: text-bottom;
+}
+
+.wgxc-item img,
+.wgxc-event img {
+	margin: 10px 0 10px 0;
+}
+
+.wgxc-item .description,
+.wgxc-event .description {
+	border-bottom: 2px solid black;
+	padding-bottom:10px;
+	
+}
+
+/* Archive File List at bottom of item and event pages */
+
+.item-archive-entry-list {
+	/*display: none;*/
+}	
+.item-archive-entry {
+	margin: 0 0 10px 20px;
+}
+
+.item-archive-entry p {
+	font-size:90%;
+	line-height: 95%;
+	margin: 0px 0 3px 0;
+}
+
