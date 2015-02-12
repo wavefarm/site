@@ -122,26 +122,20 @@
   overflow: auto;
 }
 
-
-
-
-.event-icons {
-	margin-top:10px;
-	float:right;
-}
-
-.event-icons img {
-	margin:0 4px 0 4px;
-	width:40px;
-	height: 40px;
-}
-
 .event-info {
   /*border-bottom: 2px solid #bbb;*/
   border-top: 2px solid #bbb;
-  margin: 0 70px 0 140px;
+  margin: 0 22px 0 140px;
   padding: 10px 0 20px 0px;
 }
+
+.event-name img {
+	margin:0 4px 0 4px;
+	width:30px;
+	height: 30px;
+	vertical-align: middle;
+}
+
 
 .event-info-first,
 .event-info-ongoing {
@@ -212,7 +206,7 @@
 .ongoing-events h4 {
 	font-size: 28px;
 	line-height: 32px;
-	margin:0 70px 10px 140px;
+	margin:0 22px 10px 140px;
 	border-bottom: 2px solid #bbb;
 }
 
@@ -250,8 +244,15 @@
 
 /* Archive File List at bottom of item and event pages */
 
+.item-archive-section h2 span {
+	/*color:#cc0302;*/
+	font-size: 14px;
+	padding-left:10px;
+	vertical-align: top;
+}
 .item-archive-entry-list {
-	/*display: none;*/
+	display: none;
+	clear:both;
 }	
 .item-archive-entry {
 	margin: 0 0 10px 20px;

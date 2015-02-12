@@ -53,6 +53,9 @@ http.createServer(function (req, res) {
   // WGXC events
   if (/^\/wgxc\/calendar\/\w{6}$/.test(p)) return require('./routes/wgxc/event')(req, res)
 
+  // Listen Live Popup Window
+  if (/^\/listen\/\w{4}$/.test(p)) return require('./routes/listen')(req, res)
+
   // Set head and nav sections
   sub = subRe.exec(p)
   if (sub) {

@@ -389,11 +389,13 @@ nav.wf2 {
 }
 .listen-email {
 }
-.listen-nowplaying {
+.listen-nowplaying,
+.listen-upnext {
 	font-weight: bold;
 	margin: 10px 0 0 0;
 }
-.listen-nowplaying-desc {
+.listen-nowplaying-desc,
+.listen-upnext-desc {
 }
 .listen-news {
 		margin: 10px 0 0 0;
