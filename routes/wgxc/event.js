@@ -28,6 +28,7 @@ module.exports = function (req, res) {
 
     var locationName = '';
     var locationAddress = '';
+    var imgSrc = '';
     
     if(typeof(item.locations)!='undefined' && item.locations.length>0) {
         var locationName = item.locations[0].main;    	
@@ -39,7 +40,6 @@ module.exports = function (req, res) {
     	icons += '<img src="' + iconList[i] +'" />';
     }
         
-    
 
     res.setHeader('Content-Type', 'text/html; charset=utf-8')
     t('/layout.html').pipe(hs({
@@ -48,7 +48,8 @@ module.exports = function (req, res) {
       '.nav': t('/wgxc/nav.html'),
       '.main': t('/wgxc/event.html').pipe(hs({
         '.item-main span.main': item.main,
-        '.item-main span.icons': icons,        
+        '.item-main span.icons': icons,	       	        
+        //'.item-main-image': { src: imgSrc },
         '.event-dates strong': datesDesc,
         '.event-location strong': locationName,
         //'.event-location p': locationAddress,

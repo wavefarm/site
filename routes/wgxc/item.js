@@ -39,6 +39,7 @@ module.exports = function (req, res) {
     if (typeof(item.credit)!='undefined')
     	detailDesc = item.credit;
     
+ 
     
     res.setHeader('Content-Type', 'text/html; charset=utf-8')
     t('/layout.html').pipe(hs({
@@ -49,6 +50,7 @@ module.exports = function (req, res) {
         '.item-main strong': show,
         '.item-main span.main': main,
         '.item-main span.icons': icons,
+        //'.item-main-image': { src: imgSrc },
         '.item-dates strong': datesDesc,
         '.item-detail strong': detailDesc,
         '.description': item.description

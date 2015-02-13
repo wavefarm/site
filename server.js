@@ -66,7 +66,16 @@ http.createServer(function (req, res) {
     nav = ''
   }
 
-  main = templates(p + '.html') || templates(p + '/index.html')
+  // handle date params for schedule and calendar
+  if (/^\/wgxc\/calendar\/\d{4}-\d{2}-\d{2}$/.test(p)) {
+	  main = templates('/wgxc/calendar.html')
+  }
+  else if (/^\/wgxc\/schedule\/\d{4}-\d{2}-\d{2}$/.test(p)) {
+	  main = templates('/wgxc/schedule.html')
+  }
+  else {
+  	main = templates(p + '.html') || templates(p + '/index.html')
+  }
 
   // No template found so check static
   if (!main) return mount(req, res)
