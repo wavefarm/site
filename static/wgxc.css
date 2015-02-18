@@ -37,6 +37,16 @@
 }	
 
 
+.datepicker-container .add-event input {
+  background-color: #cc0302;
+  border: 1px solid #cc0302;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  margin: 0 0 10px 2px;
+  padding: 10px 35px;  
+}
 
 .ui-datepicker-group {
 	background-color:white;
@@ -89,9 +99,9 @@
 .datepicker-controls a {
 	color: white;
 	padding: 2px 5px;
-	border: 1px solid black;
+	border: 1px solid #a70000;
 	line-height: 22px;
-	  border-radius: 8px;
+	border-radius: 8px;
 }
 
 .datepicker-today {
