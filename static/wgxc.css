@@ -66,17 +66,18 @@
 	color: #cc0302;
 }
 
-.datepicker-calendar .ui-datepicker-current-day,
+.datepicker-calendar .ui-datepicker-current-day a,
 .datepicker-calendar .datepicker-controls a {
 	background-color: #cc0302;
 }
-.datepicker-schedule .ui-datepicker-current-day,
+.datepicker-schedule .ui-datepicker-current-day a,
 .datepicker-schedule .datepicker-controls a  {
 	background-color: #1AB7EA;
 }
 .datepicker-calendar .ui-datepicker-current-day a,
 .datepicker-schedule .ui-datepicker-current-day a {
 	color:white;
+	border-radius: 6px;
 }
 
 .datepicker-calendar .datepicker-controls a:hover {
@@ -99,10 +100,16 @@
 .datepicker-controls a {
 	color: white;
 	padding: 2px 5px;
-	border: 1px solid #a70000;
+
 	line-height: 22px;
 	border-radius: 8px;
 }
+.datepicker-schedule .datepicker-controls a {
+	border: 1px solid #1AB7EA;
+}
+.datepicker-calendar .datepicker-controls a {
+	border: 1px solid #cc0302;
+	}
 
 .datepicker-today {
 	margin-left:38px;
