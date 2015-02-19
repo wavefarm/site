@@ -15,6 +15,34 @@
 /* new styles */
 
 
+/* wgxc home slideshow */
+
+.wgxc-slideshow {
+  border: 1px solid black;
+  float: left;
+  margin: 0 0 0 100px;
+  position: relative;
+  text-align: right;
+}
+.wgxc-slideshow a {
+  display: none;
+  height: 557px;
+  width: 760px;
+}
+.wgxc-slideshow div {
+  font-weight: 400;
+  padding: 4px 5px;
+  position: absolute;
+  right: 0px;
+}
+
+/* turn off credits and caption for now */
+.wgxc-slideshow a div {
+	display: none;
+}
+
+
+
 /* calendar page */
 
 .wgxc-calendar p,
