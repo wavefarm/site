@@ -17,6 +17,7 @@
 
 /* wgxc home slideshow */
 
+
 .wgxc-slideshow {
   border: 1px solid black;
   float: left;
@@ -26,21 +27,52 @@
 }
 .wgxc-slideshow a {
   display: none;
-  height: 557px;
+  height: 454px;
   width: 760px;
+  padding-bottom: 22px;	/* for info section; make it bigger for more lines */
 }
+
 .wgxc-slideshow div {
   font-weight: 400;
   padding: 4px 5px;
   position: absolute;
+
+}
+
+.wgxc-slideshow .slide-credit {
   right: 0px;
+   background: rgba(256, 256, 256, .8);
+  color: #000;
+  bottom: 22px;
+  font-size: 10px;
+}
+.wgxc-slideshow .slide-info {
+  background: rgba(0, 0, 0, .7);
+  bottom: 0px;
+  color: #fff;
+  font-size: 14px;
+  width: 752px;
+  padding-left: 4px;
+  padding-right: 5px;
+  margin: 0;
 }
 
-/* turn off credits and caption for now */
-.wgxc-slideshow a div {
-	display: none;
+
+#wgxc-slideshow-prev {
+	position:absolute;
+	height: 100%;
+	width: 50px;
+	left: 0px;
+	top: 0px;
 }
 
+#wgxc-slideshow-next {
+	position:absolute;
+	height: 100%;
+	width: 50px;
+	right: 0px;
+	top: 0px;
+}
 
 
 /* calendar page */
