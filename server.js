@@ -40,6 +40,9 @@ http.createServer(function (req, res) {
   // Local proxy for org tweets
   if (p === '/tweets') return require('./routes/tweets')(req, res)
 
+  // Local proxy for WGXC tweets
+  if (p === '/wgxc/tweets') return require('./routes/wgxc/tweets')(req, res)
+
   // Archive
   if (p === '/archive') return require('./routes/archive')(req, res)
 
