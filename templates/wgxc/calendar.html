@@ -1,3 +1,134 @@
-<div class="page wgxc">
-  <h1>WGXC 90.7-FM CALENDAR</h1>
+<link href="/jquery-ui.css" rel="stylesheet" />
+<link href="/wgxc.css" rel="stylesheet" />
+
+
+
+
+
+
+<div class="datepicker-container datepicker-calendar">
+	<form>
+	  <div class="add-event">
+	    <input id="add-event" name="add-event" type="button" value="Add An Event">
+	  </div>
+	</form>
+
+	<div class="datepicker-controls-h">
+		<div id="datepicker"></div>
+	</div>
+	<div class="datepicker-controls">
+		<a class="datepicker-prev" href="javascript:$('.ui-datepicker-prev').click();">&lt;</a>
+		<a class="datepicker-today" href="javascript:$('.ui-datepicker-current').click();;">TODAY</a>
+		<a class="datepicker-next" href="javascript:$('.ui-datepicker-next').click();">&gt;</a>
+	</div>
+</div>
+
+<div class="calendar-container">
+
+	<div class="page wgxc wgxc-calendar">
+	
+	  <h1>WGXC Community Calendar</h1>
+	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In enim nisl, tempor vitae ultricies ac, laoreet volutpat lorem. Ut condimentum ac sapien a finibus. Quisque non metus quis leo vulputate lobortis sit amet at lacus. Integer sit amet urna ex. Sed varius urna nec erat tempor porta et id ante. Phasellus nec turpis bibendum, tempor lectus sit amet, rutrum quam. Mauris venenatis placerat semper. Vestibulum ultrices et dolor eget malesuada.</p>
+	 <!-- 
+	 <h2>CLICK ON ANY SHOW BELOW FOR DETAILS</h2>
+	  -->
+	  
+	  <!-- Schedule will be filled in client-side -->
+	  <div class="calendar">
+	  
+	    <div class="event">
+	    
+	      <div class="calendar-card">
+	        <div class="calendar-card-topbar"></div>
+	        <div class="tag"></div>
+	        <div class="weekday"></div>
+	        <div class="month"></div>
+	        <div class="monthday"></div>
+	        <div class="time"></div>
+	      </div>  
+	      <!-- 
+	      <div class="event-icons">
+	      	<ul>
+	      		<li><img src="" alt="" /></li>
+	      	</ul>
+	      </div>
+	       -->
+          <div class="event-info">
+            <h3 class="event-name">
+            	<a></a>
+            	<!--  icons will be appended here as <img /> -->
+            </h3>
+           	<div class="event-dates"><strong></strong></div>
+           	<div class="event-location">
+           		<strong></strong>
+           		<p></p>
+           	</div>
+            <div class="event-description">
+            	<div class="event-description-short">
+              		<p></p>
+            	</div>
+            	<div class="event-description-long">
+              		<p></p>
+              		<img >
+		            <div class="actions"><a class="more" href="">more details</a></div>            		
+               	</div>
+            </div>
+          </div>
+	    </div>
+	    
+	    
+	    <!--  slightly different structure for ongoing events as they contain 
+	    one calendar card but multiple abbreviated events -->
+	    
+	    <div class="ongoing-events">
+	      <div class="calendar-card">
+	        <div class="calendar-card-topbar"></div>
+	        <div class="tag">ONGOING</div>
+	        <div class="weekday"></div>
+	        <div class="month"></div>
+	        <div class="monthday"></div>
+	      </div>
+	      <h4>ONGOING EVENTS</h4>
+	      <div class="ongoing-events-list">
+	      
+	      	<div class="ongoing-event">
+	      	  <!-- 	      	
+		      <div class="event-icons">
+		      	<ul>
+		      		<li><img src="" alt="" /></li>
+		      	</ul>
+		      </div>
+		       -->
+	          <div class="event-info event-info-ongoing">
+	            <h3 class="event-name">
+	            	<a></a>
+	            </h3>
+	           	<div class="event-dates"><strong></strong></div>
+	           	<div class="event-location">
+	           		<strong></strong>
+	           		<p></p>
+	           	</div>
+	            <div class="event-description">
+	            	<div class="event-description-short">
+	              		<p></p>
+	            	</div>
+	            	<div class="event-description-long">
+	              		<p></p>
+	              		<img >
+			            <div class="actions"><a class="more" href="">more details</a></div>            		
+	               	</div>
+	            </div>
+	          </div>          	      	
+	      	</div>	      	      
+	      </div>	        
+	    </div>	    	    
+	  </div>
+	  
+	  <form>
+	    <div class="more">
+	      <input id="more" name="more" type="button" value="View Another Week">
+	    </div>
+	  </form>
+	  
+	</div>
 </div>

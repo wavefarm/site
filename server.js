@@ -40,6 +40,9 @@ http.createServer(function (req, res) {
   // Local proxy for org tweets
   if (p === '/tweets') return require('./routes/tweets')(req, res)
 
+  // Local proxy for WGXC tweets
+  if (p === '/wgxc/tweets') return require('./routes/wgxc/tweets')(req, res)
+
   // Archive
   if (p === '/archive') return require('./routes/archive')(req, res)
 
@@ -49,6 +52,12 @@ http.createServer(function (req, res) {
 
   // WGXC broadcasts and shows
   if (/^\/wgxc\/schedule\/\w{6}$/.test(p)) return require('./routes/wgxc/item')(req, res)
+
+  // WGXC events
+  if (/^\/wgxc\/calendar\/\w{6}$/.test(p)) return require('./routes/wgxc/event')(req, res)
+
+  // Listen Live Popup Window
+  if (/^\/listen\/\w{4}$/.test(p)) return require('./routes/listen')(req, res)
 
   // Set head and nav sections
   sub = subRe.exec(p)
@@ -60,7 +69,16 @@ http.createServer(function (req, res) {
     nav = ''
   }
 
-  main = templates(p + '.html') || templates(p + '/index.html')
+  // handle date params for schedule and calendar
+  if (/^\/wgxc\/calendar\/\d{4}-\d{2}-\d{2}$/.test(p)) {
+	  main = templates('/wgxc/calendar.html')
+  }
+  else if (/^\/wgxc\/schedule\/\d{4}-\d{2}-\d{2}$/.test(p)) {
+	  main = templates('/wgxc/schedule.html')
+  }
+  else {
+  	main = templates(p + '.html') || templates(p + '/index.html')
+  }
 
   // No template found so check static
   if (!main) return mount(req, res)

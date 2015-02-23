@@ -28,34 +28,54 @@
         <div class="head"></div>
         <div class="nav"></div>
         <div class="main"></div>
-        <!-- Hide listen sidebar for alpha launch
-        <div class="listen">
+        <!-- Hide listen sidebar for alpha launch -->
+        <div class="listen" style="left:-300px;">
           <div class="listen-handle">· · · · · · · · LISTEN LIVE · · · · · · · ·</div>
           <div class="listen-wgxc">
+            <img src="/images/wgxc-icon.png" alt="wgxc"/>
             <h1>WGXC 90.7-FM</h1>
-            <div>LISTEN NOW</div>
-            <p>CATSKILL STUDIO: (518) 291-9294</p>
-            <p>info@wgxc.org</p>
-            <h2>NOW PLAYING: WGXC Afternoon Show</h2>
-            <p>Hosted by Ellen Thurston, Victor Mendolla, and Tom DePietro.</p>
-            <h2>UP NEXT: Al Jazeera English: Half Hour</h2>
-            <p>Hosted by Albert Jazeera.</p>
-            <p>TODAY'S LOCAL NEWS</p>
-            <p>VIEW FULL SCHEDULE</p>
+          	
+            <div class="listen-listennow"><a>LISTEN NOW</a>
+				<audio controls="controls" preload="none">
+					<source src="http://comm.free103point9.org:8000/wgxc.mp3" type="audio/mpeg" ></source>
+					Please update your browser to the latest version. This player should work in all current versions of Chrome, Firefox, Safari and IE.                          
+				</audio>  
+				<div>         
+					<a class="listen-wgxc-window" href="">Pop-out Player</a><br /> 
+					<a href="http://comm.free103point9.org:8000/wgxc.mp3.m3u">Download the .m3u</a>
+				</div> 
+            </div>            
+            
+            <p class="listen-contact">HUDSON STUDIO: (518) 697-7400</p>
+            <p class="listen-contact">ACRA STUDIO: (518) 622-2598  </p>           
+            <p class="listen-email"><a href="mailto:info@wgxc.org">info@wgxc.org</a></p>
+            
+            <!-- 
+            <h2 class="listen-nowplaying">NOW PLAYING: <a></a></h2>
+            <h2 class="listen-upnext">UP NEXT: <a></a></h2>
+            <p class="listen-news"><a href="/wgxc/schedule">VIEW FULL SCHEDULE</a></p>
+             -->
+             
           </div>
           <div class="listen-wf">
+            <img src="/images/ta-icon.png" alt="Wave Farm Radio"/>
             <h1>WAVE FARM RADIO</h1>
-            <div>LISTEN NOW</div>
-            <p>CATSKILL STUDIO: (518) 291-9294</p>
-            <p>info@wgxc.org</p>
-            <h2>NOW PLAYING: WGXC Afternoon Show</h2>
-            <p>Hosted by Ellen Thurston, Victor Mendolla, and Tom DePietro.</p>
-            <h2>UP NEXT: Al Jazeera English: Half Hour</h2>
-            <p>Hosted by Albert Jazeera.</p>
-            <p>TODAY'S RADIO NEWS</p>
+            <div class="listen-listennow"><a>LISTEN NOW</a>
+				<audio controls="controls"  preload="none">
+					<source src="http://comm.free103point9.org:8000/transmissionarts.mp3" type="audio/mpeg" ></source>
+					Please update your browser to the latest version. This player should work in all current versions of Chrome, Firefox, Safari and IE.                          
+				</audio>
+				<div>         
+					<a class="listen-wf-window" href="">Pop-out Player</a><br /> 
+					<a href="http://comm.free103point9.org:8000/transmissionarts.mp3.m3u">Download the .m3u</a>
+				</div> 				            
+            </div>
+           
+            <p class="listen-contact">WAVE FARM STUDY: (518) 622-2598</p>
+            <p class="listen-email"><a href="mailto:info@wavefarm.org">info@wavefarm.org</a></p>
           </div>
         </div>
-        -->
+        <!-- -->
       </div>
       <div class="tweets-container">
         <div class="tweets">
@@ -96,6 +116,8 @@
       </div>
     </div>
     <script src="/scripts/jquery.js"></script>
+    <script src="/scripts/jquery-ui.js"></script>
     <script src="/bundle.js"></script>
+       
   </body>
 </html>

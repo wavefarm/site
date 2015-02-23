@@ -326,9 +326,18 @@ nav.wf2 {
   top: 70px;
   width: 300px;
 }
+
+.listen img {
+	width:60px;
+	position:absolute;
+	left:230px;
+}
 .listen h1 {
   font-size: 20px;
-  padding: 10px 0 20px 0;
+  padding: 20px 0 30px 0;
+  font-weight: 500;
+  width: 180px;
+  text-align:right;
 }
 .listen-handle {
   background: black;
@@ -367,10 +376,45 @@ nav.wf2 {
   background: white;
   color: black;
   margin: 10px 0;
-  padding: 10px 5px 10px 25px;
+  padding: 10px 5px 10px 35px;
 }
 .listen-wf div, .listen-wgxc div {
   font-size: 18px;
+}
+
+.listen {
+	font-size: 90%;
+}
+.listen-listennow {
+	padding: 0 0 20px;
+}
+.listen-listennow div a {
+	font-size:70%;
+}
+.listen-contact {
+	font-size: 90%;
+	}
+.listen-email {
+}
+.listen-nowplaying,
+.listen-upnext {
+	font-weight: bold;
+	margin: 10px 0 0 0;
+}
+
+.listen-nowplaying a,
+.listen-upnext a {
+	font-weight: 400;
+}
+
+.listen-news {
+		margin: 10px 0 0 0;
+}
+
+.listen audio {
+	margin: 10px 0 0 0;
+	width: 250px;
+
 }
 
 /* Main content area */
@@ -611,7 +655,7 @@ a.wgxc.slide, a.mag.slide {
   margin-top: 40px;
 }
 .day {
-  clear: both;
+  clear: left;
   margin: 0 0 40px;
   overflow: auto;
 }
@@ -640,8 +684,8 @@ a.wgxc.slide, a.mag.slide {
 }
 .broadcast-list {
   border-bottom: 2px solid #bbb;
-  margin-left: 200px;
-  padding: 0 0 30px;
+  margin-left: 160px;
+  padding: 0 40px 30px;
 }
 .broadcast-time {
   float: left;

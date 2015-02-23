@@ -1,12 +1,14 @@
 var api = require('../../api')
 var hs = require('hyperstream')
 var t = require('../../templates')
+var moment = require('moment')
 var wgxc = require('../../lib/wgxc')
 
-var idRe = /\/wgxc\/schedule\/(\w{6})/
+var idRe = /\/wgxc\/calendar\/(\w{6})/
 var wgxcTypes = [
   'broadcast',
-  'show'
+  'show',
+  'event'
 ]
 
 module.exports = function (req, res) {
@@ -19,14 +21,17 @@ module.exports = function (req, res) {
     if (wgxcTypes.indexOf(item.type) === -1) {
       return res.error(404, new Error('No type "' + item.type + '"'))
     }
-
+    
+    
+    //var datesDesc = moment(item.startDate).format('MMM D, YYYY') + ' - ' + moment(item.endDate).format('MMM D, YYYY');
     var datesDesc = wgxc.formatDates(item);
+
+    var locationName = '';
+    var locationAddress = '';
+    var imgSrc = '';
     
-    var main = item.main;
-    var show = '';
-    
-    if (item.type=='broadcast' && typeof(item.shows)!='undefined') {
-    	show =  '<a href="/wgxc/schedule/'+item.shows[0].id+'">'+ item.shows[0].main +'</a>:&nbsp;';
+    if(typeof(item.locations)!='undefined' && item.locations.length>0) {
+        var locationName = item.locations[0].main;    	
     }
     
     var iconList = wgxc.getIconList(item);   
@@ -34,26 +39,23 @@ module.exports = function (req, res) {
     for (i=0; i<iconList.length; i++) {
     	icons += '<img src="' + iconList[i] +'" />';
     }
-    
-    var detailDesc = '';
-    if (typeof(item.credit)!='undefined')
-    	detailDesc = item.credit;
-    
- 
-    
+        
+
     res.setHeader('Content-Type', 'text/html; charset=utf-8')
     t('/layout.html').pipe(hs({
       title: item.main,
       '.head': t('/wgxc/head.html'),
       '.nav': t('/wgxc/nav.html'),
-      '.main': t('/wgxc/item.html').pipe(hs({
-        '.item-main strong': show,
-        '.item-main span.main': main,
-        '.item-main span.icons': icons,
+      '.main': t('/wgxc/event.html').pipe(hs({
+        '.item-main span.main': item.main,
+        '.item-main span.icons': icons,	       	        
         //'.item-main-image': { src: imgSrc },
-        '.item-dates strong': datesDesc,
-        '.item-detail strong': detailDesc,
-        '.description': item.description
+        '.event-dates strong': datesDesc,
+        '.event-location strong': locationName,
+        //'.event-location p': locationAddress,
+        '.description': item.briefDescription,
+        '.start-date': item.startDate,
+        '.end-date': item.endDate
       }))
     })).pipe(res)
   })
