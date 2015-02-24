@@ -344,6 +344,7 @@ nav.wf2 {
 }
 .listen-handle {
   background: black;
+  cursor: pointer;
   font-size: 18px;
   position: absolute;
   width: 400px;
