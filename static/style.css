@@ -161,6 +161,7 @@ header .search input {
 .wgxc .subicon:hover {
   background-position: -68px 0px;
 }
+/*
 .wgxc-logo {
   background: url('/images/wgxc-logo.png') no-repeat;
   height: 206px;
@@ -168,6 +169,15 @@ header .search input {
   margin-left: 68px;
   position: absolute;
   top: 4px;
+}
+*/
+.wgxc-logo {
+  background: url('/images/wgxc-logo.png') no-repeat;
+  height: 100px;
+  width: 670px;
+  margin-left: 28px;
+  position: absolute;
+  top: 95px;
 }
 
 /* Primary nav */
