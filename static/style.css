@@ -119,8 +119,10 @@ header .search input {
 .mag-logo {
   background: url('/images/mag-logo.png') no-repeat;
   float: right;
-  height: 178px;
-  width: 753px;
+  height: 151px;
+  width: 665px;
+  margin-right: 134px;
+
 }
 .sub {
   float: left;
@@ -153,7 +155,7 @@ header .search input {
   float: left;
   height: 100px;
   width: 100px;
-  margin: 60px 38px 20px 0;
+  margin: 33px 38px 20px 0;
 }
 .wgxc .subicon {
   background-position: -68px -60px;
@@ -161,23 +163,14 @@ header .search input {
 .wgxc .subicon:hover {
   background-position: -68px 0px;
 }
-/*
-.wgxc-logo {
-  background: url('/images/wgxc-logo.png') no-repeat;
-  height: 206px;
-  width: 755px;
-  margin-left: 68px;
-  position: absolute;
-  top: 4px;
-}
-*/
+
 .wgxc-logo {
   background: url('/images/wgxc-logo.png') no-repeat;
   height: 100px;
   width: 670px;
   margin-left: 28px;
   position: absolute;
-  top: 95px;
+  top: 68px;
 }
 
 /* Primary nav */
