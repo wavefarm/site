@@ -13,7 +13,9 @@ module.exports = function (req, res) {
 	var title = 'WGXC 90.7-FM: Listen Now'
   
     res.setHeader('Content-Type', 'text/html; charset=utf-8')
-    t('/listen.html').pipe(res)
+    t('/listen-popout.html').pipe(hs({
+      '.listen': t('/listen.html')
+    })).pipe(res)
     /*
     t('/layout.html').pipe(hs({
       title: title,
