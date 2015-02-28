@@ -1,7 +1,8 @@
+var fs = require('fs')
 var h = require('virtual-hyperscript')
-
+var vdomify = require('vdomify')
 
 module.exports = function (state) {
-  // TODO Render listen sidebar
-  return ''
+  //return h('.listen', {innerHTML: fs.readFileSync(__dirname + '/../templates/listen.html', 'utf8')})
+  return vdomify('.listen', fs.readFileSync(__dirname + '/../templates/listen.html', 'utf8'))
 }

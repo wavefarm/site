@@ -14,6 +14,7 @@ module.exports = function (state) {
     ]),
     h('body', [
       require('./')(state),
+      require('./listen')(state),
       h('script', 'window.initialState = ' + JSON.stringify(state)),
       h('script', {src: '/scripts/jquery.js'}),
       h('script', {src: '/bundle.js'})

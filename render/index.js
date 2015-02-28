@@ -7,8 +7,7 @@ module.exports = function (state) {
     h('.main-container', [
       require('./head')(state),
       require('./nav')(state),
-      require('./main')(state),
-      require('./listen')(state)
+      require('./main')(state)
     ]),
     h('.tweets-container', require('./tweets')(state)),
     h('.footer-container', require('./footer')(state))
