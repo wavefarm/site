@@ -2,6 +2,7 @@ var api = require('../../api')
 var hs = require('hyperstream')
 var t = require('../../templates')
 var wgxc = require('../../lib/wgxc')
+var templates = require('../../templates')
 
 var idRe = /\/wgxc\/schedule\/(\w{6})/
 var wgxcTypes = [
@@ -46,6 +47,7 @@ module.exports = function (req, res) {
       title: item.main,
       '.head': t('/wgxc/head.html'),
       '.nav': t('/wgxc/nav.html'),
+      '.listen': templates('/listen.html'),      
       '.main': t('/wgxc/item.html').pipe(hs({
         '.item-main strong': show,
         '.item-main span.main': main,
