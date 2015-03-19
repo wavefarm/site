@@ -29,7 +29,8 @@
   display: none;
   height: 454px;
   width: 760px;
-  padding-bottom: 22px;	/* for info section; make it bigger for more lines */
+  margin-bottom: 22px;	/* for info section; make it bigger for more lines */
+  background-color: black;
 }
 
 .wgxc-slideshow div {

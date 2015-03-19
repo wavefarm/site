@@ -770,3 +770,13 @@ a.programs-header:hover {
 .mag.programs-header:hover .programs-icon {
   background-image: url('/images/mag-icon.png');
 }
+
+
+#scrollUp {
+  bottom: 120px;
+  right: 40px;
+  padding: 10px 10px;
+  background: #555;
+  color: #fff;
+  font-size:80%;
+}
