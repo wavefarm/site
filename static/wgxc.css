@@ -248,7 +248,7 @@
 
 .event-name img {
 	margin:0 4px 0 4px;
-	width:30px;
+	/*width:30px;*/
 	height: 30px;
 	vertical-align: middle;
 }
