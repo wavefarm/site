@@ -22,13 +22,9 @@ http.createServer(function (req, res) {
 
   helpres(res)
 
-  if (p === '/robots.txt') {
+  if (p === '/robots.txt' && env !== 'prod') {
     res.statusCode = 200
-    if (env === 'prod') {
-      return res.end('User-agent: *\nDisallow:\n')
-    } else {
-      return res.end('User-agent: *\nDisallow: /\n')
-    }
+    return res.end('User-agent: *\nDisallow: /\n')
   }
 
   // Redirect to slashless if we aren't at the root
