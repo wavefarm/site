@@ -3,6 +3,7 @@ var hs = require('hyperstream')
 var t = require('../../templates')
 var moment = require('moment')
 var wgxc = require('../../lib/wgxc')
+var templates = require('../../templates')
 
 var idRe = /\/wgxc\/calendar\/(\w{6})/
 var wgxcTypes = [
@@ -40,12 +41,12 @@ module.exports = function (req, res) {
     	icons += '<img src="' + iconList[i] +'" />';
     }
         
-
     res.setHeader('Content-Type', 'text/html; charset=utf-8')
     t('/layout.html').pipe(hs({
       title: item.main,
       '.head': t('/wgxc/head.html'),
       '.nav': t('/wgxc/nav.html'),
+      '.listen': templates('/listen.html'),
       '.main': t('/wgxc/event.html').pipe(hs({
         '.item-main span.main': item.main,
         '.item-main span.icons': icons,	       	        

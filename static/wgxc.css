@@ -9,7 +9,7 @@
 
 
 .page.wgxc.wgxc-calendar a:hover {
-  color: #cc0302;
+  color: #73c346;
 }
 
 /* new styles */
@@ -29,7 +29,8 @@
   display: none;
   height: 454px;
   width: 760px;
-  padding-bottom: 22px;	/* for info section; make it bigger for more lines */
+  margin-bottom: 22px;	/* for info section; make it bigger for more lines */
+  background-color: black;
 }
 
 .wgxc-slideshow div {
@@ -97,9 +98,10 @@
 }	
 
 
-.datepicker-container .add-event input {
-  background-color: #cc0302;
-  border: 1px solid #cc0302;
+.datepicker-container .add-event input,
+.add-event-div #add-event-submit {
+  background-color: #73c346;
+  border: 1px solid #73c346;
   border-radius: 8px;
   color: #fff;
   cursor: pointer;
@@ -108,13 +110,35 @@
   padding: 10px 35px;  
 }
 
-.ui-datepicker-group {
+
+
+.ui-datepicker-group,
+#ui-datepicker-div {
 	background-color:white;
 	border: 1px solid black;
 	margin-bottom: 5px;
  	border-radius: 8px;
  }
 
+#ui-datepicker-div {
+	color: black;
+	width: 200px;
+}
+
+#ui-datepicker-div .ui-datepicker-prev,
+#ui-datepicker-div .ui-datepicker-next  {
+	color:white;
+	background-color: #73c346;
+ 	border-radius: 8px;
+ 	
+}
+
+
+#ui-datepicker-div .ui-datepicker-prev span,
+#ui-datepicker-div .ui-datepicker-next span {
+	color: white;
+ 	text-indent: 0px;
+}
 
 .ui-datepicker-group {
 	width: 100%;
@@ -122,13 +146,14 @@
 .datepicker-schedule .ui-datepicker-today a {
 	color: #1AB7EA;
 }
-.datepicker-calendar .ui-datepicker-today a {
-	color: #cc0302;
+.datepicker-calendar .ui-datepicker-today a,
+#ui-datepicker-div .ui-datepicker-today a {
+	color: #73c346;
 }
 
 .datepicker-calendar .ui-datepicker-current-day a,
 .datepicker-calendar .datepicker-controls a {
-	background-color: #cc0302;
+	background-color: #73c346;
 }
 .datepicker-schedule .ui-datepicker-current-day a,
 .datepicker-schedule .datepicker-controls a  {
@@ -141,7 +166,7 @@
 }
 
 .datepicker-calendar .datepicker-controls a:hover {
-	background-color:#a70000;
+	background-color:#5f9235;
 }
 .datepicker-schedule .datepicker-controls a:hover {
 	background-color:#096E8C;
@@ -168,7 +193,7 @@
 	border: 1px solid #1AB7EA;
 }
 .datepicker-calendar .datepicker-controls a {
-	border: 1px solid #cc0302;
+	border: 1px solid #73c346;
 	}
 
 .datepicker-today {
@@ -179,6 +204,8 @@
 
 }
 
+
+
 .calendar {
 	margin-top:20px;
 	margin-right:10px;
@@ -186,10 +213,10 @@
 	/*border-top:2px solid #bbb;*/
 }
 .calendar .calendar-card-topbar {
-  background-color: #990303;
+  background-color: #5f9235;
 }
 .calendar .calendar-card {
-  background-color: #cc0302;
+  background-color: #73c346;
 }
 
 .calendar .calendar-card .time {
@@ -202,8 +229,8 @@
 }
 
 .wgxc-calendar .more input {
-  background-color: #cc0302;
-  border: 1px solid #cc0302;
+  background-color: #73c346;
+  border: 1px solid #73c346;
 }
 
 .event {
@@ -221,7 +248,7 @@
 
 .event-name img {
 	margin:0 4px 0 4px;
-	width:30px;
+	/*width:30px;*/
 	height: 30px;
 	vertical-align: middle;
 }
@@ -244,7 +271,8 @@
   line-height:32px;
   padding: 0px;
 }
-.event-name span {
+.event-name span,
+.event-name a {
   cursor: pointer;
 }
 
@@ -300,6 +328,36 @@
 	border-bottom: 2px solid #bbb;
 }
 
+
+
+/* Calendar Page: Add Event Form */
+
+.add-event-div {
+	display:none;
+}
+.add-event-div label {
+	margin-top:10px;
+	display: block;
+	font-size: 90%;
+}
+
+.add-event-div .help_text {
+	margin-top:2px;
+	font-size: 70%;
+}
+
+label.error {
+	margin-top:2px;
+	color: red;
+}
+
+#add-event-success h2 {
+	margin-top:20px;
+	color:#73c346;
+}
+
+
+
 /* Individual Item and Event Pages */
 
 .wgxc-event h1.item-main,
@@ -335,7 +393,7 @@
 /* Archive File List at bottom of item and event pages */
 
 .item-archive-section h2 span {
-	/*color:#cc0302;*/
+	/*color:#73c346;*/
 	font-size: 14px;
 	padding-left:10px;
 	vertical-align: top;
