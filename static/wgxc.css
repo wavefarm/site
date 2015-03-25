@@ -271,7 +271,8 @@
   line-height:32px;
   padding: 0px;
 }
-.event-name span {
+.event-name span,
+.event-name a {
   cursor: pointer;
 }
 
