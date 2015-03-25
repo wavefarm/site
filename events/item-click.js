@@ -7,7 +7,7 @@ module.exports = function (ev) {
   api.get(ev.currentTarget.id, function (err, item) {
     if (err) return console.error(err)
     
-    
+    /*
     if (item.type.indexOf('show')!=-1 || item.type.indexOf('broadcast')!=-1) {
     	window.location.href='/wgxc/schedule/'+item.id
     	return
@@ -15,8 +15,8 @@ module.exports = function (ev) {
     	window.location.href='/wgxc/calendar/'+item.id
     	return
     } 
+    */
     		
-
     state.scrollX.set(window.scrollX)
     state.scrollY.set(window.scrollY)
     history.replaceState(state(), 'scrolled results')
