@@ -24,6 +24,7 @@ module.exports = function (req, res) {
     var datesDesc = wgxc.formatDates(item);
     
     var main = item.main;
+    var mainSubtitle = typeof(item.subtitle)!='undefined'?item.subtitle:'';
     var show = '';
     
     if (item.type=='broadcast' && typeof(item.shows)!='undefined') {
@@ -36,12 +37,8 @@ module.exports = function (req, res) {
     	icons += '<img src="' + iconList[i] +'" />';
     }
     
-    var detailDesc = '';
-    if (typeof(item.credit)!='undefined')
-    	detailDesc = item.credit;
-    
- 
-    
+    var detailDesc = typeof(item.credit)!='undefined'?item.credit:'';
+     
     res.setHeader('Content-Type', 'text/html; charset=utf-8')
     t('/layout.html').pipe(hs({
       title: item.main,
@@ -51,11 +48,12 @@ module.exports = function (req, res) {
       '.main': t('/wgxc/item.html').pipe(hs({
         '.item-main strong': show,
         '.item-main span.main': main,
+        '.item-main span.subtitle': mainSubtitle,                
         '.item-main span.icons': icons,
         //'.item-main-image': { src: imgSrc },
         '.item-dates strong': datesDesc,
         '.item-detail strong': detailDesc,
-        '.description': item.description
+        '.description': typeof(item.description)!='undefined'?item.description:''
       }))
     })).pipe(res)
   })

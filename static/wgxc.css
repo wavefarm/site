@@ -370,6 +370,10 @@ label.error {
 	font-weight:bold;
 }
 
+.wgxc-item h1.item-main span.subtitle {
+	display:block;
+}
+
 .wgxc-item h1.item-main img,
 .wgxc-event h1.item-main img  {
 	margin: 0 0 3px 5px;
