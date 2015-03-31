@@ -38,6 +38,7 @@ module.exports = function (req, res) {
     }
     
     var detailDesc = typeof(item.credit)!='undefined'?item.credit:'';
+    var detail2Desc = typeof(item.airtime)!='undefined'?item.airtime:'';
      
     res.setHeader('Content-Type', 'text/html; charset=utf-8')
     t('/layout.html').pipe(hs({
@@ -53,6 +54,7 @@ module.exports = function (req, res) {
         //'.item-main-image': { src: imgSrc },
         '.item-dates strong': datesDesc,
         '.item-detail strong': detailDesc,
+        '.item-detail2 strong': detail2Desc,
         '.description': typeof(item.description)!='undefined'?item.description:''
       }))
     })).pipe(res)
