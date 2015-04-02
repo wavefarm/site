@@ -30,7 +30,11 @@
   height: 454px;
   width: 760px;
   margin-bottom: 22px;	/* for info section; make it bigger for more lines */
-  background-color: black;
+  background-size: contain; 
+	background-position: center; 
+	background-color: rgba(0, 0, 0, .8);;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;	
 }
 
 .wgxc-slideshow div {
@@ -65,6 +69,7 @@
 	width: 50px;
 	left: 0px;
 	top: 0px;
+	cursor: pointer;
 }
 
 #wgxc-slideshow-next {
@@ -73,6 +78,7 @@
 	width: 50px;
 	right: 0px;
 	top: 0px;
+	cursor: pointer;
 }
 
 
