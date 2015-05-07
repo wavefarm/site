@@ -750,6 +750,16 @@ a.programs-header:hover {
   margin: -10px 0 0 -70px;
   width: 45px;
 }
+
+.ta-logo {
+  background: url('/images/ta-logo.gif') no-repeat;
+  width: 760px;
+	height: 100px;
+  margin-left: 28px;
+  position: absolute;
+  top: 68px;
+}
+
 .ta.programs-header .programs-icon {
   background-image: url('/images/ta-icon-light.png');
   margin-left: -72px;
