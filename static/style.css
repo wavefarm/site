@@ -630,6 +630,7 @@ a.wgxc.slide, a.mag.slide {
 }
 
 /* WGXC pages */
+
 /* TODO Split out subsite styles into their own CSS/LESS */
 .page.wgxc a:hover {
   color: #1AB7EA;
@@ -654,84 +655,6 @@ a.wgxc.slide, a.mag.slide {
 }
 .side.wgxc a:hover {
   color: #1AB7EA;
-}
-
-/* WGXC Schedule */
-.schedule {
-  margin-top: 40px;
-}
-.day {
-  clear: left;
-  margin: 0 0 40px;
-  overflow: auto;
-}
-.calendar-card-topbar {
-  background-color: #096E8C;
-  border-radius: 8px 8px 0 0;
-  height: 12px;
-  width: 120px;
-}
-.calendar-card {
-  background-color: #1AB7EA;
-  border-radius: 8px;
-  color: #fff;
-  float: left;
-  font-weight: 400;
-  text-align: center;
-  width: 120px;
-}
-.calendar-card .weekday {
-  font-size: 12px;
-  margin: 6px 0 0 0;
-}
-.calendar-card .monthday {
-  font-size: 48px;
-  margin: 10px 0 40px;
-}
-.broadcast-list {
-  border-bottom: 2px solid #bbb;
-  margin-left: 160px;
-  padding: 0 40px 30px;
-}
-.broadcast-time {
-  float: left;
-  text-align: right;
-  width: 80px;
-}
-.broadcast-info {
-  border-left: 1px dashed #000;
-  margin-left: 100px;
-  padding: 0 0 20px 20px;
-}
-.show-name {
-  font-size: 22px;
-}
-.show-name span {
-  cursor: pointer;
-}
-.broadcast-name {
-  padding: 0 0 15px;
-}
-.broadcast-name span {
-  cursor: pointer;
-}
-.broadcast-description {
-  display: none;
-}
-.broadcast-description.current {
-  display: block;
-}
-.wgxc .more {
-  text-align: center;
-}
-.wgxc .more input {
-  background-color: #1AB7EA;
-  border: 1px solid #1AB7EA;
-  border-radius: 8px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 20px;
-  padding: 10px 40px;
 }
 
 /* Programs page */

@@ -12,7 +12,7 @@ module.exports = function (ev) {
     	window.location.href='/wgxc/schedule/'+item.id
     	return
     } else if (item.type.indexOf('event')!=-1) {
-    	window.location.href='/wgxc/calendar/'+item.id
+    	window.location.href='/wgxc/events/'+item.id
     	return
     } 
     */

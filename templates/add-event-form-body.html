@@ -1,0 +1,21 @@
+				<div id="error_message"></div>
+	
+		    <form method="post" id="add-event-form" class="cmxform">				
+					<!-- 
+					<div style='display:none'>
+			    	<input type='hidden' name='csrfmiddlewaretoken' value='4287214a2a15fb8535423ac87df26737' />
+			    </div>
+			     -->		    
+			    <label for="id_email">Email:</label> <input type="email" name="email" id="id_email" required /><p class="help_text">For internal use only. Your email will not be published.</p>
+					<label for="id_event_name">Event name:</label> <input type="text" name="name" id="id_event_name" required />
+					<label for="id_description">Location &amp; Description (150 words or less):</label> <textarea id="id_description" rows="10" cols="40" name="briefDescription"></textarea>
+					<label for="id_admission">Admission:</label> <input type="text" name="admission" id="id_admission" />
+					<label for="id_url">URL:</label> <input type="url" name="url" id="id_url" />
+					<label for="id_start_date">Start date:</label> <input type="text" name="startDate" id="id_start_date" placeholder="mm/dd/yyyy" required/>
+					<label for="id_end_date">End date:</label> <input type="text" name="endDate" id="id_end_date" placeholder="mm/dd/yyyy" /><p class="help_text">Leave blank if same as start date.</p>
+					<label for="id_start_time">Start time:</label> <input type="time" name="startTime" id="id_start_time" /><p class="help_text">"8:30am", for example, or "10:01pm". Leave this blank if it's an all-day event.</p>
+					<label for="id_end_time">End time:</label> <input type="time" name="endTime" id="id_end_time" /><p class="help_text">Same format as start time.</p>		    
+				  <div class="add-event">
+			    	<input id="add-event-submit" name="add-event" type="button" value="Add An Event" />
+					</div>    
+		    </form>	
