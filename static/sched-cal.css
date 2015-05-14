@@ -551,47 +551,6 @@ label.error {
 }
 
 
-/*
-.datepicker-schedule .ui-datepicker-today a,
-.datepicker-calendar .ui-datepicker-today a,
-#ui-datepicker-div .ui-datepicker-today a {
-	color: #ca0b15;
-}
-
-.datepicker-calendar .ui-datepicker-current-day a,
-.datepicker-calendar .datepicker-controls a,
-.datepicker-schedule .ui-datepicker-current-day a,
-.datepicker-schedule .datepicker-controls a  {
-	background-color: #ca0b15;
-}
-.datepicker-calendar .datepicker-controls a:hover,
-.datepicker-schedule .datepicker-controls a:hover {
-	background-color:#98070e;
-}
-
-
-.datepicker-schedule .datepicker-controls a {
-	border: 1px solid #1AB7EA;
-}
-.datepicker-calendar .datepicker-controls a {
-	border: 1px solid #73c346;
-	}
-
-.wgxc.calendar-page .more input {
-  background-color: #73c346;
-  border: 1px solid #73c346;
-}
-
-#add-event-success h2 {
-	margin-top:20px;
-	color:#73c346;
-}
-
-
-
-*/
-
-
 
 
 

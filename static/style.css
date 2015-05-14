@@ -647,15 +647,32 @@ a.wgxc.slide, a.mag.slide {
   width: 200px;
 }
 .side h3 {
-  color: #6fb43f;
   font-family: Roboto, Arial, sans-serif;
   font-size: 22px;
   font-weight: bold;
   margin: 20px 0 10px 0;
 }
+.side.wgxc h3 {
+	  color: #6fb43f;	
+}
 .side.wgxc a:hover {
   color: #1AB7EA;
 }
+
+
+
+/* TA */
+
+.page.ta a:hover {
+  color: #ffcd32;
+}
+.side.ta h3 {
+	  color: #ffcd32;	
+}
+.side.ta a:hover {
+  color: #ffcd32;
+}
+
 
 /* Programs page */
 a.programs-header {
