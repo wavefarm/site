@@ -46,12 +46,21 @@ http.createServer(function (req, res) {
   idMatch = /^\/archive\/(\w{6})$/.exec(p)
   if (idMatch) return require('./routes/archive/item')(req, res, idMatch[1])
 
-  // WGXC broadcasts and shows
-  if (/^\/wgxc\/schedule\/\w{6}$/.test(p)) return require('./routes/wgxc/item')(req, res)
+    
+  // WGXC/TA broadcasts and shows
+  if (/^(\/\w+)?\/schedule\/\w{6}$/.test(p)) return require('./routes/item')(req, res)
 
-  // WGXC events
-  if (/^\/wgxc\/calendar\/\w{6}$/.test(p)) return require('./routes/wgxc/event')(req, res)
+  // WGXC/TA event
+  if (/^(\/\w+)?\/calendar\/\w{6}$/.test(p)) return require('./routes/event')(req, res)
+  
+  // Main/WGXC/TA Calendar pages  
+  if (/^(\/\w+)?\/calendar/.test(p)) return require('./routes/calendar')(req, res)
+  if (/^(\/\w+)?\/calendar\/\d{4}-\d{2}-\d{2}$/.test(p)) return require('./routes/calendar')(req, res)
 
+  // WGXC/TA Schedule pages  
+  if (/^(\/\w+)\/schedule$/.test(p)) return require('./routes/schedule')(req, res)
+  if (/^(\/\w+)\/schedule\/\d{4}-\d{2}-\d{2}$/.test(p)) return require('./routes/schedule')(req, res)
+  	
   // Listen Live Popup Window
   if (/^\/listen\/\w{4}$/.test(p)) return require('./routes/listen')(req, res)
 
@@ -65,16 +74,7 @@ http.createServer(function (req, res) {
     nav = ''
   }
 
-  // handle date params for schedule and calendar
-  if (/^\/wgxc\/calendar\/\d{4}-\d{2}-\d{2}$/.test(p)) {
-	  main = templates('/wgxc/calendar.html')
-  }
-  else if (/^\/wgxc\/schedule\/\d{4}-\d{2}-\d{2}$/.test(p)) {
-	  main = templates('/wgxc/schedule.html')
-  }
-  else {
-  	main = templates(p + '.html') || templates(p + '/index.html')
-  }
+	main = templates(p + '.html') || templates(p + '/index.html')
 
   // No template found so check static
   if (!main) return mount(req, res)
