@@ -7,9 +7,8 @@ module.exports = function (req, res) {
     hostname: u.hostname,
     port: u.port,
     auth: u.auth,
-    path: u.path + req.parsedUrl.path.replace('/api/', '')
-    // Only allow GET requests for now
-    // method: req.method,
+    path: u.path + req.parsedUrl.path.replace('/api/', ''),
+    method: req.method,
     // Do we need to pass headers?
     // headers: req.headers
   }, function (clientRes) {
