@@ -316,6 +316,9 @@
 .event-description-long {
 	display:none;
 }
+.event-description-long img {
+	margin: 10px 0;
+}
 
 .event-description.current {
   display: block;
