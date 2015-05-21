@@ -19,16 +19,26 @@ function getSites (item) {
   })
 }
 
+function getLink (item) {
+  if (item.type == 'broadcast' || item.type == 'show') {
+    return {href: '/wgxc/schedule/' + item.id}
+  }
+  if (item.type == 'event' && item.sites.indexOf('wgxc') != -1) {
+    return {href: '/wgxc/calendar/' + item.id}
+  }
+  return {
+    href: '/archive/' + item.id,
+    'ev-click': itemClick
+  }
+}
+
 module.exports = function (item) {
   var desc = item.description || item.briefDescription || item.longDescription || ''
   // Strip HTML tags from description for excerpt display
   desc = desc.replace(/<[^>]*>/g, '')
   return h('.result', [
     h('.item-subsites', getSites(item)),
-    h('a.item-link#' + item.id, {
-      href: '/archive/' + item.id,
-      'ev-click': itemClick
-    }, [
+    h('a.item-link#' + item.id, getLink(item), [
       h('h3', [
         h('span.item-main', item.main),
         ' ',
