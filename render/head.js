@@ -8,7 +8,7 @@ module.exports = function (state) {
       h('.subtext', h('img', {alt: 'TRANSMISSION ARTS', src: '/images/ta-icon-text.png'})),
       h('.subicon')
     ]),
-    h('a.wgxc.sub', {href: 'http://wgxc.org', target: '_blank'}, [
+    h('a.wgxc.sub', {href: '/wgxc'}, [
       h('.subtext', h('img', {alt: 'WGXC 90.7-FM', src: '/images/wgxc-icon-text.png'})),
       h('.subicon')
     ]),
