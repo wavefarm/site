@@ -76,8 +76,11 @@ http.createServer(function (req, res) {
 
 	main = templates(p + '.html') || templates(p + '/index.html')
 
-  // No template found so check static
-  if (!main) return mount(req, res)
+  // No template found so check static on dev, otherwise 404
+  if (!main) {
+    if (env !== 'prod') return mount(req, res)
+    else return res.error(404, new Error('Not Found'))
+  }
 
   res.setHeader('Content-Type', 'text/html; charset=utf-8')
 
