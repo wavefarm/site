@@ -1,4 +1,4 @@
-var fs = require('fs')
+var fs = require('graceful-fs')
 var h = require('virtual-hyperscript')
 var vdomify = require('vdomify')
 
