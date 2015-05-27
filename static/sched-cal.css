@@ -292,12 +292,14 @@
 	font-size: 18px;
 	line-height:22px;
 }
-.event-location strong {
+.event-location strong,
+.item-location strong {
 	font-weight: 500;
 	font-size: 18px;
 	line-height:22px;
 }
-.event-location p {
+.event-location p,
+.item-location p {
 	margin: 0px;
 	padding: 0px;
 	font-size: 18px;

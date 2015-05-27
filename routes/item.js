@@ -24,6 +24,7 @@ module.exports = function (req, res) {
     }
 
     var datesDesc = util.formatDates(item);    
+    var locationName = '';
     var main = item.main;
     var mainSubtitle = typeof(item.subtitle)!='undefined'?item.subtitle:'';
     var show = '';
@@ -32,6 +33,10 @@ module.exports = function (req, res) {
     	show =  '<a href="'+site+'/schedule/'+item.shows[0].id+'">'+ item.shows[0].main +'</a>:&nbsp;';
     }
     
+    if(typeof(item.locations)!='undefined' && item.locations.length>0) {
+      var locationName = item.locations[0].main;    	
+    }
+        
     var iconList = util.getIconList(item);   
     var icons = '';
     for (i=0; i<iconList.length; i++) {
@@ -54,6 +59,7 @@ module.exports = function (req, res) {
         '.item-main span.icons': icons,
         //'.item-main-image': { src: imgSrc },
         '.item-dates strong': datesDesc,
+        '.item-location strong': locationName,
         '.item-detail strong': detailDesc,
         '.item-detail2 strong': detail2Desc,
         '.description': typeof(item.description)!='undefined'?item.description:''

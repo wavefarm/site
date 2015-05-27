@@ -49,8 +49,7 @@ module.exports = function (req, res) {
         '.item-main span.icons': icons,	       	        
         //'.item-main-image': { src: imgSrc },
         '.event-dates strong': datesDesc,
-        '.event-location strong': locationName,
-        //'.event-location p': locationAddress,
+        '.item-location strong': locationName,
         '.description': item.briefDescription,
         '.start-date': item.startDate,
         '.end-date': item.endDate
