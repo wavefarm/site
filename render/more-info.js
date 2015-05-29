@@ -1,6 +1,7 @@
 var h = require('virtual-hyperscript')
 
 module.exports = function (item) {
+  if (!item.sites) item.sites = []
   return h('ul.more-info',
     item.sites.map(function (site) {
       if (site === 'transmissionarts') {
