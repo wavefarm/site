@@ -4,7 +4,9 @@ module.exports = function (item) {
   if (!item.sites) item.sites = []
   return h('ul.more-info',
     item.sites.map(function (site) {
-      if (site === 'transmissionarts') {
+      if (site === 'transmissionarts' &&
+          item.categories &&
+          item.categories.indexOf('Transmission Artist') !== -1) {
         return h('li', [
           'More info at ',
           h('a', {
