@@ -89,7 +89,8 @@ http.createServer(function (req, res) {
     '.head': head,
     '.nav': nav,
     '.main': main,
-    '.listen': templates('/listen.html')
+    '.listen': templates('/listen.html'),
+    '.announce': templates('/announce.html')
   })).pipe(res)
 }).listen(port, function () {
   console.log('Listening on port', port)
