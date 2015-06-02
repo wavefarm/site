@@ -15,11 +15,13 @@
   height: 454px;
   width: 760px;
   margin-bottom: 22px;	/* for info section; make it bigger for more lines */
-  background-size: contain; 
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;     
 	background-position: center; 
 	background-color: rgba(0, 0, 0, .8);;
-  background-repeat-x: no-repeat;
-  background-repeat-y: no-repeat;	
+ 	background-repeat: no-repeat;	
 }
 
 .wgxc-slideshow div {
