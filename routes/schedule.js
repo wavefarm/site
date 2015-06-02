@@ -35,6 +35,7 @@ module.exports = function (req, res) {
     '.head': t(sitePath+'/head.html'),
     '.nav': t(sitePath+'/nav.html'),
     '.listen': templates('/listen.html'),
+    '.announce': templates('/announce.html'),
     '.main': t(sitePath+'/schedule.html').pipe(hs({
       '.datepicker-container': t('/datepicker-container-body.html'),
     }))

@@ -52,6 +52,7 @@ module.exports = function (req, res) {
       '.head': t(site+'/head.html'),
       '.nav': t(site+'/nav.html'),
       '.listen': templates('/listen.html'),      
+      '.announce': templates('/announce.html'),
       '.main': t('/program-broadcast.html').pipe(hs({
         '.item-main strong': show,
         '.item-main span.main': main,
