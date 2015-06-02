@@ -391,7 +391,7 @@ label.error {
 .wgxc-item h1.item-main img,
 .wgxc-event h1.item-main img  {
 	margin: 0 0 3px 5px;
-	width: 34px;
+	/*width: 34px;*/
 	height: 34px;
 	vertical-align: text-bottom;
 }
