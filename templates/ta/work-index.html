@@ -1,0 +1,44 @@
+<link href="/artists-works.css" rel="stylesheet" />
+
+<div class="page ta works-page">
+
+
+	<div class="works-container">
+	
+	 <h1>WORKS</h1>
+	 <p>Some descriptive copy.<br />Maybe some more</p>
+	 <p>browse works alphabetically below</p>
+	 <p>or search the archive in upper right by keyword, artist name, or title</p>
+	 <p>Click on any work below for details</p>
+	 
+	  <!-- Artists will be filled in client-side -->
+	  <div class="works">
+	  	
+				<div class="alpha" id="alpha">
+          <div class="top arrow move" style="left: 2.01138187504871px; display: block;"><img src="/images/highlightarrow_top.gif" width="20" height="15"></div>
+          <nav><a href="/ta/works/a">A</a><a href="/ta/works/b">B</a><a href="/ta/works/c">C</a><a href="/ta/works/d">D</a><a href="/ta/works/e">E</a><a href="/ta/works/f">F</a><a href="/ta/works/g">G</a><a href="/ta/works/h">H</a><a href="/ta/works/i">I</a><a href="/ta/works/j">J</a><a href="/ta/works/k">K</a><a href="/ta/works/l">L</a><a href="/ta/works/m">M</a><a href="/ta/works/n">N</a><a href="/ta/works/o">O</a><a href="/ta/works/p">P</a><a href="/ta/works/q">Q</a><a href="/ta/works/r">R</a><a href="/ta/works/s">S</a><a href="/ta/works/t">T</a><a href="/ta/works/u">U</a><a href="/ta/works/v">V</a><a href="/ta/works/w">W</a><a href="/ta/works/x">X</a><a href="/ta/works/y">Y</a><a href="/ta/works/z">Z</a><a href="/ta/works/0">0-9</a></nav>
+          <div class="bottom arrow" style="left: 2.01138187504871px; display: block;"><img src="/images/highlightarrow_bottom.gif" alt="" width="20" height="15"></div>
+        </div>
+        
+       	<form method="get" action="/ta/works">
+        	<input id="search-input" name="q" placeholder="SEARCH BY WORK TITLE" size="40"/>
+        	<input type="submit" style="display:none;" />
+        </form>
+	  </div>
+
+		<h2 class="letter-title"></h2>
+
+		<div class="works-list">		
+      <div class="work-info">
+        <h3 class="work-name"><span></span></h3>
+        <div class="work-description">
+	        <div class="work-dates"><strong></strong></div>
+	        <div class="work-credit"><strong></strong></div>
+          <p></p>
+          <div class="actions"><a class="more" href="">more details</a></div>
+        </div>
+      </div>		
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,55 @@
+
+.artists-list,
+.works-list {
+	margin-top:10px;
+}
+
+.alpha a {
+  display: inline-block;
+  padding: 0 2px;
+}
+
+.alpha .top.arrow {
+  margin: 0 0 -5px 0;
+}
+.arrow {
+  display: none;
+  position: relative;
+  width: 20px;
+}
+
+.page h2.letter-title {
+	font-size:200%;
+}
+
+.artist-info,
+.work-info {
+  padding: 15px 0 15px 0px;
+}
+
+.artist-name,
+.work-name {
+	font-size: 120%;
+  padding: 0 0 5px 0;
+  cursor: pointer;
+  
+}
+
+.work-dates,
+.work-credit {
+	padding: 1px 0;
+}
+
+
+.artist-description,
+.work-description  {
+  display: none;
+}
+
+.ta-item .item-main {
+	margin-bottom:0px;
+}
+.ta-item .description {
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
+}
