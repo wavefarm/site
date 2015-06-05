@@ -213,6 +213,25 @@ nav.secondary.wgxc a {
   display: none;
 }
 
+/* TA secondary nav */
+nav.secondary.ta {
+	display: none;
+	background: #fff;
+  border-bottom: 1px solid black;
+  font-size: 16px;
+  margin: 0px 0 0 0;
+  min-width: 960px;
+  padding: 5px 0;
+  text-align: center;
+}
+nav.secondary.ta a {
+  color: black;
+}
+nav.secondary.ta a:hover {
+  color: #ffcd32;
+}
+
+
 /* Tweets */
 .tweets-container {
   background: #FBF9FA;
@@ -691,10 +710,11 @@ a.programs-header:hover {
 }
 
 .ta-logo {
-  background: url('/images/ta-logo.gif') no-repeat;
+  background: url('/images/ta-logo.png') no-repeat;
   width: 760px;
-	height: 100px;
+	height: 78px;
   margin-left: 28px;
+  margin-top: 14px;
   position: absolute;
   top: 68px;
 }
@@ -729,8 +749,6 @@ a.programs-header:hover {
   color: #fff;
   font-size:80%;
 }
-
-
 
 
 /* Announce slider */
@@ -807,5 +825,28 @@ a.programs-header:hover {
 
 .announce-buttons {
 	margin-left:30px;
+}
+
+
+/* Related Items */
+
+.related-item-section h2 span {
+	/*color:#73c346;*/
+	font-size: 14px;
+	padding-left:10px;
+	vertical-align: top;
+}
+.related-item-list {
+	display: none;
+	clear:both;
+}	
+.related-item {
+	margin: 0 0 10px 20px;
+}
+
+.related-item p {
+	font-size:90%;
+	line-height: 95%;
+	margin: 0px 0 3px 0;
 }
 

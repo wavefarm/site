@@ -61,6 +61,14 @@ http.createServer(function (req, res) {
   if (/^(\/\w+)\/schedule$/.test(p)) return require('./routes/schedule')(req, res)
   if (/^(\/\w+)\/schedule\/\d{4}-\d{2}-\d{2}$/.test(p)) return require('./routes/schedule')(req, res)
   	
+  // TA Artists and Works pages  
+  if (/^\/ta\/artists$/.test(p)) return require('./routes/ta/artist-index')(req, res)
+  if (/^\/ta\/artists\/\w{1}$/.test(p)) return require('./routes/ta/artist-index')(req, res)
+  if (/^\/ta\/artists\/\w{6}$/.test(p)) return require('./routes/ta/artist')(req, res)
+  if (/^\/ta\/works$/.test(p)) return require('./routes/ta/work-index')(req, res)
+  if (/^\/ta\/works\/\w{1}$/.test(p)) return require('./routes/ta/work-index')(req, res)
+  if (/^\/ta\/works\/\w{6}$/.test(p)) return require('./routes/ta/work')(req, res)
+
   // Listen Live Popup Window
   if (/^\/listen\/\w{4}$/.test(p)) return require('./routes/listen')(req, res)
 

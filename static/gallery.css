@@ -3,14 +3,14 @@
 /* wgxc home slideshow */
 
 
-.wgxc-slideshow {
+.wf-slideshow {
   border: 1px solid black;
   float: left;
   margin: 0 0 0 100px;
   position: relative;
   text-align: right;
 }
-.wgxc-slideshow a {
+.wf-slideshow a {
   display: none;
   height: 454px;
   width: 760px;
@@ -24,21 +24,21 @@
  	background-repeat: no-repeat;	
 }
 
-.wgxc-slideshow div {
+.wf-slideshow div {
   font-weight: 400;
   padding: 4px 5px;
   position: absolute;
 
 }
 
-.wgxc-slideshow .slide-credit {
+.wf-slideshow .slide-credit {
   right: 0px;
    background: rgba(256, 256, 256, .8);
   color: #000;
   bottom: 22px;
   font-size: 10px;
 }
-.wgxc-slideshow .slide-info {
+.wf-slideshow .slide-info {
   background: rgba(0, 0, 0, .7);
   bottom: 0px;
   color: #fff;
@@ -50,7 +50,7 @@
 }
 
 
-#wgxc-slideshow-prev {
+#wf-slideshow-prev {
 	position:absolute;
 	height: 100%;
 	width: 50px;
@@ -59,7 +59,7 @@
 	cursor: pointer;
 }
 
-#wgxc-slideshow-next {
+#wf-slideshow-next {
 	position:absolute;
 	height: 100%;
 	width: 50px;
