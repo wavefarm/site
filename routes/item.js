@@ -2,7 +2,6 @@ var api = require('../api')
 var hs = require('hyperstream')
 var t = require('../templates')
 var util = require('../lib/util')
-var templates = require('../templates')
 
 var idRe = /(\/\w+)\/schedule\/(\w{6})/
 var validTypes = [
@@ -51,8 +50,9 @@ module.exports = function (req, res) {
       title: item.main,
       '.head': t(site+'/head.html'),
       '.nav': t(site+'/nav.html'),
-      '.listen': templates('/listen.html'),      
+      '.listen': t('/listen.html'),      
       '.main': t('/program-broadcast.html').pipe(hs({
+      	'.related-items-container': t('/related-items.html'),
         '.item-main strong': show,
         '.item-main span.main': main,
         '.item-main span.subtitle': mainSubtitle,                

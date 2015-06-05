@@ -3,7 +3,6 @@ var hs = require('hyperstream')
 var t = require('../templates')
 var moment = require('moment')
 var util = require('../lib/util')
-var templates = require('../templates')
 
 var idRe = /(\/\w+)?\/calendar\/(\w{6})/
 var validTypes = [
@@ -43,8 +42,9 @@ module.exports = function (req, res) {
       title: item.main,
       '.head': t(site+'/head.html'),
       '.nav': t(site+'/nav.html'),
-      '.listen': templates('/listen.html'),
+      '.listen': t('/listen.html'),
       '.main': t('/event.html').pipe(hs({
+      	'.related-items-container': t('/related-items.html'),
         '.item-main span.main': item.main,
         '.item-main span.icons': icons,	       	        
         //'.item-main-image': { src: imgSrc },

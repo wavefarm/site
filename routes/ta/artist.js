@@ -29,6 +29,7 @@ module.exports = function (req, res) {
       '.nav': t('/ta/nav.html'),
       '.listen': t('/listen.html'),      
       '.main': t('/ta/artist.html').pipe(hs({
+      	'.related-items-container': t('/related-items.html'),
         '.item-main span.main': main,
         //'.item-main-image': { src: imgSrc },
         '.description': typeof(item.bio)!='undefined'?item.bio:''

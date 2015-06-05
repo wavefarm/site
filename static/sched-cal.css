@@ -408,34 +408,8 @@ label.error {
 	
 }
 
-/* Archive File List at bottom of item and event pages */
-
-.item-archive-section h2 span {
-	/*color:#73c346;*/
-	font-size: 14px;
-	padding-left:10px;
-	vertical-align: top;
-}
-.item-archive-entry-list {
-	display: none;
-	clear:both;
-}	
-.item-archive-entry {
-	margin: 0 0 10px 20px;
-}
-
-.item-archive-entry p {
-	font-size:90%;
-	line-height: 95%;
-	margin: 0px 0 3px 0;
-}
-
-
-
 
 /* Color schemes */
-
-
 
 .wgxc.calendar-page .calendar-card-topbar {
   background-color: #5f9235;

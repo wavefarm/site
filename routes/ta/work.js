@@ -33,6 +33,7 @@ module.exports = function (req, res) {
       '.nav': t('/ta/nav.html'),
       '.listen': t('/listen.html'),      
       '.main': t('/ta/work.html').pipe(hs({
+      	'.related-items-container': t('/related-items.html'),
         '.item-main span.main': main,
         //'.item-main-image': { src: imgSrc },
         '.item-credit strong': credit,                
