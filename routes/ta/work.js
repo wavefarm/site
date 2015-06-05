@@ -20,8 +20,6 @@ module.exports = function (req, res) {
       return res.error(404, new Error('No type "' + item.type + '"'))
     }
 
-    console.log(item);
-    
     var main = item.main;
     var datesDesc = util.formatArchiveDate(item);    
     var credit = item.credit || '';
