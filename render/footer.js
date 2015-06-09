@@ -31,9 +31,9 @@ module.exports = function (state) {
       ]),
       h('div', [
         '· ',
-        h('span.studio-name', 'WGXC Catskill'),
+        h('span.studio-name', 'WGXC Satellite'),
         ' · ',
-        h('span.studio-info', '344 Main Street Catskill, NY 12414 (518) 291-9294'),
+        h('span.studio-info', 'currently at the Catskill Public Library'),
         ' ·'
       ])
     ]),
