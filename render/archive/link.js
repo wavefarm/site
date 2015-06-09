@@ -23,7 +23,7 @@ function getLink (item) {
   if (item.type == 'broadcast' || item.type == 'show') {
     return {href: '/wgxc/schedule/' + item.id}
   }
-  if (item.type == 'event' && item.sites.indexOf('wgxc') != -1) {
+  if (item.type == 'event' && item.sites && item.sites.indexOf('wgxc') != -1) {
     return {href: '/wgxc/calendar/' + item.id}
   }
   return {
