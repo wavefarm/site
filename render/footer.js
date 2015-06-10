@@ -6,7 +6,7 @@ module.exports = function (state) {
     h('nav.wf1', [
       h('a', {href: '/about'}, 'ABOUT'),
       h('a', {href: '/programs'}, 'PROGRAMS'),
-      h('a', {href: '/events'}, 'EVENTS'),
+      h('a', {href: '/calendar'}, 'EVENTS'),
       h('a', {href: '/archive'}, 'ARCHIVE'),
       h('a', {href: '/newsroom'}, 'NEWSROOM')
     ]),
