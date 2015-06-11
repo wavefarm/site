@@ -27,9 +27,14 @@ module.exports = function (req, res) {
     var locationAddress = '';
     var imgSrc = '';
     
-    if(typeof(item.locations)!='undefined' && item.locations.length>0) {
-        var locationName = item.locations[0].main;    	
-    }
+    var locations = '';
+    if(typeof(item.locations)!='undefined') {
+    	for (i = 0; i < item.locations.length; i++) { 
+    		locations += '<strong>'+item.locations[i].main+'</strong>';
+    		// place holder for address to be filled in client side
+    		locations += '<p id="location-address-'+item.locations[i].id+'"></p>';
+    	}    	
+    }    
     
     var iconList = util.getIconList(item);   
     var icons = '';
@@ -50,7 +55,7 @@ module.exports = function (req, res) {
         '.item-main span.icons': icons,	       	        
         //'.item-main-image': { src: imgSrc },
         '.event-dates strong': datesDesc,
-        '.item-location strong': locationName,
+        '.item-location': locations,
         '.description': item.briefDescription,
         '.start-date': item.startDate,
         '.end-date': item.endDate
