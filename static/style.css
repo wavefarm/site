@@ -393,7 +393,8 @@ nav.wf2 {
   display: none;
 }
 
-.listen-wgxc-window {
+.listen-wgxc-window,
+.listen-wf-window {
 	color:white;
 	background-color:	#ca0b15;
 	padding: 5px 20px;
@@ -403,7 +404,8 @@ nav.wf2 {
 	border-radius: 5px;
 }
 
-.listen-wgxc-window:hover {
+.listen-wgxc-window:hover,
+.listen-wf-window:hover {
 	color:white;
 }
 
