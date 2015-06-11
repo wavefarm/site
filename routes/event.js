@@ -41,7 +41,12 @@ module.exports = function (req, res) {
     for (i=0; i<iconList.length; i++) {
     	icons += '<img src="' + iconList[i] +'" />';
     }
-        
+      	
+    var url = '';
+  	if (typeof(item.url)!='undefined' && item.url.length>0) {
+  		url = '<a href="'+item.url+'">'+item.url+'</a>';
+  	}
+  	               
     res.setHeader('Content-Type', 'text/html; charset=utf-8')
     t('/layout.html').pipe(hs({
       title: item.main,
@@ -57,6 +62,7 @@ module.exports = function (req, res) {
         '.event-dates strong': datesDesc,
         '.item-location': locations,
         '.description': item.briefDescription,
+        'div.url': url,
         '.start-date': item.startDate,
         '.end-date': item.endDate
       }))
