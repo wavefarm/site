@@ -46,22 +46,21 @@ http.createServer(function (req, res) {
   idMatch = /^\/archive\/(\w{6})$/.exec(p)
   if (idMatch) return require('./routes/archive/item')(req, res, idMatch[1])
 
-    
   // WGXC/TA broadcasts and shows
   if (/^(\/\w+)?\/schedule\/\w{6}$/.test(p)) return require('./routes/item')(req, res)
 
   // WGXC/TA event
   if (/^(\/\w+)?\/calendar\/\w{6}$/.test(p)) return require('./routes/event')(req, res)
-  
-  // Main/WGXC/TA Calendar pages  
+
+  // Main/WGXC/TA Calendar pages
   if (/^(\/\w+)?\/calendar/.test(p)) return require('./routes/calendar')(req, res)
   if (/^(\/\w+)?\/calendar\/\d{4}-\d{2}-\d{2}$/.test(p)) return require('./routes/calendar')(req, res)
 
-  // WGXC/TA Schedule pages  
+  // WGXC/TA Schedule pages
   if (/^(\/\w+)\/schedule$/.test(p)) return require('./routes/schedule')(req, res)
   if (/^(\/\w+)\/schedule\/\d{4}-\d{2}-\d{2}$/.test(p)) return require('./routes/schedule')(req, res)
-  	
-  // TA Artists and Works pages  
+
+  // TA Artists and Works pages
   if (/^\/ta\/artists$/.test(p)) return require('./routes/ta/artist-index')(req, res)
   if (/^\/ta\/artists\/\w{1}$/.test(p)) return require('./routes/ta/artist-index')(req, res)
   if (/^\/ta\/artists\/\w{6}$/.test(p)) return require('./routes/ta/artist')(req, res)
@@ -82,7 +81,7 @@ http.createServer(function (req, res) {
     nav = ''
   }
 
-	main = templates(p + '.html') || templates(p + '/index.html')
+  main = templates(p + '.html') || templates(p + '/index.html')
 
   // No template found so check static on dev, otherwise 404
   if (!main) {
