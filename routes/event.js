@@ -27,16 +27,26 @@ module.exports = function (req, res) {
     var locationAddress = '';
     var imgSrc = '';
     
-    if(typeof(item.locations)!='undefined' && item.locations.length>0) {
-        var locationName = item.locations[0].main;    	
-    }
+    var locations = '';
+    if(typeof(item.locations)!='undefined') {
+    	for (i = 0; i < item.locations.length; i++) { 
+    		locations += '<strong>'+item.locations[i].main+'</strong>';
+    		// place holder for address to be filled in client side
+    		locations += '<p id="location-address-'+item.locations[i].id+'"></p>';
+    	}    	
+    }    
     
     var iconList = util.getIconList(item);   
     var icons = '';
     for (i=0; i<iconList.length; i++) {
     	icons += '<img src="' + iconList[i] +'" />';
     }
-        
+      	
+    var url = '';
+  	if (typeof(item.url)!='undefined' && item.url.length>0) {
+  		url = '<a href="'+item.url+'">'+item.url+'</a>';
+  	}
+  	               
     res.setHeader('Content-Type', 'text/html; charset=utf-8')
     t('/layout.html').pipe(hs({
       title: item.main,
@@ -50,8 +60,9 @@ module.exports = function (req, res) {
         '.item-main span.icons': icons,	       	        
         //'.item-main-image': { src: imgSrc },
         '.event-dates strong': datesDesc,
-        '.item-location strong': locationName,
+        '.item-location': locations,
         '.description': item.briefDescription,
+        'div.url': url,
         '.start-date': item.startDate,
         '.end-date': item.endDate
       }))

@@ -20,11 +20,27 @@ function getSites (item) {
 }
 
 function getLink (item) {
-  if (item.type == 'broadcast' || item.type == 'show') {
-    return {href: '/wgxc/schedule/' + item.id}
+  if ((item.type == 'broadcast' || item.type == 'show') && item.sites) {
+    if (item.sites.indexOf('wgxc') != -1) {
+    	return {href: '/wgxc/schedule/' + item.id}
+    }
+    if (item.sites.indexOf('transmissionarts') != -1) {
+    	return {href: '/ta/schedule/' + item.id}
+    }
   }
-  if (item.type == 'event' && item.sites && item.sites.indexOf('wgxc') != -1) {
-    return {href: '/wgxc/calendar/' + item.id}
+  if (item.type == 'event' && item.sites) {
+  	if (item.sites.indexOf('wgxc') != -1) {
+  		return {href: '/wgxc/calendar/' + item.id}
+  	}
+		if (item.sites.indexOf('transmissionarts') != -1) {
+			return {href: '/ta/calendar/' + item.id}
+		}
+  }
+  if (item.type == 'artist' && item.sites && item.sites.indexOf('transmissionarts') != -1) {
+    return {href: '/ta/artists/' + item.id}
+  }
+  if (item.type == 'work' && item.sites && item.sites.indexOf('transmissionarts') != -1) {
+    return {href: '/ta/works/' + item.id}
   }
   return {
     href: '/archive/' + item.id,
