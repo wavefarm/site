@@ -36,7 +36,7 @@ function getLink (item) {
 			return {href: '/ta/calendar/' + item.id}
 		}
   }
-  if (item.type == 'artist' && item.sites && item.sites.indexOf('transmissionarts') != -1) {
+  if (item.type == 'artist' && item.categories && item.categories.indexOf('Transmission Artist') != -1) {  	
     return {href: '/ta/artists/' + item.id}
   }
   if (item.type == 'work' && item.sites && item.sites.indexOf('transmissionarts') != -1) {
