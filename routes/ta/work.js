@@ -36,7 +36,7 @@ module.exports = function (req, res) {
         //'.item-main-image': { src: imgSrc },
         '.item-credit strong': credit,                
         '.item-dates strong': datesDesc,
-        '.description': typeof(item.description)!='undefined'?item.description:'No desc'
+        '.description': typeof(item.description)!='undefined'?item.description:' '
       }))
     })).pipe(res)
   })
