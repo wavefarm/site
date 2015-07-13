@@ -21,6 +21,11 @@ module.exports = function (req, res) {
     }
 
     var main = item.main;
+    
+    var url = '';
+  	if (typeof(item.url)!='undefined' && item.url.length>0) {
+  		url = '<a href="'+item.url+'">'+item.url+'</a>';
+  	}    
      
     res.setHeader('Content-Type', 'text/html; charset=utf-8')
     t('/layout.html').pipe(hs({
@@ -32,7 +37,8 @@ module.exports = function (req, res) {
       	'.related-items-container': t('/related-items.html'),
         '.item-main span.main': main,
         //'.item-main-image': { src: imgSrc },
-        '.description': typeof(item.bio)!='undefined'?item.bio:''
+        'div.bio': typeof(item.bio)!='undefined'?item.bio:'',
+        'div.url': url,
       }))
     })).pipe(res)
   })
