@@ -815,6 +815,15 @@ a.programs-header:hover {
 
 /* Announce slider */
 
+.outer-announce-container {
+	right:0px;
+	width:300px;
+	height:330px;
+	overflow-x:hidden;
+	position:absolute;
+	top:70px;
+}
+
 .announce {
 	display: none;	/* default to not showing; turned on via .js */
   background: black;
@@ -822,7 +831,6 @@ a.programs-header:hover {
   right: -20px;
   padding: 5px 0px 5px 30px;
   position: absolute;
-  top: 330px;
   width: 290px;
 }
 
