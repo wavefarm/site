@@ -48,6 +48,7 @@ body {
   font-family: Roboto, Arial, sans-serif;
   font-weight: 300;
   line-height: 1;
+  overflow-x:hidden;    
 }
 img {
   max-width: 100%;
@@ -822,7 +823,7 @@ a.programs-header:hover {
   right: -20px;
   padding: 5px 0px 5px 30px;
   position: absolute;
-  top: 330px;
+  top: 70px;
   width: 290px;
 }
 
