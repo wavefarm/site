@@ -816,6 +816,7 @@ a.programs-header:hover {
 /* Announce slider */
 
 .outer-announce-container {
+	display: none;	/* default to not showing; turned on via .js */
 	right:0px;
 	width:300px;
 	height:330px;
