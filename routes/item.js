@@ -1,9 +1,8 @@
 var api = require('../api')
-var hs = require('hyperstream')
-var t = require('../templates')
+var render = require('mustache').render
 var util = require('../lib/util')
 
-var idRe = /(\/\w+)\/schedule\/(\w{6})/
+var idRe = /\/(\w+)\/schedule\/(\w{6})/
 var validTypes = [
   'broadcast',
   'show'
@@ -13,6 +12,7 @@ module.exports = function (req, res) {
 	var matches = idRe.exec(req.url)
 	var site = matches[1] || ''
   var id = matches[2]
+  var view = {}
   api.get(id, function (err, item) {
     if (err) {
       return res.error(500, err)
@@ -22,14 +22,13 @@ module.exports = function (req, res) {
       return res.error(404, new Error('No type "' + item.type + '"'))
     }
 
-    var datesDesc = util.formatDates(item);    
-    var locationName = '';
+    view.dates = util.formatDates(item);
     var main = item.main;
     var mainSubtitle = typeof(item.subtitle)!='undefined'?item.subtitle:'';
     var show = '';
     
     if (item.type=='broadcast' && typeof(item.shows)!='undefined') {
-    	show =  '<a href="'+site+'/schedule/'+item.shows[0].id+'">'+ item.shows[0].main +'</a>:&nbsp;';
+      show = '<a href="/'+site+'/schedule/'+item.shows[0].id+'">'+ item.shows[0].main +'</a>:&nbsp;';
     }
     
     var locations = '';
@@ -51,25 +50,22 @@ module.exports = function (req, res) {
     var detail2Desc = typeof(item.airtime)!='undefined'?item.airtime:'';
      
     res.setHeader('Content-Type', 'text/html; charset=utf-8')
-    t('/layout.html').pipe(hs({
-      title: item.main,
-      '.head': t(site+'/head.html'),
-      '.nav': t(site+'/nav.html'),
-      '.listen': t('/listen.html'),      
-      '.announce': t('/announce.html'),
-      '.main': t('/program-broadcast.html').pipe(hs({
-      	'.related-items-container': t('/related-items.html'),
-        '.item-main strong': show,
-        '.item-main span.main': main,
-        '.item-main span.subtitle': mainSubtitle,                
-        '.item-main span.icons': icons,
-        //'.item-main-image': { src: imgSrc },
-        '.item-dates strong': datesDesc,
-        '.item-location': locations,
-        '.item-detail strong': detailDesc,
-        '.item-detail2 strong': detail2Desc,
-        '.description': typeof(item.description)!='undefined'?item.description:''
-      }))
-    })).pipe(res)
+    res.end(render(res.t['layout.html'], {title: item.main}, {
+      head: res.t[site+'/head.html'],
+      nav: res.t[site+'/nav.html'],
+      listen: res.t['listen.html'],
+      announce: res.t['announce.html'],
+      main: render(res.t['program-broadcast.html'], {
+        show: show,
+        main: main,
+        subtitle: mainSubtitle,
+        icons: icons,
+        dates: datesDesc,
+        locations: locations,
+        detail: detailDesc,
+        detail2: detail2Desc,
+        description: typeof(item.description)!='undefined'?item.description:''
+      }, {relatedItems: res.t['related-items.html']})
+    }))
   })
 }
