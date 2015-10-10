@@ -7,7 +7,7 @@ module.exports = function (state) {
       h('a', {href: '/about'}, 'ABOUT'),
       h('a', {href: '/programs'}, 'PROGRAMS'),
       h('a', {href: '/calendar'}, 'EVENTS'),
-      h('a', {href: '/archive'}, 'ARCHIVE'),
+      h('a', {href: '/archive?q=type%3Aaudio%20OR%20type%3Avideo%20OR%20type%3Aimage%20OR%20type%3Atext&date=&date2=&sort=-timestamp'}, 'ARCHIVE'),
       h('a', {href: '/newsroom'}, 'NEWSROOM')
     ]),
     h('nav.wf2', [
