@@ -41,10 +41,6 @@ module.exports = function (data) {
   var params = data && data.archive && data.archive.params || {}
   var total = results && results.total || 0
   return h('.search', [
-    h('.content', [
-      h('p', "Search Wave Farm's entire organizational history as well as current programs."),
-      h('p', "Search Hints: Filter by a specific program by including sites:transmissionarts or sites:wgxc in your search. Filter for audio files by including type:audio in your search. You can also filter by artist, work, show, broadcast, video, image, event...")
-    ]),
     //h('h2', 'Item Types'),
     //h('.types', typeSearchLinks(data)),
     //h('h2', 'Sites'),
@@ -70,6 +66,9 @@ module.exports = function (data) {
       h('div', [
         h('input.action', {type: 'submit', value: 'GO'})
       ])
+    ]),
+    h('.content', [
+      h('p', "Hint: Filter by a specific program by including sites:transmissionarts or sites:wgxc in your search. Filter by file type by including type:audio, type:image, type:artist, type:work, type:show, type:broadcast, type:video, or type:event.")
     ]),
     h('.results-head', [
       h('h2', 'Results'),
