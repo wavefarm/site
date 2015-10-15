@@ -819,8 +819,8 @@ a.programs-header:hover {
 	display: none;	/* default to not showing; turned on via .js */
 	right:0px;
 	width:300px;
-	height:330px;
-	overflow-x:hidden;
+	height:340px;
+	overflow:hidden;
 	position:absolute;
 	top:70px;
 }
