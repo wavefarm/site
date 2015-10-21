@@ -1,8 +1,5 @@
 var api = require('../api')
-var hs = require('hyperstream')
-var t = require('../templates')
 var moment = require('moment')
-var templates = require('../templates')
 var url = require('url')
 
 module.exports = function (req, res) {
@@ -22,22 +19,19 @@ module.exports = function (req, res) {
 
 	if (site=='wgxc') {
 		title = 'WGXC Schedule';
-		sitePath = '/wgxc';
+		sitePath = 'wgxc/';
 	}
 	else if (site=='ta') {
 		title = 'Wave Farm Radio';
-		sitePath = '/ta';
+		sitePath = 'ta/';
 	}	
 	
-  res.setHeader('Content-Type', 'text/html; charset=utf-8')
-  t('/layout.html').pipe(hs({
-    'title': title,
-    '.head': t(sitePath+'/head.html'),
-    '.nav': t(sitePath+'/nav.html'),
-    '.listen': templates('/listen.html'),
-    '.announce': templates('/announce.html'),
-    '.main': t(sitePath+'/schedule.html').pipe(hs({
-      '.datepicker-container': t('/datepicker-container-body.html'),
-    }))
-  })).pipe(res)
+  res.render({title: title}, {
+    head: sitePath+'head.html',
+    nav: sitePath+'nav.html',
+    listen: 'listen.html',
+    announce: 'announce.html',
+    main: sitePath+'schedule.html',
+    datepicker: 'datepicker-container-body.html'
+  })
 }

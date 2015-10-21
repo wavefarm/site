@@ -3,13 +3,13 @@
 
 <div class="page calendar-page">
 	
-	<div class="datepicker-container"></div>
+	<div class="datepicker-container">{{> datepicker}}</div>
 		
 	<div class="calendar-container">
 		
 		<div class="add-event-div">		
 			<h2>Add a WGXC/Transmission Arts Calendar Event</h2>		
-			<div class="add-event-form-div"></div>					
+			<div class="add-event-form-div">{{> addEventForm}}</div>
 		</div>
 		<!--  success/error messages only shown after form submission -->			
 		<div id="add-event-success" style="display:none;">
@@ -24,7 +24,7 @@
 					  
 		<!-- Calendar HTML will be filled in server-side -->
 		<!-- Calendar data will be filled in client-side -->
-		<div class="calendar-div"></div>
+		<div class="calendar-div">{{> calendar}}</div>
 		  
 	</div>
 </div>

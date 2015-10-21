@@ -1,8 +1,6 @@
 var helpres = require('./helpres')
-var hs = require('hyperstream')
 var http = require('http')
 var st = require('st')
-var templates = require('./templates')
 var url = require('url')
 
 var env = process.env.NODE_ENV
@@ -76,14 +74,23 @@ http.createServer(function (req, res) {
   // Set head and nav sections
   sub = subRe.exec(p)
   if (sub) {
-    head = templates('/' + sub[1] + '/head.html')
-    nav = templates('/' + sub[1] + '/nav.html')
+    head = sub[1] + '/head.html'
+    nav = sub[1] + '/nav.html'
   } else {
-    head = templates('/head.html')
+    head = 'head.html'
     nav = ''
   }
 
-  main = templates(p + '.html') || templates(p + '/index.html')
+  var tmpl = p.substr(1)
+  //if (p === '/') main = 'index.html'
+  //else if (fs.existsSync(tmpl + '.html') main = tmpl + '.html'
+  //else if (fs.existsSync(tmpl + '/index.html') main = tmpl + '/index.html'
+
+  var tFile = tmpl + '.html'
+  var tIndex = tmpl + '/index.html'
+  main = (p === '/' && 'index.html') ||
+    (res.t[tFile] && tFile) ||
+    (res.t[tIndex] && tIndex)
 
   // No template found so check static on dev, otherwise 404
   if (!main) {
@@ -91,16 +98,14 @@ http.createServer(function (req, res) {
     else return res.error(404, new Error('Not Found'))
   }
 
-  res.setHeader('Content-Type', 'text/html; charset=utf-8')
-
-  // Streams and streams
-  templates('/layout.html').pipe(hs({
-    '.head': head,
-    '.nav': nav,
-    '.main': main,
-    '.listen': templates('/listen.html'),
-    '.announce': templates('/announce.html')
-  })).pipe(res)
+  console.log(main)
+  res.render({title: 'Wave Farm'}, {
+    head: head,
+    nav: nav,
+    main: main,
+    listen: 'listen.html',
+    announce: 'announce.html'
+  })
 }).listen(port, function () {
   console.log('Listening on port', port)
   if (process.send) process.send('online')
