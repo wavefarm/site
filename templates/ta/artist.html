@@ -4,17 +4,17 @@
 <div class="ta-item page artist-page">
   
 	<h1 class="item-main">
- 		<span class="main"></span>
+ 		<span class="main">{{title}}</span>
   </h1>
 	<img class="item-main-image" />
    	
 	<div class="description">
-		<div class="bio"></div>
-		<div class="url"><a></a></div>
+		<div class="bio">{{&bio}}</div>
+		<div class="url"><a href="{{url}}">{{url}}</a></div>
 	</div>
 
    
-	<div class="related-items-container"></div>
+	<div class="related-items-container">{{>relatedItems}}</div>
 
 	  
 </div>
