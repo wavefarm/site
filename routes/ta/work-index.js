@@ -1,6 +1,3 @@
-var hs = require('hyperstream')
-var t = require('../../templates')
-var templates = require('../../templates')
 
 module.exports = function (req, res) {	
   res.setHeader('Content-Type', 'text/html; charset=utf-8')

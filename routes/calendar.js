@@ -1,6 +1,5 @@
 var api = require('../api')
 var moment = require('moment')
-var render = require('mustache').render
 var url = require('url')
 
 module.exports = function (req, res) {
@@ -20,22 +19,21 @@ module.exports = function (req, res) {
 
 	if (site=='wgxc') {
 		title = 'WGXC Community Calendar';
-		sitePath = 'wgxc';
+		sitePath = 'wgxc/';
 	}
 	else if (site=='ta') {
 		title = 'Transmission Arts Events';
-		sitePath = 'ta';
+		sitePath = 'ta/';
 	}
 	
-	res.setHeader('Content-Type', 'text/html; charset=utf-8')
-  res.end(render(res.t['layout.html'], {title: title}, {
-    head: res.t[sitePath+'/head.html'],
-    nav: res.t[sitePath+'/nav.html'],
-    listen: res.t['listen.html'],
-    announce: res.t['announce.html'],
-    main: res.t[sitePath+'/calendar.html'],
-    datepicker: res.t['datepicker-container-body.html'],
-    addEventForm: res.t['add-event-form-body.html'],
-    calendar: res.t['calendar-body.html']
-  }))
+  res.render({title: title}, {
+    head: sitePath+'head.html',
+    nav: sitePath+'nav.html',
+    listen: 'listen.html',
+    announce: 'announce.html',
+    main: sitePath+'calendar.html',
+    datepicker: 'datepicker-container-body.html',
+    addEventForm: 'add-event-form-body.html',
+    calendar: 'calendar-body.html'
+  })
 }

@@ -1,8 +1,7 @@
 var api = require('../api')
-var render = require('mustache').render
 var util = require('../lib/util')
 
-var idRe = /\/(\w+)\/schedule\/(\w{6})/
+var idRe = /\/(\w+\/)schedule\/(\w{6})/
 var validTypes = [
   'broadcast',
   'show'
@@ -12,7 +11,6 @@ module.exports = function (req, res) {
 	var matches = idRe.exec(req.url)
 	var site = matches[1] || ''
   var id = matches[2]
-  var view = {}
   api.get(id, function (err, item) {
     if (err) {
       return res.error(500, err)
@@ -22,13 +20,12 @@ module.exports = function (req, res) {
       return res.error(404, new Error('No type "' + item.type + '"'))
     }
 
-    view.dates = util.formatDates(item);
-    var main = item.main;
+    var dates = util.formatDates(item);
     var mainSubtitle = typeof(item.subtitle)!='undefined'?item.subtitle:'';
     var show = '';
     
     if (item.type=='broadcast' && typeof(item.shows)!='undefined') {
-      show = '<a href="/'+site+'/schedule/'+item.shows[0].id+'">'+ item.shows[0].main +'</a>:&nbsp;';
+      show = '<a href="/'+site+'schedule/'+item.shows[0].id+'">'+ item.shows[0].main +'</a>:&nbsp;';
     }
     
     var locations = '';
@@ -49,23 +46,24 @@ module.exports = function (req, res) {
     var detailDesc = typeof(item.credit)!='undefined'?item.credit:'';
     var detail2Desc = typeof(item.airtime)!='undefined'?item.airtime:'';
      
-    res.setHeader('Content-Type', 'text/html; charset=utf-8')
-    res.end(render(res.t['layout.html'], {title: item.main}, {
-      head: res.t[site+'/head.html'],
-      nav: res.t[site+'/nav.html'],
-      listen: res.t['listen.html'],
-      announce: res.t['announce.html'],
-      main: render(res.t['program-broadcast.html'], {
-        show: show,
-        main: main,
-        subtitle: mainSubtitle,
-        icons: icons,
-        dates: datesDesc,
-        locations: locations,
-        detail: detailDesc,
-        detail2: detail2Desc,
-        description: typeof(item.description)!='undefined'?item.description:''
-      }, {relatedItems: res.t['related-items.html']})
-    }))
+    res.render({
+      title: item.main,
+      show: show,
+      itemMain: item.main,
+      subtitle: mainSubtitle,
+      icons: icons,
+      dates: dates,
+      locations: locations,
+      detail: detailDesc,
+      detail2: detail2Desc,
+      description: typeof(item.description)!='undefined'?item.description:''
+    }, {
+      head: site+'head.html',
+      nav: site+'nav.html',
+      listen: 'listen.html',
+      announce: 'announce.html',
+      main: 'program-broadcast.html',
+      relatedItems: 'related-items.html'
+    })
   })
 }

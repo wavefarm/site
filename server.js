@@ -1,7 +1,5 @@
 var helpres = require('./helpres')
 var http = require('http')
-var render = require('mustache').render
-var snout = require('snout')
 var st = require('st')
 var url = require('url')
 
@@ -11,8 +9,6 @@ var port = process.env.PORT || 1041
 var mount = st({path: __dirname + '/static'})
 
 var subRe = new RegExp('/(ta|wgxc|mag)')
-
-var templates = snout(__dirname + '/templates')
 
 http.createServer(function (req, res) {
   var head, idMatch, main, nav, p, sub
@@ -40,8 +36,6 @@ http.createServer(function (req, res) {
 
   // Local proxy for WGXC tweets
   if (p === '/wgxc/tweets') return require('./routes/tweets')({wgxc: true})(req, res)
-
-  res.t = templates
 
   // Archive
   if (p === '/archive') return require('./routes/archive')(req, res)
@@ -80,16 +74,23 @@ http.createServer(function (req, res) {
   // Set head and nav sections
   sub = subRe.exec(p)
   if (sub) {
-    head = res.t[sub[1] + '/head.html']
-    nav = res.t[sub[1] + '/nav.html']
+    head = sub[1] + '/head.html'
+    nav = sub[1] + '/nav.html'
   } else {
-    head = res.t['head.html']
+    head = 'head.html'
     nav = ''
   }
 
   var tmpl = p.substr(1)
-  if (p === '/') main = res.t['index.html']
-  else main = res.t[tmpl + '.html'] || res.t[tmpl + '/index.html']
+  //if (p === '/') main = 'index.html'
+  //else if (fs.existsSync(tmpl + '.html') main = tmpl + '.html'
+  //else if (fs.existsSync(tmpl + '/index.html') main = tmpl + '/index.html'
+
+  var tFile = tmpl + '.html'
+  var tIndex = tmpl + '/index.html'
+  main = (p === '/' && 'index.html') ||
+    (res.t[tFile] && tFile) ||
+    (res.t[tIndex] && tIndex)
 
   // No template found so check static on dev, otherwise 404
   if (!main) {
@@ -97,15 +98,14 @@ http.createServer(function (req, res) {
     else return res.error(404, new Error('Not Found'))
   }
 
-  res.setHeader('Content-Type', 'text/html; charset=utf-8')
-
-  res.end(render(res.t['layout.html'], {title: 'Wave Farm'}, {
+  console.log(main)
+  res.render({title: 'Wave Farm'}, {
     head: head,
     nav: nav,
     main: main,
-    listen: res.t['listen.html'],
-    announce: res.t['announce.html']
-  }))
+    listen: 'listen.html',
+    announce: 'announce.html'
+  })
 }).listen(port, function () {
   console.log('Listening on port', port)
   if (process.send) process.send('online')
