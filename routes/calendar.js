@@ -1,8 +1,5 @@
 var api = require('../api')
-var hs = require('hyperstream')
-var t = require('../templates')
 var moment = require('moment')
-var templates = require('../templates')
 var url = require('url')
 
 module.exports = function (req, res) {
@@ -22,24 +19,21 @@ module.exports = function (req, res) {
 
 	if (site=='wgxc') {
 		title = 'WGXC Community Calendar';
-		sitePath = '/wgxc';
+		sitePath = 'wgxc/';
 	}
 	else if (site=='ta') {
 		title = 'Transmission Arts Events';
-		sitePath = '/ta';
+		sitePath = 'ta/';
 	}
 	
-	res.setHeader('Content-Type', 'text/html; charset=utf-8')
-  t('/layout.html').pipe(hs({
-    title: title,
-    '.head': t(sitePath+'/head.html'),
-    '.nav': t(sitePath+'/nav.html'),
-    '.listen': templates('/listen.html'),
-    '.announce': templates('/announce.html'),
-    '.main': t(sitePath+'/calendar.html').pipe(hs({
-      '.datepicker-container': t('/datepicker-container-body.html'),
-      '.add-event-form-div': t('/add-event-form-body.html'),
-      '.calendar-div': t('/calendar-body.html')
-    }))
-  })).pipe(res)
+  res.render({title: title}, {
+    head: sitePath+'head.html',
+    nav: sitePath+'nav.html',
+    listen: 'listen.html',
+    announce: 'announce.html',
+    main: sitePath+'calendar.html',
+    datepicker: 'datepicker-container-body.html',
+    addEventForm: 'add-event-form-body.html',
+    calendar: 'calendar-body.html'
+  })
 }

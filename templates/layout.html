@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Wave Farm</title>
+    <title>{{title}}</title>
     <link href="//fonts.googleapis.com/css?family=Roboto:400,300,700" rel="stylesheet">
     <link href="/style.css" rel="stylesheet">
   </head>
@@ -29,9 +29,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
       </div>
       <div class="main-container">
-        <div class="head"></div>
-        <div class="nav"></div>
-        <div class="main"></div>
+        <div class="head">{{>head}}</div>
+        <div class="nav">{{>nav}}</div>
+        <div class="main">{{>main}}</div>
       </div>
       <div class="tweets-container">
         <div class="tweets">
@@ -72,9 +72,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
       </div>
     </div>
-    <div class="listen"></div>
+    <div class="listen">{{> listen}}</div>
     <div class="outer-announce-container">
-  <div class="announce"></div>
+      <div class="announce">{{> announce}}</div>
     </div>        
     <script src="/scripts/jquery.js"></script>
     <script src="/scripts/jquery-ui.js"></script>
