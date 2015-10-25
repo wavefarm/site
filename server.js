@@ -98,7 +98,6 @@ http.createServer(function (req, res) {
     else return res.error(404, new Error('Not Found'))
   }
 
-  console.log(main)
   res.render({title: 'Wave Farm'}, {
     head: head,
     nav: nav,
