@@ -5,21 +5,29 @@
   $('#date').val(query.date)
   $('#date2').val(query.date2)
 
-  var template = $('#result-template').html()
-  Mustache.parse(template)
+  var template, data
 
-  function results (data) {
-    console.log(data)
-    $('#total').text(data.total)
+  function renderResults () {
+    if (!template || !data) return
+    $('#summary').html('<b>' + data.total + '</b> items.')
     var $results = $('#results')
     data.hits.forEach(function (hit) {
+      console.log(hit)
       $results.append(Mustache.render(template, hit))
     })
   }
 
+  $.get('/templates/search-result.html', function (t) {
+    template = t
+    renderResults()
+  })
+
   $.ajax({
     url: '/api/search',
     data: querystring,
-    success: results
+    success: function (d) {
+      data = d
+      renderResults()
+    }
   })
 })(jQuery)
