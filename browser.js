@@ -21,7 +21,6 @@ window.state = struct({
   title: o()
 })
 
-require('./lib/archive')()
 require('./lib/pointer')()
 require('./lib/schedule')()
 require('./lib/schemas')()
