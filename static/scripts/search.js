@@ -15,6 +15,7 @@
       hit.when = when(hit);
       hit.desc = hit.description || hit.briefDescription || hit.longDescription || '';
       hit.desc = hit.desc.replace(/<[^>]*>/g, '')
+      hit.itemUrl = itemUrl(hit);
       if (hit.desc.length > 160) hit.desc = hit.desc.substr(0, 160) + '...';
       console.log(hit);
       $results.append(Mustache.render(template, hit));
