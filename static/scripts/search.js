@@ -12,6 +12,7 @@
     $('#summary').html('<b>' + data.total + '</b> items.');
     var $results = $('#results');
     data.hits.forEach(function (hit) {
+      hit.when = when(hit);
       console.log(hit);
       $results.append(Mustache.render(template, hit));
     });
