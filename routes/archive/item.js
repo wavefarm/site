@@ -8,7 +8,7 @@ module.exports = function (req, res, id) {
       return res.error(500, err)
     }
 
-    if (['audio', 'image', 'text', 'video'].indexOf(item.type) === -1) {
+    if (['artist', 'audio', 'image', 'text', 'video'].indexOf(item.type) === -1) {
       return res.error(404, {message: 'Not Found'})
     }
 

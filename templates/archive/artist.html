@@ -1,0 +1,17 @@
+<div class="archive page">
+  <h1>SEARCH</h1>
+  <div class="item" id="{{item.id}}">
+    <h2>
+      <span class="item-main">{{item.main}}</span> <span class="item-type">({{item.type}})</span>
+    </h2>
+    <div class="bio">{{&item.bio}}</div>
+    <div class="broadcasts">
+      <h3>Broadcasts</h3>
+      <ul>
+        {{#item.broadcasts}}
+        <li><a href="/wgxc/schedule/{{id}}">{{main}}</a></li>
+        {{/item.broadcasts}}
+      </ul>
+    </div>
+  </div>
+</div>
