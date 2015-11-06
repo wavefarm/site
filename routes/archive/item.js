@@ -8,11 +8,12 @@ module.exports = function (req, res, id) {
       return res.error(500, err)
     }
 
-    if (['artist', 'audio', 'image', 'text', 'video'].indexOf(item.type) === -1) {
+    if (['artist', 'audio', 'image', 'location', 'text', 'video'].indexOf(item.type) === -1) {
       return res.error(404, {message: 'Not Found'})
     }
 
     item.dateFormatted = util.formatArchiveDate(item)
+    item.addressFull = util.concoctFullAddress(item)
     console.log(item)
 
     res.render({title: item.main, item: item}, {
