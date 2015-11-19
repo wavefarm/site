@@ -126,8 +126,8 @@
 	display:none;	
 }
 /* turn on Add Event button for WGXC and TA cal */
-.page.wgxc.calendar-page .add-event,
-.page.ta.calendar-page  .add-event {
+.page.wgxc.calendar-page .add-event-button .add-event,
+.page.ta.calendar-page .add-event-button .add-event {
 	display:block;	
 }
 
