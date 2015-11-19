@@ -226,7 +226,7 @@
   background-color: #ca0b15;
 }
 
-.calendar .calendar-card .time {
+.calendar-card .time {
   font-size: 12px;
 }
 
@@ -286,8 +286,7 @@
 
 .item-dates strong,
 .item-detail strong,
-.item-detail2 strong,
-.event-dates strong {
+.item-detail2 strong {
 	font-weight: 500;
 	font-size: 18px;
 	line-height:22px;
@@ -372,40 +371,41 @@ label.error {
 
 
 
-/* Individual Item and Event Pages */
+/* Individual Item Pages */
 
-.wgxc-event h1.item-main,
-.wgxc-item h1.item-main {
+.wf-item h1.item-main {
 	margin-bottom: 5px;
 	line-height: 100%;
 }
 
-.wgxc-item h1.item-main strong {
+.wf-item h1.item-main strong {
 	font-weight:bold;
 }
 
-.wgxc-item h1.item-main span.subtitle {
+.wf-item h1.item-main span.subtitle {
 	display:block;
 }
 
-.wgxc-item h1.item-main img,
-.wgxc-event h1.item-main img  {
+.wf-item h1.item-main img  {
 	margin: 0 0 3px 5px;
 	/*width: 34px;*/
 	height: 34px;
 	vertical-align: text-bottom;
 }
 
-.wgxc-item img,
-.wgxc-event img {
+.wf-item img {
 	margin: 10px 0 10px 0;
 }
 
-.wgxc-item .description,
-.wgxc-event .description {
+.wf-item .description {
 	border-bottom: 2px solid black;
-	padding-bottom:10px;
-	
+	padding-bottom:10px;	
+}
+
+.wf-item .description audio {
+	display:block;
+	margin:20px 0 10px 0;
+	width: 100%;
 }
 
 

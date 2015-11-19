@@ -6,11 +6,13 @@
 		<span class="main">{{title}}</span>
 		<span class="icons">{{#icons}}<img src="{{.}}" >{{/icons}}</span>
 	</h1>
-	<div class="item-dates"><strong>{{dates}}</strong></div>
+	<div class="item-dates"><strong>{{{dates}}}</strong></div>
 	<div class="item-location">{{{locations}}}</div>
 	<div class="url"><a href="{{url}}">{{url}}</a></div>
 	<img class="item-main-image" />
-	<div class="description">{{&description}}</div>
+	<div class="description">{{&description}}{{&audioPlayer}}		
+	</div>
+		
 		
 	<div class="related-items-container">{{>relatedItems}}</div>
 	
