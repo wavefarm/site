@@ -53,9 +53,19 @@ module.exports = function (req, res) {
   		fullDescription = fullDescription.replace(mp3Re,'');  		
   		audioPlayer = audioPlayerTemplate.replace('{{audioUrl}}',mp3Url);
   	}    
-    
-			
-		
+    		
+		var  newsTagList = '';		
+		if (typeof(item.keywords)!='undefined' && item.keywords!=='') {			
+			var keywords = item.keywords.split(',');
+			var sitesValue = site.replace('/','');
+			if (sitesValue=='ta') sitesValue = 'transmissionarts';
+      for (i = 0; i < keywords.length; i++) {
+      	var url = '/archive?q=keywords:'+encodeURIComponent((keywords[i])+' sites:'+sitesValue+' type:news' );
+      	newsTagList = newsTagList + '<a href="'+url+'+">' + keywords[i] + '</a>';
+      	if (i<keywords.length-1) newsTagList = newsTagList + ', ';
+      }
+		}
+					
     res.render({
       title: item.main,
       icons: iconList,                 
@@ -63,7 +73,8 @@ module.exports = function (req, res) {
       dates: datesDesc,
       locations: locations,
       description: fullDescription,
-      audioPlayer: audioPlayer
+      audioPlayer: audioPlayer,
+      newsTagList: newsTagList
       //url: item.url
     }, {
       head: site+'head.html',
