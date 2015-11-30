@@ -28,6 +28,14 @@ function getLink (item) {
     	return {href: '/ta/schedule/' + item.id}
     }
   }
+  if (item.type == 'news' && item.sites) {
+    if (item.sites.indexOf('wgxc') != -1) {
+    	return {href: '/wgxc/newsroom/' + item.id}
+    }
+    if (item.sites.indexOf('transmissionarts') != -1) {
+    	return {href: '/ta/newsroom/' + item.id}
+    }
+  }
   if (item.type == 'event' && item.sites) {
   	if (item.sites.indexOf('wgxc') != -1) {
   		return {href: '/wgxc/calendar/' + item.id}
