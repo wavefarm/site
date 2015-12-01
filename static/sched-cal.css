@@ -426,9 +426,6 @@ label.error {
 .wgxc.calendar-page .calendar-card-topbar {
   background-color: #5f9235;
 }
-.wgxc.calendar-page.news .calendar-card-topbar {
-  background-color: #c9c7c7;
-}
 .wgxc.schedule-page .calendar-card-topbar {
   background-color: #096e8c;
 }
@@ -436,7 +433,9 @@ label.error {
 .ta.calendar-page .calendar-card-topbar {
 	background-color: #bf8d00;
 }
-
+.calendar-page.news .calendar-card-topbar {
+  background-color: #c9c7c7;
+}
 
 .wgxc.calendar-page .calendar-card {
   background-color: #73c346;
@@ -444,22 +443,21 @@ label.error {
 .wgxc.schedule-page .calendar-card {
   background-color: #1ab7ea;
 }
-.wgxc.calendar-page.news .calendar-card {
-  background-color: #747a7f;
-}
+
 .ta.schedule-page .calendar-card ,
 .ta.calendar-page .calendar-card  {
 	background-color: #f2c025;
+}
+
+.calendar-page.news .calendar-card {
+  background-color: #747a7f;
 }
 
 .wgxc.calendar-page .more input {
   background-color: #73c346;
   border: 1px solid #73c346;
 }
-.wgxc.calendar-page.news .more input {
-  background-color: #747a7f;
-  border: 1px solid #747a7f;
-}
+
 .wgxc.schedule-page .more input {
   background-color: #1ab7ea;
   border: 1px solid #1ab7ea;
@@ -469,13 +467,13 @@ label.error {
   background-color: #f2c025;
   border: 1px solid #f2c025;
 }
-
+.calendar-page.news .more input {
+  background-color: #747a7f;
+  border: 1px solid #747a7f;
+}
 
 .wgxc.calendar-page a:hover {
   color: #73c346;
-}
-.wgxc.calendar-page.news a:hover {
-  color: #747a7f;
 }
 .wgxc.schedule-page a:hover {
   color: #1ab7ea;
@@ -484,17 +482,14 @@ label.error {
 .ta.calendar-page a:hover {
   color: #f2c025;
 }
-
+.calendar-page.news a:hover {
+  color: #747a7f;
+}
 
 .wgxc.calendar-page .datepicker-container .add-event input,
 .wgxc.calendar-page .add-event-div #add-event-submit {
   background-color: #73c346;
   border: 1px solid #73c346;
-}
-.wgxc.calendar-page.news .datepicker-container .add-event input,
-.wgxc.calendar-page.news .add-event-div #add-event-submit {
-  background-color: #747a7f;
-  border: 1px solid #747a7f;
 }
 .wgxc.schedule-page .datepicker-container .add-event input,
 .wgxc.schedule-page .add-event-div #add-event-submit {
@@ -506,17 +501,18 @@ label.error {
 	background-color: #f2c025;
   border: 1px solid #f2c025;
 }
-
+.calendar-page.news .datepicker-container .add-event input,
+.calendar-page.news .add-event-div #add-event-submit {
+  background-color: #747a7f;
+  border: 1px solid #747a7f;
+}
 
 
 .wgxc.calendar-page #ui-datepicker-div .ui-datepicker-prev,
 .wgxc.calendar-page #ui-datepicker-div .ui-datepicker-next  {
 	background-color: #73c346;
 }
-.wgxc.calendar-page.news #ui-datepicker-div .ui-datepicker-prev,
-.wgxc.calendar-page.news #ui-datepicker-div .ui-datepicker-next  {
-	background-color: #747a7f;
-}
+
 .wgxc.schedule-page #ui-datepicker-div .ui-datepicker-prev,
 .wgxc.schedule-page #ui-datepicker-div .ui-datepicker-next  {
 	background-color: #1ab7ea;
@@ -525,28 +521,27 @@ label.error {
 .ta.page #ui-datepicker-div .ui-datepicker-next  {
 	background-color: #f2c025;
 }
-
+.calendar-page.news #ui-datepicker-div .ui-datepicker-prev,
+.calendar-page.news #ui-datepicker-div .ui-datepicker-next  {
+	background-color: #747a7f;
+}
 
 .wgxc.calendar-page .ui-datepicker-today a {
 		color: #73c346;
 }
-.wgxc.calendar-page.news .ui-datepicker-today a {
-		color: #747a7f;
-}
+
 .wgxc.schedule-page  .ui-datepicker-today a {
 		color: #1ab7ea;
 }
 .ta.page .ui-datepicker-today a {
 		color: #f2c025;
 }
-
+.calendar-page.news .ui-datepicker-today a {
+		color: #747a7f;
+}
 .wgxc.calendar-page .datepicker-controls a  {
 	background-color: #73c346;
 	border: 1px solid #73c346;
-}
-.wgxc.calendar-page.news .datepicker-controls a  {
-	background-color: #747a7f;
-	border: 1px solid #747a7f;
 }
 .wgxc.schedule-page .datepicker-controls a  {
 	background-color: #1ab7ea;
@@ -556,15 +551,15 @@ label.error {
 	background-color: #f2c025;
 	border: 1px solid #f2c025;
 }
-
+.calendar-page.news .datepicker-controls a  {
+	background-color: #747a7f;
+	border: 1px solid #747a7f;
+}
 .wgxc.calendar-page .ui-datepicker-current-day a {
 	color:white;
 	background-color: #73c346;
 }
-.wgxc.calendar-page.news .ui-datepicker-current-day a {
-	color:white;
-	background-color: #747a7f;
-}
+
 .wgxc.schedule-page .ui-datepicker-current-day a {
 	color:white;
 	background-color: #1ab7ea;
@@ -573,8 +568,14 @@ label.error {
 	color:white;
 	background-color: #f2c025;
 }
+.calendar-page.news .ui-datepicker-current-day a {
+	color:white;
+	background-color: #747a7f;
+}
 
-
-
-
+.calendar-page .datepicker-controls a:hover,
+.schedule-page .datepicker-controls a:hover,
+.calendar-news--page .datepicker-controls a:hover {
+	color: white;
+}
 
