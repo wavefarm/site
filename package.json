@@ -3,7 +3,7 @@
   "description": "Home site for Wave Farm",
   "version": "0.0.0",
   "author": "Gabriel Farrell <g@grrawr.com>",
-  "repository": "git://github.com/wavefarm/wavefarm.org.git",
+  "repository": "git://github.com/wavefarm/site.git",
   "dependencies": {
     "brfs": "^1.4.0",
     "concat-stream": "~1.3.1",
