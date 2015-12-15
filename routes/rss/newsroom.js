@@ -9,6 +9,7 @@ module.exports = function (req, res) {
 	var pathname = url.parse(req.url, true).pathname;	
 	var site = '';	// default
 	var subsiteRe = /\/(\w+)\/newsroom\/rss/
+	var mp3Re = /\n(https?:\/\/.+\.mp3)/
 	var matches = subsiteRe.exec(pathname)
 	if (matches!=null) {				
 		if (matches[1]=='wgxc') site = 'wgxc';
@@ -60,10 +61,22 @@ module.exports = function (req, res) {
 	    	if (i==0) {
 	    		feedLastBuildDate = moment(result.date).format(dateFormat)
 	    		feedPubDate = feedLastBuildDate
-	    	}            
+	    	}        
+	      
+	    	var fullDescription = result.description || ''
+	    	// deal with embedded mp3 URLs
+	  		var mp3Url = false;		
+	    	var matches = mp3Re.exec(fullDescription)
+	    	if (matches!=null) {	
+	    		mp3Url = matches[1]
+	    		fullDescription = fullDescription.replace(mp3Re,'')	    		
+        	var audioTag = '<audio controls="controls" preload="none"><source src="'+mp3Url+'" type="audio/mpeg"></audio>'
+        	fullDescription = fullDescription + '<br /><br />' + audioTag	    		
+	    	}
+	      	      
 	      item = {
 	      		"title" : result.title,
-	      		"description" : result.description,
+	      		"description" : fullDescription,
 	      		"link" : basePath + '/' + sitePath + 'newsroom/' + result.id,
 	      		"pubDate" : moment(result.date).format(dateFormat),
 	      		"guid" : result.id,
