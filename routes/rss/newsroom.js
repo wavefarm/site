@@ -21,7 +21,7 @@ module.exports = function (req, res) {
 	if (req.connection && req.headers.host)
 		basePath = 		req.connection.encrypted?'https://':'http://' + req.headers.host;		
 	var sitePath = '';	
-	var feedTitle = 'Newsroom';
+	var feedTitle = 'Wave Farm Newsroom';
 	//var feedUrl =  'https://wavefarm.org/newsroom';
 	var feedUrl =   basePath + req.url;
 	var feedDescription = 'This page combines the posts from both the Wave Farm Newsroom (Transmission Art news, radio news, open calls, media news, radio theatre, and more) and the WGXC Newsroom (Scripts and sounds for WGXC radio hosts to play on the WGXC Morning Show or WGXC Afternoon Show. Breaking news, features, local audio, video, analysis, music, links to events in Greene and Columbia counties, NY.)';
@@ -36,7 +36,7 @@ module.exports = function (req, res) {
 		feedUrl =  basePath + '/wgxc/newsroom';
 	}
 	else if (site=='ta') {
-		feedTitle = 'Waver Farm Newsroom';
+		feedTitle = 'Transmission Art Newsroom';
 		feedDescription = 'Transmission Art news, radio news, open calls, media news, radio theatre, and more, from Wave Farm.';
 		sitePath =  'ta/';
 		feedUrl =  basePath + '/ta/newsroom';
