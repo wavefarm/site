@@ -58,8 +58,9 @@ http.createServer(function (req, res) {
   if (/^(\/\w+)?\/newsroom\/\w{6}$/.test(p)) return require('./routes/news')(req, res)
 
   // Main/WGXC/TA news pages
-  if (/^(\/\w+)?\/newsroom/.test(p)) return require('./routes/news-calendar')(req, res)
+  if (/^(\/\w+)?\/newsroom$/.test(p)) return require('./routes/news-calendar')(req, res)
   if (/^(\/\w+)?\/newsroom\/\d{4}-\d{2}-\d{2}$/.test(p)) return require('./routes/news-calendar')(req, res)
+  if (/^(\/\w+)?\/newsroom\/rss/.test(p)) return require('./routes/rss/newsroom')(req, res)
   
 
   // WGXC/TA Schedule pages

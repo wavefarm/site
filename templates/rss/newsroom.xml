@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+			xmlns:atom="http://www.w3.org/2005/Atom" 
+			xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/" 
+			xmlns:media="http://search.yahoo.com/mrss/" 
+			xmlns:dc="http://purl.org/dc/elements/1.1/" 
+			version="2.0">
+			
+<channel>
+	<title>{{feedTitle}}</title>
+	<link>{{feedUrl}}</link>
+	<description>{{feedDescription}}</description>
+	<language>en-us</language>
+	<copyright>{{feedCopyright}}</copyright>
+	<pubDate>{{feedPubDate}}</pubDate>
+	<lastBuildDate>{{feedLastBuildDate}}</lastBuildDate>
+	<ttl>5</ttl>
+	
+	{{#items}}
+	<item>
+		<title>{{title}}</title>
+		<link>{{link}}</link>
+		<description>{{description}}</description>
+		<pubDate>{{pubDate}}</pubDate>
+		<guid isPermaLink="false">{{guid}}</guid>
+		<dc:creator>{{author}}</dc:creator>
+	</item>	
+	{{/items}}
+	
+</channel></rss>	

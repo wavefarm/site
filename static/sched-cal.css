@@ -10,10 +10,16 @@
   width: 900px;
 }
 
+.page.calendar-page h1,
+.page.schedule-page h1 {
+	margin-right:20px;
+}
+
 
 /* WGXC Schedule */
 .schedule {
   margin-top: 40px;
+  margin-right: 20px;
 }
 
 .day {
@@ -419,6 +425,14 @@ label.error {
 	font-size:smaller;
 }
 
+
+
+/* newsroom */
+
+h1 .newsroom-icons {
+	float:right;
+	text-align:right;	
+}
 
 
 /* color schemes */
