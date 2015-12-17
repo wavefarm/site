@@ -25,9 +25,12 @@ module.exports = function (req, res) {
 	//var feedUrl =  'https://wavefarm.org/newsroom';
 	var feedUrl =   basePath + req.url;
 	var feedDescription = 'This page combines the posts from both the Wave Farm Newsroom (Transmission Art news, radio news, open calls, media news, radio theatre, and more) and the WGXC Newsroom (Scripts and sounds for WGXC radio hosts to play on the WGXC Morning Show or WGXC Afternoon Show. Breaking news, features, local audio, video, analysis, music, links to events in Greene and Columbia counties, NY.)';
-	var feedCopyright = 'Wave Farm Newsroom RSS';
+	//var feedCopyright = 'Wave Farm Newsroom RSS';
+	var feedCopyright = '';
 	var feedPubDate =  moment().format(dateFormat)
-	var feedLastBuildDate = 'Mon, 14 Dec 2015 20:01:51 GMT';
+	var feedLastBuildDate = moment().subtract(1, 'years');
+
+	var dateFilter = moment().add(6, 'hours');
 
 	if (site=='wgxc') {
 		feedTitle = 'WGXC Newsroom';
@@ -57,32 +60,36 @@ module.exports = function (req, res) {
     }
     else {
 	    for (var i = 0; i < results.hits.length; i++) {    	    	
-	      result = results.hits[i]      
-	    	if (i==0) {
-	    		feedLastBuildDate = moment(result.date).format(dateFormat)
-	    		feedPubDate = feedLastBuildDate
-	    	}        
+	      result = results.hits[i]
 	      
-	    	var fullDescription = result.description || ''
-	    	// deal with embedded mp3 URLs
-	  		var mp3Url = false;		
-	    	var matches = mp3Re.exec(fullDescription)
-	    	if (matches!=null) {	
-	    		mp3Url = matches[1]
-	    		fullDescription = fullDescription.replace(mp3Re,'')	    		
-        	var audioTag = '<audio controls="controls" preload="none"><source src="'+mp3Url+'" type="audio/mpeg"></audio>'
-        	fullDescription = fullDescription + '<br /><br />' + audioTag	    		
-	    	}
-	      	      
-	      item = {
-	      		"title" : result.title,
-	      		"description" : fullDescription,
-	      		"link" : basePath + '/' + sitePath + 'newsroom/' + result.id,
-	      		"pubDate" : moment(result.date).format(dateFormat),
-	      		"guid" : result.id,
-	      		"authod" : result.author
-	      }            
-	      items.push(item)
+	      // filter out items too far in the future
+	      if (result.date && moment(result.date).isBefore(dateFilter)) {
+
+		      if (result.timestamp && feedLastBuildDate.isBefore(moment(result.timestamp)))
+		      	feedLastBuildDate = moment(result.timestamp)
+		      
+		    	var fullDescription = result.description || ''
+		    	// deal with embedded mp3 URLs
+		  		var mp3Url = false;		
+		    	var matches = mp3Re.exec(fullDescription)
+		    	if (matches!=null) {	
+		    		mp3Url = matches[1]
+		    		fullDescription = fullDescription.replace(mp3Re,'')	    		
+	        	var audioTag = '<audio controls="controls" preload="none"><source src="'+mp3Url+'" type="audio/mpeg"></audio>'
+	        	fullDescription = fullDescription + '<br /><br />' + audioTag	    		
+		    	}
+		      	      
+		      item = {
+		      		"title" : result.title,
+		      		"description" : fullDescription,
+		      		"link" : basePath + '/' + sitePath + 'newsroom/' + result.id,
+		      		"pubDate" : moment(result.date).format(dateFormat),
+		      		"guid" : result.id,
+		      		"authod" : result.author
+		      }            
+		      items.push(item)
+	      
+	      }
 	    }
     }
       	
@@ -93,7 +100,7 @@ module.exports = function (req, res) {
       feedDescription: feedDescription,
       feedCopyright: feedCopyright,
       feedPubDate: feedPubDate,
-      feedLastBuildDate: feedLastBuildDate,
+      feedLastBuildDate: feedLastBuildDate.format(dateFormat),
       items: items        
     }))   
   })	

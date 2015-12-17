@@ -11,10 +11,8 @@
 	<link>{{feedUrl}}</link>
 	<description>{{feedDescription}}</description>
 	<language>en-us</language>
-	<copyright>{{feedCopyright}}</copyright>
-	<pubDate>{{feedPubDate}}</pubDate>
 	<lastBuildDate>{{feedLastBuildDate}}</lastBuildDate>
-	<ttl>5</ttl>
+	<ttl>60</ttl>
 	
 	{{#items}}
 	<item>
