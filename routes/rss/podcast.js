@@ -87,7 +87,5 @@ module.exports = function (req, res) {
 	      }))
       }    
     })
-    
-    //return res.error(404, new Error('404'))    
   })	
 }
