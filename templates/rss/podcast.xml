@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss 	xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" 
+			xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+			xmlns:dc="http://purl.org/dc/elements/1.1/" 
+			version="2.0">
+<channel>
+	<title>{{feedTitle}}</title>
+	<link>{{feedUrl}}</link>
+	<description>{{feedDescription}}</description>
+	<language>en-us</language>
+	<lastBuildDate>{{feedLastBuildDate}}</lastBuildDate>
+	<copyright></copyright>
+	<ttl>60</ttl>	
+	<itunes:summary>{{feedSummary}}</itunes:summary>
+	<itunes:subtitle><![CDATA[{{{feedSubtitle}}}]]></itunes:subtitle>
+	<itunes:author>{{feedAuthor}}</itunes:author>
+	
+	{{#items}}
+	<item>
+		<title>{{title}}</title>
+		<link>{{link}}</link>
+		<description>{{summary}}</description>
+		<pubDate>{{pubDate}}</pubDate>
+		<guid isPermaLink="false">{{guid}}</guid>
+		<dc:creator>{{author}}</dc:creator>
+		
+		<itunes:author>{{author}}</itunes:author>
+		<itunes:summary><![CDATA[{{{summary}}}]]></itunes:summary>
+		<itunes:explicit>no</itunes:explicit>
+		<enclosure url="{{{enclosureURL}}}" length="0" type="{{{mimetype}}}"/>
+	</item>	
+	{{/items}}
+	
+</channel></rss>	

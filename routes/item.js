@@ -45,6 +45,11 @@ module.exports = function (req, res) {
     
     var detailDesc = typeof(item.credit)!='undefined'?item.credit:'';
     var detail2Desc = typeof(item.airtime)!='undefined'?item.airtime:'';
+    
+    var podcastURL = ''
+    if (item.type=='show' && typeof(item.audio)!='undefined') {
+    	podcastURL = '/'+site+'schedule/'+item.id+'/rss'
+    }    
      
     res.render({
       title: item.main,
@@ -56,7 +61,8 @@ module.exports = function (req, res) {
       locations: locations,
       detail: detailDesc,
       detail2: detail2Desc,
-      description: typeof(item.description)!='undefined'?item.description:''
+      description: typeof(item.description)!='undefined'?item.description:'',
+      podcastURL : podcastURL
     }, {
       head: site+'head.html',
       nav: site+'nav.html',
