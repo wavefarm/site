@@ -433,6 +433,13 @@ h1 .newsroom-icons {
 	float:right;
 	text-align:right;	
 }
+.wf-item h1.item-main .newsroom-icons span {
+	vertical-align: bottom;
+}
+.wf-item h1.item-main .newsroom-icons img {
+	height: 26px;
+}
+
 
 
 /* color schemes */
