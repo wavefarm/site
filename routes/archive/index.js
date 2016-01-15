@@ -1,8 +1,10 @@
-var elemify = require('virtual-dom/create-element')
-var render = require('../../render/layout')
+var api = require('../api')
 
 module.exports = function (req, res) {
-  var state = {section: 'archive', title: 'Archive'}
-  res.setHeader('Content-Type', 'text/html; charset=utf-8')
-  res.end('<!doctype html>' + String(elemify(render(state))))
+  res.render({title: 'Wave Farm Archive'}, {
+    head: 'head.html',
+    listen: 'listen.html',
+    main: 'archive.html',
+    scripts: 'archive-scripts.html'
+  })
 }
