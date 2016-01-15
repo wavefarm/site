@@ -682,6 +682,7 @@ a.wgxc.slide, a.mag.slide {
   border: 1px solid black;
   border-radius: 4px;
   cursor: pointer;
+  display: none;
   font-size: 16px;
   font-weight: 400;
   float: right;
