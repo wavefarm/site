@@ -46,10 +46,17 @@ module.exports = function (req, res) {
     var detailDesc = typeof(item.credit)!='undefined'?item.credit:'';
     var detail2Desc = typeof(item.airtime)!='undefined'?item.airtime:'';
     
+    
     var podcastURL = ''
+    var itunesPodcastURL = ''
     if (item.type=='show' && typeof(item.audio)!='undefined') {
     	podcastURL = '/'+site+'schedule/'+item.id+'/rss'
-    }    
+    	if (req.headers && req.headers.host)
+    		itunesPodcastURL = 'itpc://' + req.headers.host + podcastURL
+    	else
+    		itunesPodcastURL = 'itpc://wavefarm.org' + podcastURL
+    }
+    
      
     res.render({
       title: item.main,
@@ -62,7 +69,8 @@ module.exports = function (req, res) {
       detail: detailDesc,
       detail2: detail2Desc,
       description: typeof(item.description)!='undefined'?item.description:'',
-      podcastURL : podcastURL
+      podcastURL : podcastURL,
+      itunesPodcastURL : itunesPodcastURL
     }, {
       head: site+'head.html',
       nav: site+'nav.html',
