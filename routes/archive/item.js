@@ -14,6 +14,14 @@ module.exports = function (req, res, id) {
 
     item.dateFormatted = util.formatArchiveDate(item)
     item.addressFull = util.concoctFullAddress(item)
+    item.hasWorks = !!item.works
+    item.hasShows = !!item.shows
+    item.hasAudio = !!item.audio
+    item.hasVideo = !!item.video
+    item.hasImage = !!item.image
+    item.hasText = !!item.text
+    item.hasBroadcasts = !!item.broadcasts
+    item.hasEvents = !!item.events
     console.log(item)
 
     res.render({title: item.main, item: item}, {
