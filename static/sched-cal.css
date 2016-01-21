@@ -433,14 +433,23 @@ h1 .newsroom-icons {
 	float:right;
 	text-align:right;	
 }
+
+h1 .newsroom-icons a {
+	margin: 0 3px;
+}
+
+.wf-item h1 .newsroom-icons a {
+	margin: 0;
+}
 .wf-item h1.item-main .newsroom-icons span {
 	vertical-align: bottom;
 	font-weight: 500;
   font-size: 18px;
-  line-height: 22px;	
+  line-height: 20px;	
+  text-align: right;
 }
 .wf-item h1.item-main .newsroom-icons img {
-	height: 26px;
+	height: 40px;
 }
 
 
