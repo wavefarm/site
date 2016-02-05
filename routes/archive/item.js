@@ -14,6 +14,7 @@ module.exports = function (req, res, id) {
 
     item.dateFormatted = util.formatArchiveDate(item)
     item.addressFull = util.concoctFullAddress(item)
+    /*
     item.hasWorks = !!item.works
     item.hasShows = !!item.shows
     item.hasAudio = !!item.audio
@@ -23,11 +24,13 @@ module.exports = function (req, res, id) {
     item.hasBroadcasts = !!item.broadcasts
     item.hasEvents = !!item.events
     console.log(item)
+    */
 
     res.render({title: item.main, item: item}, {
       head: 'head.html',
       listen: 'listen.html',
-      main: 'archive/' + item.type + '.html'
+      main: 'archive/' + item.type + '.html',
+      relatedItems: 'related-items.html'      
     })
   })
 }
