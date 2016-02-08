@@ -1,0 +1,11 @@
+<div class="result">
+  <div class="item-subsites">
+    {{#sites}}<div class="{{.}} site-icon"></div>{{/sites}}
+  </div>
+  <a href="{{itemUrl}}" id="{{id}}" class="item-link">
+    <h3><span class="item-main">{{&main}}</span> <span class="type">({{type}})</span></h3>
+    <div class="date">{{&when}}</div>
+    <div class="credit">{{&credit}}</div>
+    <div class="description">{{desc}}</div>
+  </a>
+</div>

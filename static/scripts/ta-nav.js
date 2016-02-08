@@ -6,6 +6,7 @@
   else if (window.location.pathname == '/ta/support') current('support');
   else if (window.location.pathname.indexOf('/ta/schedule')==0) current('schedule');
   else if (window.location.pathname.indexOf('/ta/calendar')==0) current('calendar');
+  else if (window.location.pathname.indexOf('/ta/newsroom')==0) current('newsroom');
   
   else if (window.location.pathname.indexOf('/ta/archive')==0)	{ 
   	document.getElementById('nav-secondary-ta').style.display = 'block'; 

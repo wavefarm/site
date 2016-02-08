@@ -671,7 +671,7 @@ a.wgxc.slide, a.mag.slide {
   position: absolute;
   width: 35px;
 }
-.archive .site-icon.ta {
+.archive .site-icon.transmissionarts {
   background-image: url('/images/ta-icon-light.png');
   left: 35px;
 }
@@ -682,6 +682,7 @@ a.wgxc.slide, a.mag.slide {
   border: 1px solid black;
   border-radius: 4px;
   cursor: pointer;
+  display: none;
   font-size: 16px;
   font-weight: 400;
   float: right;

@@ -104,19 +104,4 @@ module.exports = function (req, res) {
       items: items        
     }))   
   })	
-	
-	
-	
-	
-	/*
-	var items =[
-    { "title": "Moe", "link":"/newsroom/abcdef"},
-    { "title": "Larry", "link":"/newsroom/abcdefg" },
-    { "title": "Curly", "link":"/newsroom/abcdefgh" }
-	]
-	*/
-		          
-	
-
-	
 }

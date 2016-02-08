@@ -1,1 +1,26 @@
-<div class="archive page"></div>
+<div class="archive page">
+  <h1>SEARCH</h1>
+  <div class="search">
+    <form action="/archive" id="archive-search">
+      <div><input type="search" name="q" placeholder="ENTER ARTIST, PROGRAM, ETC." id="q2"></div>
+      <div class="date-filter">
+        <div class="filter-text">filter by date</div>
+        <input type="text" name="date" placeholder="YYYY-MM-DD" id="date">
+      </div>
+      <div class="date2-filter">
+        <div class="filter-text">or date range</div>
+        <input type="text" name="date2" placeholder="YYYY-MM-DD" id="date2">
+      </div>
+      <div><input type="submit" value="GO" class="action"></div>
+    </form>
+    <div class="content">
+      <p>Hint: Filter by a specific program by including sites:transmissionarts or sites:wgxc in your search. Filter by file type by including type:audio, type:image, type:artist, type:work, type:show, type:broadcast, type:video, or type:event.</p>
+    </div>
+    <div class="results-head">
+      <h2>Results</h2>
+      <div class="summary" id="summary">Loading...</div>
+    </div>
+    <div class="results" id="results"></div>
+    <div class="more" id="more">More</div>
+  </div>
+</div>
