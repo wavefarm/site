@@ -820,7 +820,7 @@ a.programs-header:hover {
 	display: none;	/* default to not showing; turned on via .js */
 	right:0px;
 	width:300px;
-	height:440px;
+	height:540px;
 	overflow:hidden;
 	position:absolute;
 	top:70px;
@@ -896,7 +896,7 @@ a.programs-header:hover {
 }
 
 .announce-buttons {
-	margin-left:30px;
+	margin-left:40px;
 }
 
 
