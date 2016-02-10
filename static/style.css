@@ -820,7 +820,7 @@ a.programs-header:hover {
 	display: none;	/* default to not showing; turned on via .js */
 	right:0px;
 	width:300px;
-	height:340px;
+	height:440px;
 	overflow:hidden;
 	position:absolute;
 	top:70px;
@@ -874,7 +874,7 @@ a.programs-header:hover {
 }
 .announce-container {
   background: #a7f0ff; 
-  color: #fff200;
+  color: #171c44;
   margin: 10px 0;
   padding: 10px 35px 10px 5px;
 }
