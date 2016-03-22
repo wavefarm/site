@@ -58,7 +58,7 @@ module.exports = function (req, res) {
 		      summary = ''	
 		      subtitle = ''
 		      	
-		      item = {
+		      listItem = {
 		      		"title" : result.title,
 		      		"description" : summary,
 		      		"link" : basePath + '/archive/' + result.id,
@@ -69,7 +69,7 @@ module.exports = function (req, res) {
 		      		"enclosureURL": result.url,
 		      		"mimetype" : result.mimetype
 		      }            
-		      items.push(item)
+		      items.push(listItem)
   	    }
   	    
 	    	res.setHeader('Content-Type', 'application/rss+xml; charset=utf-8')
