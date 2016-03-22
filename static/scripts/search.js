@@ -1,9 +1,12 @@
 ;(function ($) {
   var querystring = location.search.substr(1);
   var query = $.deparam(querystring);
-  $('#q2').val(query.q);
-  $('#date').val(query.date);
-  $('#date2').val(query.date2);
+  $('#archive-search #q2').val(query.q);
+  $('#archive-search #date').val(query.date);
+  $('#archive-search #date2').val(query.date2);
+  $('#archive-search #types').val(query.types);
+  $('#archive-search #sites').val(query.sites);
+  $('#archive-search #sort').val(query.sort);
 
   var template, data;
   var resultsDiv = $('#results');
@@ -37,6 +40,7 @@
       });
       moreButton.show();
     } else {
+      var moreButton = $('#more');
       moreButton.hide();
     }
   }
@@ -46,9 +50,20 @@
     renderResults();
   });
 
+  // stuff sites and type into q if they are present
+  if (query.sites) {  	
+  	query.q = query.q + ' sites:'+query.sites
+  }
+  if (query.types) {  	
+  	query.q = query.q + ' type:'+query.types
+  }
+  
+  //console.log($.param(query))
+  
   $.ajax({
     url: '/api/search',
-    data: querystring,
+    //data: querystring,
+    data: $.param(query),
     success: function (d) {
       data = d;
       renderResults();

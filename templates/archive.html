@@ -2,15 +2,57 @@
   <h1>SEARCH</h1>
   <div class="search">
     <form action="/archive" id="archive-search">
-      <div><input type="search" name="q" placeholder="ENTER ARTIST, PROGRAM, ETC." id="q2"></div>
-      <div class="date-filter">
-        <div class="filter-text">filter by date</div>
+      <div class="archive-control keywords-filter">
+      	<label for="q">Keywords(s):</label>
+      		<input type="search" name="q" placeholder="ENTER ARTIST, PROGRAM, ETC." id="q2">
+      </div>
+      <div class="archive-control types-filter">
+        <label for="types">Filter by type:</label>
+        <select name="types"  id="types">
+        	<option value=""></option>
+        	<option value="artist">Artist</option>
+        	<option value="audio">Audio</option>
+        	<option value="broadcast">Broadcast</option>
+        	<option value="event">Event</option>
+        	<option value="image">Image</option>
+        	<option value="location">Location</option>
+        	<option value="news">News</option>
+        	<option value="show">Show</option>
+        	<option value="text">Text</option>
+        	<option value="video">Video</option>
+        	<option value="work">Work</option>
+        </select>
+      </div>
+      
+      <div class="archive-control date-filter">
+        <label for="date"  >Filter by date:</label>
         <input type="text" name="date" placeholder="YYYY-MM-DD" id="date">
       </div>
-      <div class="date2-filter">
-        <div class="filter-text">or date range</div>
+      <div class="archive-control date2-filter">
+        <label for="date2"  >or by date range:</label>
         <input type="text" name="date2" placeholder="YYYY-MM-DD" id="date2">
       </div>
+      
+      <div class="archive-control sites-filter">
+        <label for="sites" >Filter by site:</label>
+        <select name="sites"  id="sites">
+        	<option value=""></option>
+        	<option value="wgxc">WGXC</option>
+        	<option value="transmissionarts">Transmission Arts</option>
+        </select>
+      </div>
+      
+      <div class="archive-control sort-filter">
+        <label for="sort" >Sort by:</label>
+        <select name="sort"  id="sort">
+        	<option value="">Relevance</option>
+        	<option value="date">Date</option>
+        	<option value="-date">Date, Descending</option>
+        	<option value="main">Title</option>
+        	<option value="-main">Title, Descending</option>
+        </select>
+      </div>  
+
       <div><input type="submit" value="GO" class="action"></div>
     </form>
     <div class="content">
