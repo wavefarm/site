@@ -415,7 +415,7 @@ nav.wf2 {
 .pop-out .listen-handle,
 .pop-out .listen-wgxc-window,
 .pop-out .listen-wf-window,
-.pop-out .listen-download,
+/*.pop-out .listen-download,*/
 .pop-out .listen-popout {
   display: none;
 }
