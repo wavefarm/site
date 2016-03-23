@@ -483,10 +483,12 @@ nav.wf2 {
 
 .listen-email {
 }
+.listen-nowplaying-list {
+	margin: 10px 0 0 0;	
+}
 .listen-nowplaying,
 .listen-upnext {
 	font-weight: bold;
-	margin: 10px 0 0 0;
 }
 
 .listen-nowplaying a,
@@ -618,7 +620,7 @@ a.wgxc.slide, a.mag.slide {
 }
 
 .archive label {
-	width: 140px;
+	width: 150px;
 	font-weight:bold;
 	float:left;	
 }
