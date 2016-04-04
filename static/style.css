@@ -415,7 +415,7 @@ nav.wf2 {
 .pop-out .listen-handle,
 .pop-out .listen-wgxc-window,
 .pop-out .listen-wf-window,
-.pop-out .listen-download,
+/*.pop-out .listen-download,*/
 .pop-out .listen-popout {
   display: none;
 }
@@ -483,10 +483,12 @@ nav.wf2 {
 
 .listen-email {
 }
+.listen-nowplaying-list {
+	margin: 10px 0 0 0;	
+}
 .listen-nowplaying,
 .listen-upnext {
 	font-weight: bold;
-	margin: 10px 0 0 0;
 }
 
 .listen-nowplaying a,
@@ -612,10 +614,24 @@ a.wgxc.slide, a.mag.slide {
 .archive .types a, .archive .sites a {
   margin: 0 10px 0 0;
 }
+
+.archive .archive-control {
+	margin-bottom:10px;
+}
+
+.archive label {
+	width: 150px;
+	font-weight:bold;
+	float:left;	
+}
+
+
+
 .archive input[type=search] {
   font-size: 20px;
   padding: 5px;
-  width: 100%;
+  /*width: 100%;*/
+  width: 510px;
 }
 .archive .date-filter {
   float: left;

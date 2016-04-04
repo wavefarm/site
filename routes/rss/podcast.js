@@ -37,6 +37,9 @@ module.exports = function (req, res) {
     var sort = '-date,sort,main'
     var relation = 'shows'
     var itemId = item.id
+    var feedTitle = item.title
+    
+    if (feedTitle) feedTitle = feedTitle + ' Podcast'
     
     var params = qs.parse('q=public:true%20type:'+targetType+'%20'+relation+'.id:'+itemId +'&size=50&sort='+sort)
     
@@ -58,7 +61,7 @@ module.exports = function (req, res) {
 		      summary = ''	
 		      subtitle = ''
 		      	
-		      item = {
+		      listItem = {
 		      		"title" : result.title,
 		      		"description" : summary,
 		      		"link" : basePath + '/archive/' + result.id,
@@ -69,12 +72,12 @@ module.exports = function (req, res) {
 		      		"enclosureURL": result.url,
 		      		"mimetype" : result.mimetype
 		      }            
-		      items.push(item)
+		      items.push(listItem)
   	    }
   	    
 	    	res.setHeader('Content-Type', 'application/rss+xml; charset=utf-8')
 	      res.end(mustache.render(res.t['rss/podcast.xml'], {
-	        feedTitle:  item.title,
+	        feedTitle:  feedTitle,
 	        feedUrl:  basePath + req.url,
 	        feedDescription: item.description,
 	        feedCopyright: 'Copyright '+moment().format('YYYY')+' Wavefarm',
