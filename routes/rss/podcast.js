@@ -58,8 +58,7 @@ module.exports = function (req, res) {
 		      if (result.timestamp && feedLastBuildDate.isBefore(moment(result.timestamp)))
 		      	feedLastBuildDate = moment(result.timestamp)
 		      
-		      summary = ''	
-		      subtitle = ''
+		      summary = result.description
 		      	
 		      listItem = {
 		      		"title" : result.title,
