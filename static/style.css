@@ -117,11 +117,20 @@ header .search input {
   background-position: -128px 0px;
 }
 .mag-logo {
+	/*
   background: url('/images/mag-logo.png') no-repeat;
-  float: right;
-  height: 151px;
   width: 665px;
+  height: 151px;
   margin-right: 134px;
+	float: right;
+  */
+  background: url('/images/mag-logo-2016.png') no-repeat;
+	width: 760px;
+	height: 98px;
+  margin-left: 28px;
+  margin-top: 14px;
+  position: absolute;
+  top: 68px;
 
 }
 .sub {
@@ -789,9 +798,13 @@ a.programs-header:hover {
 }
 
 .ta-logo {
-  background: url('/images/ta-logo.png') no-repeat;
+  /*background: url('/images/ta-logo.png') no-repeat;
   width: 760px;
 	height: 78px;
+	*/  
+  background: url('/images/ta-logo-2016.png') no-repeat;
+	width: 760px;
+	height: 98px;
   margin-left: 28px;
   margin-top: 14px;
   position: absolute;
