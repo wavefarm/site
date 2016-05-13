@@ -106,22 +106,31 @@ header .search input {
 }
 .subicon {
   background: url('/images/subicons.png') no-repeat;
-  background-size: 188px 120px;
+  background-size: 183px 120px;
   height: 60px;
   width: 60px;
 }
 .mag .subicon {
-  background-position: -128px -60px;
+  background-position: -123px -60px;
 }
 .mag .subicon:hover {
-  background-position: -128px 0px;
+  background-position: -123px 0px;
 }
 .mag-logo {
+	/*
   background: url('/images/mag-logo.png') no-repeat;
-  float: right;
-  height: 151px;
   width: 665px;
+  height: 151px;
   margin-right: 134px;
+	float: right;
+  */
+  background: url('/images/mag-logo-2016.png') no-repeat;
+	width: 760px;
+	height: 98px;
+  margin-left: 28px;
+  margin-top: 14px;
+  position: absolute;
+  top: 68px;
 
 }
 .sub {
@@ -134,9 +143,13 @@ header .search input {
   margin: 16px auto;
 }
 .ta .subicon {
+	
   background-position: 0px -60px;
+  /*
   height: 60px;
   width: 68px;
+  */
+  
 }
 .ta .subicon:hover {
   background-position: 0px 0px;
@@ -158,10 +171,10 @@ header .search input {
   margin: 33px 38px 20px 0;
 }
 .wgxc .subicon {
-  background-position: -68px -60px;
+  background-position: -60px -60px;
 }
 .wgxc .subicon:hover {
-  background-position: -68px 0px;
+  background-position: -60px 0px;
 }
 
 .wgxc-logo {
@@ -190,10 +203,10 @@ nav.primary a:hover {
   color: white;
 }
 nav.mag {
-  background: #6dcff6;
+  background: #B98DE0;/*#6dcff6;*/
 }
 nav.ta {
-  background: #ffcd32;
+  background: #F0B112;/*#ffcd32;*/
 }
 nav.wgxc {
   background: #6fb43f;
@@ -789,9 +802,13 @@ a.programs-header:hover {
 }
 
 .ta-logo {
-  background: url('/images/ta-logo.png') no-repeat;
+  /*background: url('/images/ta-logo.png') no-repeat;
   width: 760px;
 	height: 78px;
+	*/  
+  background: url('/images/ta-logo-2016.png') no-repeat;
+	width: 760px;
+	height: 98px;
   margin-left: 28px;
   margin-top: 14px;
   position: absolute;
