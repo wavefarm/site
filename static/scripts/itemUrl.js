@@ -7,12 +7,15 @@ function itemUrl (item) {
       return '/ta/schedule/' + item.id;
     }
   }
-  if (item.type == 'event' && item.sites) {
-    if (item.sites.indexOf('wgxc') != -1) {
+  if (item.type == 'event') {
+    if (item.sites && item.sites.indexOf('wgxc') != -1) {
       return '/wgxc/calendar/' + item.id;
     }
-    if (item.sites.indexOf('transmissionarts') != -1) {
+    else if (item.sites && item.sites.indexOf('transmissionarts') != -1) {
       return '/ta/calendar/' + item.id;
+    }
+    else {
+      return '/calendar/' + item.id;
     }
   }
   if (item.type == 'news') {
