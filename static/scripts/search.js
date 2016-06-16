@@ -50,6 +50,14 @@
     renderResults();
   });
 
+  // if no colon in q (no fields specified) duplicate query
+  // in ORed "main" field for better relevancy
+  // note: this is in API search too but it needs to happen
+  // before any other : elements added to q
+  if (query.q && query.q.indexOf(':') == -1) {
+  	query.q = query.q+' OR main:('+query.q+')'
+  }
+  
   // stuff sites and type into q if they are present
   if (query.sites) {  	
   	query.q = query.q + ' sites:'+query.sites
