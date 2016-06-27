@@ -955,3 +955,43 @@ a.programs-header:hover {
 	margin: 0px 0 3px 0;
 }
 
+
+/* Schedule Grid */
+
+.schedule-grid.page {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0;
+}
+	
+table.schedule-grid {
+	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid #838486;	
+	
+}
+table.schedule-grid th,
+table.schedule-grid td {
+	border:1px solid black;
+	padding: 2px 4px 2px 4px;
+}
+table.schedule-grid th {
+	font-weight:bold;
+	width: 13%;
+	border-width: 1px 1px 2px 1px;
+	background-color:black;
+	color:white;
+	text-transform:uppercase;
+}
+table.schedule-grid td {
+	border-width: 1px;
+	overflow: hidden;	
+	font-size:13px;
+	text-align: center;
+	line-height: 16px;
+}
+table.schedule-grid td ul li {
+	text-align:left;
+	line-height: 18px;
+	font-size:13px;
+}

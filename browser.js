@@ -5,6 +5,7 @@ if (env == 'dev') require('deva');
 
 require('./lib/pointer')()
 require('./lib/schedule')()
+require('./lib/schedule-grid')()
 require('./lib/subnav')()
 require('./lib/tweets')()
 require('./lib/listenlive')()
