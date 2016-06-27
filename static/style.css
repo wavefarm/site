@@ -990,7 +990,7 @@ table.schedule-grid td {
 	text-align: center;
 	line-height: 16px;
 }
-table.schedule-grid td ul li {
+table.schedule-grid td ul li  {
 	text-align:left;
 	line-height: 18px;
 	font-size:13px;
