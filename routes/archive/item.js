@@ -14,18 +14,20 @@ module.exports = function (req, res, id) {
 
     item.dateFormatted = util.formatArchiveDate(item)
     item.addressFull = util.concoctFullAddress(item)
-    /*
-    item.hasWorks = !!item.works
-    item.hasShows = !!item.shows
-    item.hasAudio = !!item.audio
-    item.hasVideo = !!item.video
-    item.hasImage = !!item.image
-    item.hasText = !!item.text
-    item.hasBroadcasts = !!item.broadcasts
-    item.hasEvents = !!item.events
-    console.log(item)
-    */
 
+    item.hasVideoDownload = false
+    item.hasVideoLink = false
+    if (item.type == 'video' && item.url) {
+    	if ((item.url.indexOf('data.wavefarm.org') > -1) ||
+    			(item.url.indexOf('data.free103point9.org') > -1)  ||
+    			(item.url.indexOf('free103point9.org') > -1) ) {    		
+    		item.hasVideoDownload = true
+    	}
+    	else {
+    		item.hasVideoLink = true
+    	}
+    }
+    
     res.render({title: item.main, item: item}, {
       head: 'head.html',
       listen: 'listen.html',
