@@ -7,9 +7,16 @@
     <div class="date">{{item.dateFormatted}}</div>
     <div class="credit">{{item.credit}}</div>
     <div class="description">{{&item.description}}</div>
+    {{#item.hasVideoDownload}}
     <div class="download">
       <a href="{{item.url}}" download>Download ({{item.mimetype}})</a>
     </div>
+    {{/item.hasVideoDownload}}
+    {{#item.hasVideoLink}}
+    <div class="download">
+      <a href="{{item.url}}" target="_blank">View ({{item.mimetype}})</a>
+    </div>
+    {{/item.hasVideoLink}}    
 	  <div class="related-items-container">{{> relatedItems}}</div>        
   </div>
 </div>

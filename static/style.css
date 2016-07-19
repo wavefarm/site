@@ -935,6 +935,16 @@ a.programs-header:hover {
 
 /* Related Items */
 
+.related-item-section-list {
+	border-top: 2px solid black;
+	clear:right;
+}
+
+.social-icons-container {
+	float:right;	
+}
+
+
 .related-item-section h2 span {
 	/*color:#73c346;*/
 	font-size: 14px;
