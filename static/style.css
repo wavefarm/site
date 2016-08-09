@@ -367,6 +367,16 @@ nav.wf2 {
 	position:absolute;
 	left:230px;
 }
+.listen.pop-out .listen-wf .listen-wf-audio-logo {
+	/*
+	width:262px;
+	height: 122px;
+	*/
+	width:249px;
+	height: 116px;
+	position: relative;
+	left: 0;
+}
 .listen h1 {
   font-size: 24px;
   padding: 12px 0 8px 0;
