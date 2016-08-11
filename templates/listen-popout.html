@@ -20,17 +20,23 @@
     
   </head>
   <body>
-    <div class="container">
-    
+    <div class="container">    
 		<div class="listen-container">
-			<div class="listen pop-out" style="top:10px;left:20px;">{{> main}}</div>
+			<div class="listen pop-out" style="top:10px;left:20px;">			
+				<div class="listen-wf">
+					<img class="listen-wf-audio-logo" src="/images/wf_audio_icon.png" alt="Wave Farm Audio"/> 
+				</div>	
+				{{> main}}				
+				<div class="listen-wf"><p class="listen-contact">
+					<strong>Wave Farm</strong> is a non-profit arts organization driven by experimentation with broadcast media and the airwaves.  
+					Our programs&mdash; Transmission Arts, WGXC-FM, and Media Arts Grants&mdash; provide access to transmission technologies 
+					and support artists and organizations that engage with media as an art form.
+				<p></div>
+			</div>			
 		</div>
 	</div>
-
-	
-    <script src="/scripts/jquery.js"></script>
-    <script src="/scripts/jquery-ui.js"></script>
-    <script src="/bundle.js"></script>	
-	
+  <script src="/scripts/jquery.js"></script>
+  <script src="/scripts/jquery-ui.js"></script>
+  <script src="/bundle.js"></script>	
 	</body>
 	</html>
