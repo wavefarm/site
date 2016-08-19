@@ -605,6 +605,11 @@ a.wgxc.slide, a.mag.slide {
   font-weight: 400;
   margin: 30px 0 10px 0;
 }
+.page h3 {
+  font-size: 22px;
+  font-weight: 400;
+  margin: 0px 0 0px 0;
+}
 .page i {
   font-style: italic;
 }
