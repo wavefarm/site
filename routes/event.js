@@ -27,8 +27,8 @@ module.exports = function (req, res) {
     
     var locations = '';
     if(typeof(item.locations)!='undefined') {
-      for (i = 0; i < item.locations.length; i++) { 
-        locations += '<strong>'+item.locations[i].main+'</strong>';
+      for (i = 0; i < item.locations.length; i++) {
+        locations += '<strong id="location-name-'+item.locations[i].id+'">'+item.locations[i].main+'</strong>';
         // place holder for address to be filled in client side
         locations += '<p id="location-address-'+item.locations[i].id+'"></p>';
       }     
