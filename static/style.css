@@ -350,6 +350,17 @@ nav.wf2 {
   font-size: 11px;
   text-align: right;
 }
+/* Listen Now Header Button */
+.listen-now-button {
+	position:relative;
+	top:12px;
+}
+.listen-now-button a {
+	position:absolute;
+}
+.listen-now-button a img {
+	width: 150px;
+}
 
 /* Listen slider */
 .listen {

@@ -113,7 +113,7 @@ http.createServer(function (req, res) {
     head: head,
     nav: nav,
     main: main,
-    listen: 'listen.html',
+    /*listen: 'listen.html',*/
     announce: 'announce.html'
   })
 }).listen(port, function () {
