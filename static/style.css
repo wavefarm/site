@@ -350,6 +350,17 @@ nav.wf2 {
   font-size: 11px;
   text-align: right;
 }
+/* Listen Now Header Button */
+.listen-now-button {
+	position:relative;
+	top:12px;
+}
+.listen-now-button a {
+	position:absolute;
+}
+.listen-now-button a img {
+	width: 150px;
+}
 
 /* Listen slider */
 .listen {
@@ -867,7 +878,7 @@ a.programs-header:hover {
 
 .outer-announce-container {
 	display: none;	/* default to not showing; turned on via .js */
-	right:0px;
+	left:0px;
 	width:300px;
 	height:540px;
 	overflow:hidden;
@@ -879,8 +890,8 @@ a.programs-header:hover {
 	display: none;	/* default to not showing; turned on via .js */
   background: black;
   color: white;
-  right: -20px;
-  padding: 5px 0px 5px 30px;
+  left: -20px;
+  padding: 5px 30px 5px 0px;
   position: absolute;
   width: 290px;
 }
@@ -893,8 +904,8 @@ a.programs-header:hover {
   position: absolute;
   width: 280px;
   text-align: center;
-  top: 0;
-  right: 296px;
+  top: 0px;
+  left: 34px;
   z-index: 0;
   /* Rotate from http://css-tricks.com/snippets/css/text-rotation/ */
   /* Safari */
@@ -925,7 +936,7 @@ a.programs-header:hover {
   background: #98e3fe; 
   color: #171c44;
   margin: 10px 0;
-  padding: 10px 35px 10px 5px;
+  padding: 10px 5px 10px 35px;
 }
 .announce-container p {
 	text-align:center;
