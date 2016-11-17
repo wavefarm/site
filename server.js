@@ -45,8 +45,8 @@ http.createServer(function (req, res) {
   if (idMatch) return require('./routes/archive/item')(req, res, idMatch[1])
 
   // WGXC/TA broadcasts and shows
-  if (/^(\/\w+)?\/schedule\/\w{6}$/.test(p)) return require('./routes/item')(req, res)
-  if (/^(\/\w+)?\/schedule\/\w{6}\/rss$/.test(p)) return require('./routes/rss/podcast')(req, res)
+  if (/^(\/\w+)\/schedule\/\w{6}$/.test(p)) return require('./routes/item')(req, res)
+  if (/^(\/\w+)\/schedule\/\w{6}\/rss$/.test(p)) return require('./routes/rss/podcast')(req, res)
 
   
   // WGXC/TA event
