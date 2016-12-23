@@ -14,7 +14,7 @@
 	<itunes:summary>{{feedSummary}}</itunes:summary>
 	<itunes:subtitle><![CDATA[{{{feedSubtitle}}}]]></itunes:subtitle>
 	<itunes:author>{{feedAuthor}}</itunes:author>
-	<itunes:image href=”{{{feedITunesImagePath}}}” />
+	<itunes:image href="{{{feedITunesImagePath}}}"/>
 	<image>
 		<url>{{{feedImagePath}}}</url>
 		<title>{{feedTitle}}</title>
@@ -33,7 +33,7 @@
 		<itunes:author>{{author}}</itunes:author>
 		<itunes:summary><![CDATA[{{{summary}}}]]></itunes:summary>
 		<itunes:explicit>no</itunes:explicit>
-		<itunes:image href=”{{{feedITunesImagePath}}}” />
+		<itunes:image href="{{{feedITunesImagePath}}}"/>
 		<enclosure url="{{{enclosureURL}}}" length="0" type="{{{mimetype}}}"/>
 	</item>	
 	{{/items}}
