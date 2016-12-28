@@ -60,8 +60,12 @@ module.exports = function (req, res) {
 		      
 		      summary = result.description
 		      	
+		      resultTitle = result.title
+		      if (resultTitle && resultTitle.indexOf(item.title) == -1) 
+		      	resultTitle = item.title + ': ' + resultTitle
+		      
 		      listItem = {
-		      		"title" : result.title,
+		      		"title" : resultTitle,
 		      		"description" : summary,
 		      		"link" : basePath + '/archive/' + result.id,
 		      		"pubDate" : moment(result.date).format(dateFormat),
@@ -84,7 +88,9 @@ module.exports = function (req, res) {
 	        feedLastBuildDate: feedLastBuildDate.format(dateFormat),
 	        feedSummary:  item.description,
 	        feedSubtitle: item.subtitle,
-	        feedAuthor: item.credit,	        
+	        feedAuthor: item.credit,
+	        feedImagePath: basePath + "/images/podcast_logos_lnred_sm.jpg",
+	        feedITunesImagePath: basePath + "/images/podcast_logos_lnred_lg.jpg",
 	        items: items        
 	      }))
       }    

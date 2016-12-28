@@ -5,7 +5,7 @@
 			version="2.0">
 <channel>
 	<title>{{feedTitle}}</title>
-	<link>{{feedUrl}}</link>
+	<link>{{{feedUrl}}}</link>
 	<description>{{feedDescription}}</description>
 	<language>en-us</language>
 	<lastBuildDate>{{feedLastBuildDate}}</lastBuildDate>
@@ -14,11 +14,17 @@
 	<itunes:summary>{{feedSummary}}</itunes:summary>
 	<itunes:subtitle><![CDATA[{{{feedSubtitle}}}]]></itunes:subtitle>
 	<itunes:author>{{feedAuthor}}</itunes:author>
+	<itunes:image href="{{{feedITunesImagePath}}}"/>
+	<image>
+		<url>{{{feedImagePath}}}</url>
+		<title>{{feedTitle}}</title>
+		<link>{{{feedUrl}}}</link>
+	</image>
 	
 	{{#items}}
 	<item>
 		<title>{{title}}</title>
-		<link>{{link}}</link>
+		<link>{{{link}}}</link>
 		<description>{{summary}}</description>
 		<pubDate>{{pubDate}}</pubDate>
 		<guid isPermaLink="false">{{guid}}</guid>
@@ -27,6 +33,7 @@
 		<itunes:author>{{author}}</itunes:author>
 		<itunes:summary><![CDATA[{{{summary}}}]]></itunes:summary>
 		<itunes:explicit>no</itunes:explicit>
+		<itunes:image href="{{{feedITunesImagePath}}}"/>
 		<enclosure url="{{{enclosureURL}}}" length="0" type="{{{mimetype}}}"/>
 	</item>	
 	{{/items}}

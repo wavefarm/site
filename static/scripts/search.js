@@ -6,6 +6,7 @@
   $('#archive-search #date2').val(query.date2);
   $('#archive-search #types').val(query.types);
   $('#archive-search #sites').val(query.sites);
+  $('#archive-search #locations').val(query.locations);
   $('#archive-search #sort').val(query.sort);
 
   var template, data;
@@ -58,12 +59,15 @@
   	query.q = query.q+' OR main:('+query.q+')'
   }
   
-  // stuff sites and type into q if they are present
+  // stuff sites, type, and location into q if they are present
   if (query.sites) {  	
   	query.q = query.q + ' sites:'+query.sites
   }
   if (query.types) {  	
   	query.q = query.q + ' type:'+query.types
+  }
+  if (query.locations) {  	
+  	query.q = query.q + ' locations.main:'+query.locations
   }
   
   //console.log($.param(query))

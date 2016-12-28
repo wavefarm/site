@@ -109,7 +109,22 @@ http.createServer(function (req, res) {
     else return res.error(404, new Error('Not Found'))
   }
 
-  res.render({title: 'Wave Farm'}, {
+  var title = 'Wave Farm'
+  if (main) {
+	  var page = main.replace('.html','')
+	  if (sub) {
+	  	if (sub[1] == 'ta')
+	  		title =  'Transmission Arts'
+	  	else
+	  		title = 'WGXC'
+	  	page = page.replace(sub[1],'')
+	  	page = page.replace('/','')
+	  }
+	  if (page)
+	  	title = title + ' ' + page.charAt(0).toUpperCase() + page.slice(1)
+  }
+  
+  res.render({title: title}, {
     head: head,
     nav: nav,
     main: main,

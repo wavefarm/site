@@ -13,7 +13,13 @@
 	<language>en-us</language>
 	<lastBuildDate>{{feedLastBuildDate}}</lastBuildDate>
 	<ttl>60</ttl>
-	
+	<itunes:image href="{{{feedITunesImagePath}}}"/>
+	<image>
+		<url>{{{feedImagePath}}}</url>
+		<title>{{feedTitle}}</title>
+		<link>{{{feedUrl}}}</link>
+	</image>
+		
 	{{#items}}
 	<item>
 		<title>{{title}}</title>
@@ -21,6 +27,7 @@
 		<description>{{description}}</description>
 		<pubDate>{{pubDate}}</pubDate>
 		<guid isPermaLink="false">{{guid}}</guid>
+		<itunes:image href="{{{feedITunesImagePath}}}"/>
 		<dc:creator>{{author}}</dc:creator>
 	</item>	
 	{{/items}}

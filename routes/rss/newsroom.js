@@ -78,9 +78,13 @@ module.exports = function (req, res) {
 	        	var audioTag = '<audio controls="controls" preload="none"><source src="'+mp3Url+'" type="audio/mpeg"></audio>'
 	        	fullDescription = fullDescription + '<br /><br />' + audioTag	    		
 		    	}
-		      	      
+		      	     
+		      resultTitle = result.title
+		      if (resultTitle && resultTitle.indexOf(feedTitle) == -1) 
+		      	resultTitle = feedTitle + ': ' + resultTitle
+		    	
 		      item = {
-		      		"title" : result.title,
+		      		"title" : resultTitle,
 		      		"description" : fullDescription,
 		      		"link" : basePath + '/' + sitePath + 'newsroom/' + result.id,
 		      		"pubDate" : moment(result.date).format(dateFormat),
@@ -101,6 +105,8 @@ module.exports = function (req, res) {
       feedCopyright: feedCopyright,
       feedPubDate: feedPubDate,
       feedLastBuildDate: feedLastBuildDate.format(dateFormat),
+      feedImagePath: basePath + "/images/podcast_logos_lnred_sm.jpg",
+      feedITunesImagePath: basePath + "/images/podcast_logos_lnred_lg.jpg",      
       items: items        
     }))   
   })	
