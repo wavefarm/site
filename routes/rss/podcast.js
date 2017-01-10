@@ -62,7 +62,8 @@ module.exports = function (req, res) {
 		      	
 		      resultTitle = result.title
 		      if (resultTitle && resultTitle.indexOf(item.title) == -1) 
-		      	resultTitle = item.title + ': ' + resultTitle
+		      	resultTitle = resultTitle + ", " + item.title
+		      
 		      
 		      listItem = {
 		      		"title" : resultTitle,
