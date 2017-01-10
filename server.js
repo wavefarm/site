@@ -115,13 +115,17 @@ http.createServer(function (req, res) {
 	  if (sub) {
 	  	if (sub[1] == 'ta')
 	  		title =  'Transmission Arts'
+	  	else if (sub[1] == 'mag')
+	  	  title =  'Media Arts Grants'
 	  	else
 	  		title = 'WGXC'
 	  	page = page.replace(sub[1],'')
 	  	page = page.replace('/','')
 	  }
-	  if (page)
+	  if (page) {	  		
+		  if (page == 'index') page = 'home'
 	  	title = title + ' ' + page.charAt(0).toUpperCase() + page.slice(1)
+	  }
   }
   
   res.render({title: title}, {
