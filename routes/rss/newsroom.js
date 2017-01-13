@@ -83,6 +83,16 @@ module.exports = function (req, res) {
 		      if (resultTitle && resultTitle.indexOf(feedTitle) == -1) 
 		      	resultTitle =  resultTitle + ', ' + feedTitle 
 		    	
+		      resultTitle = result.title
+	      	if (resultTitle && feedTitle && resultTitle.indexOf(feedTitle+':') == 0) {
+	      		resultTitle = resultTitle.substring(feedTitle.length+1)
+	      		resultTitle = resultTitle.trim()
+	      	}
+		      if (resultTitle && feedTitle && resultTitle.indexOf(feedTitle) == -1) {
+		      	resultTitle = resultTitle + " - " + feedTitle
+  	    	}		      	
+		      	
+		      	
 		      item = {
 		      		"title" : resultTitle,
 		      		"description" : fullDescription,
