@@ -81,7 +81,7 @@ module.exports = function (req, res) {
 		      	     
 		      resultTitle = result.title
 		      if (resultTitle && resultTitle.indexOf(feedTitle) == -1) 
-		      	resultTitle = feedTitle + ': ' + resultTitle
+		      	resultTitle =  resultTitle + ', ' + feedTitle 
 		    	
 		      item = {
 		      		"title" : resultTitle,
