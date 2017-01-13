@@ -61,8 +61,13 @@ module.exports = function (req, res) {
 		      summary = result.description
 		      	
 		      resultTitle = result.title
-		      if (resultTitle && resultTitle.indexOf(item.title) == -1) 
-		      	resultTitle = resultTitle + ", " + item.title
+	      	if (resultTitle && item.title && resultTitle.indexOf(item.title+':') == 0) {
+	      		resultTitle = resultTitle.substring(item.title.length+1)
+	      		resultTitle = resultTitle.trim()
+	      	}
+		      if (resultTitle && item.title && resultTitle.indexOf(item.title) == -1) {
+		      	resultTitle = resultTitle + " - " + item.title
+  	    	}
 		      
 		      
 		      listItem = {
