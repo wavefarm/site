@@ -964,6 +964,7 @@ a.programs-header:hover {
 	
 }
 .announce-strong {
+	color: #ffffff;
 	font-size: 120%;
 	line-height: 120%;
 	font-weight: 800;
