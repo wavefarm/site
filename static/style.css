@@ -844,6 +844,7 @@ a.wgxc.slide, a.mag.slide {
 }
 
 .wgxc-donate-form input {
+	position: absolute;
 	margin-top:10px;
 	font-size:12px;
 }
