@@ -842,10 +842,11 @@ a.wgxc.slide, a.mag.slide {
 }
 
 .wgxc-donate-form input {
-	position: absolute;
-	margin-top:10px;
 	font-size:12px;
-	padding: 20px 20px 20px 20px;
+	margin-left: 28px;
+  	margin-top: 14px;
+  	position: absolute;
+  	top: 68px;
 }
 /* TA */
 
