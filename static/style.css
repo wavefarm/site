@@ -817,8 +817,43 @@ a.wgxc.slide, a.mag.slide {
   color: #1AB7EA;
 }
 
+.page.split-right {
+  margin: 0 40px 0 0;
+  width: 600px;
+  float:left;
+}
 
+.split-right-side {
+	width:320px;
+  margin: 0 0 0 640px;
+  padding-top:40px;
+  
+}
 
+.wgxc-donate-form-container {
+	color:white;
+	background-color:	#ca0b15;
+	padding: 5px 20px 20px 15px;
+}
+
+.wgxc-donate-form-container h2 {
+	padding:20px 0 0 0;
+	font-size:30px;
+	line-height:36px;
+	font-weight:bold;
+}
+.wgxc-donate-form-container p {
+	padding:10px 0 10px 0;
+	font-size:16px;
+}
+
+.wgxc-donate-form input {
+	margin-top:10px;
+	font-size:12px;
+}
+.wgxc-donate-form input[type=text] {
+	width:100%;
+}
 /* TA */
 
 .page.ta a:hover {
