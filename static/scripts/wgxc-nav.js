@@ -5,5 +5,5 @@
   else if (window.location.pathname.indexOf('/wgxc/newsroom')==0) current('newsroom');
   else if (window.location.pathname == '/wgxc/volunteer') current('volunteer');
   else if (window.location.pathname.indexOf('/wgxc/calendar')==0) current('calendar');
-  else if (window.location.pathname == '/wgxc/donate') current('support');  
+  else if (window.location.pathname == '/wgxc/support') current('support');  
 })();
