@@ -944,7 +944,7 @@ a.programs-header:hover {
 
 .announce {
 	display: none;	/* default to not showing; turned on via .js */
-  background: black;
+  background: red;
   color: white;
   left: -20px;
   padding: 5px 30px 5px 0px;
