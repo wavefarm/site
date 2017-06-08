@@ -954,7 +954,7 @@ a.programs-header:hover {
 
 
 .announce-handle {
-  background: black;
+  background: red;
   cursor: pointer;
   font-size: 18px;
   position: absolute;
