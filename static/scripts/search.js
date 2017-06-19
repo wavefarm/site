@@ -1,6 +1,16 @@
 ;(function ($) {
   var querystring = location.search.substr(1);
   var query = $.deparam(querystring);
+  
+  // preprocess parameters
+  if (query.date2 && query.date2 == 'today') {
+    	var m = moment();
+  		query.date2 = m.format('YYYY-MM-DD')  		
+  		if (!query.date) {
+    		query.date = '1900-01-01'
+  		}
+  }
+	
   $('#archive-search #q2').val(query.q);
   $('#archive-search #date').val(query.date);
   $('#archive-search #date2').val(query.date2);
