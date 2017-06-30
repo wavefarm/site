@@ -930,13 +930,14 @@ a.programs-header:hover {
 }
 
 
+
 /* Announce slider */
 
 .outer-announce-container {
 	display: none;	/* default to not showing; turned on via .js */
 	left:0px;
-	width:280px;
-	height:280px;
+	width:300px;
+	height:540px;
 	overflow:hidden;
 	position:absolute;
 	top:70px;
@@ -944,7 +945,7 @@ a.programs-header:hover {
 
 .announce {
 	display: none;	/* default to not showing; turned on via .js */
-  background: #ca0b15;
+  background: black;
   color: white;
   left: -20px;
   padding: 5px 30px 5px 0px;
@@ -954,7 +955,7 @@ a.programs-header:hover {
 
 
 .announce-handle {
-  background: #ca0b15;
+  background: black;
   cursor: pointer;
   font-size: 18px;
   position: absolute;
@@ -989,7 +990,7 @@ a.programs-header:hover {
   border-radius: 12px;
 }
 .announce-container {
-  background: #000000;
+  background: #31a9f6;
   color: #ffffff;
   margin: 10px 0;
   padding: 10px 5px 10px 35px;
