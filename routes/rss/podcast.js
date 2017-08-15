@@ -28,7 +28,6 @@ module.exports = function (req, res) {
   	//	basePath = 		req.connection.encrypted?'https://':'http://' + req.headers.host;		
     
   	var feedLastBuildDate = moment().subtract(1, 'years')
-
     
     //var params = qs.parse('q=type:news'+sites+'&sort=-date&size=40')
 
