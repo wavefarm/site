@@ -24,8 +24,8 @@ module.exports = function (req, res) {
     
   	var dateFormat = 'ddd, DD MMM YYYY H:mm:ss -0500'
   	var basePath = 'https://wavefarm.org';
-  	if (req.connection && req.headers.host)
-  		basePath = 		req.connection.encrypted?'https://':'http://' + req.headers.host;		
+  	//if (req.connection && req.headers.host)
+  	//	basePath = 		req.connection.encrypted?'https://':'http://' + req.headers.host;		
     
 
   	var feedLastBuildDate = moment().subtract(1, 'years')
