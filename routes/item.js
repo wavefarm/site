@@ -51,10 +51,13 @@ module.exports = function (req, res) {
     var itunesPodcastURL = ''
     if (item.type=='show' && typeof(item.audio)!='undefined') {
     	podcastURL = '/'+site+'schedule/'+item.id+'/rss'
+    	/*
     	if (req.headers && req.headers.host)
     		itunesPodcastURL = 'itpc://' + req.headers.host + podcastURL
     	else
     		itunesPodcastURL = 'itpc://wavefarm.org' + podcastURL
+    	*/
+  		itunesPodcastURL = 'itpc://wavefarm.org' + podcastURL
     }
     
      
