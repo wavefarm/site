@@ -27,7 +27,6 @@ module.exports = function (req, res) {
   	//if (req.connection && req.headers.host)
   	//	basePath = 		req.connection.encrypted?'https://':'http://' + req.headers.host;		
     
-
   	var feedLastBuildDate = moment().subtract(1, 'years')
 
     
