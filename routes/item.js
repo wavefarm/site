@@ -57,7 +57,7 @@ module.exports = function (req, res) {
     	else
     		itunesPodcastURL = 'itpc://wavefarm.org' + podcastURL
     	*/
-  		itunesPodcastURL = 'itpc://wavefarm.org' + podcastURL
+  		itunesPodcastURL = 'pcast://wavefarm.org' + podcastURL
     }
     
      
