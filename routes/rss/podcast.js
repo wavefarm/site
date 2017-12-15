@@ -35,10 +35,19 @@ module.exports = function (req, res) {
     var sort = '-date,sort,main'
     var relation = 'shows'
     var itemId = item.id
-    var feedTitle = item.title
-    
-    if (feedTitle) feedTitle = feedTitle + ' Podcast'
-    
+    var feedTitle = item.title    
+    if (feedTitle) {
+    		feedTitle = feedTitle + ' Podcast'
+    }    
+    var feedImagePath =  basePath + "/images/podcast_logos_lnred_sm.jpg"
+    if (item.subscriptionIcon) {
+    		feedImagePath = item.subscriptionIcon
+    }
+    var feedITunesImagePath = basePath + "/images/podcast_logos_lnred_lg.jpg"    
+    if (item.iTunesSubscriptionIcon) {
+    		feedITunesImagePath = item.iTunesSubscriptionIcon
+    }
+    		
     var params = qs.parse('q=public:true%20type:'+targetType+'%20'+relation+'.id:'+itemId +'&size=50&sort='+sort)
     
     api.search(params, function (err, results) {
@@ -93,8 +102,8 @@ module.exports = function (req, res) {
 	        feedSummary:  item.description,
 	        feedSubtitle: item.subtitle,
 	        feedAuthor: item.credit,
-	        feedImagePath: basePath + "/images/podcast_logos_lnred_sm.jpg",
-	        feedITunesImagePath: basePath + "/images/podcast_logos_lnred_lg.jpg",
+	        feedImagePath: feedImagePath,
+	        feedITunesImagePath: feedITunesImagePath,
 	        items: items        
 	      }))
       }    
