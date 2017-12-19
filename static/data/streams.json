@@ -1,0 +1,83 @@
+{"streams":[
+	{
+		"title":"WGXC 90.7-FM",
+		"subtitle":"Hands-on Community Radio",
+		"short_description":null,
+		"site":"wgxc",
+		"stream_url":"http://audio.wavefarm.org:8000/wgxc.mp3",
+		"schedule_full_url":"https://wavefarm.org/wgxc/schedule",
+		"schedule_json_url":"https://wavefarm.org/api/wgxc/schedule/",
+		"contact_info":[
+			{"name":"Hudson Studio","value":"(518) 697-7400"},
+			{"name":"Acra Studio","value":"(518) 622-2598"},
+			{"name":"Information","value": "info@wgxc.org"},
+			{"name":"Feedback","value":"feedback@wgxc.org"}
+		],
+		"buttons":[
+			{"name":"Winter Pledge Drive","value":"https://wavefarm.org/support"}
+		]
+	},
+
+	{ 
+		"title":"Wave Farm Radio",
+		"subtitle":"Transmission Art/Experimental Sound",
+		"short_description":null,
+		"site":"transmissionarts",
+		"stream_url":"http://audio.wavefarm.org:8000/transmissionarts.mp3",
+		"schedule_full_url":"https://wavefarm.org/wgxc/schedule",
+		"schedule_json_url":"https://wavefarm.org/api/ta/schedule/",
+		"contact_info":[
+			{"name":"Wave Farm","value":"(518) 622-2598"},
+			{"name":"Information","value": "info@wavefarm.org"}
+		],
+		"buttons":[
+		]
+	},
+	
+	{ 
+		"title":"Weather Warlock",
+		"subtitle":"Quintron",
+		"short_description":"Live stream of an analog drone synthesizer played by the weather.",
+		"site":"transmissionarts",
+		"stream_url":"http://audio.wavefarm.org:8000/weatherwarlock.mp3",
+		"schedule_full_url":null,
+		"schedule_json_url":null,
+		"contact_info":[
+		],
+		"buttons":[
+			{"name":"More Details","value":"https://wavefarm.org/ta/works/g7yqrm"}
+		]
+	},	
+
+	{ 
+		"title":"POND STATION",
+		"subtitle":" ZACH POFF",
+		"short_description":"Transmissions from inside a Wave Farm pond from dawn until sundown.",
+		"site":"transmissionarts",
+		"stream_url":"http://locus.creacast.com:9001/wave_farm_pond_station_new_york.mp3",
+		"schedule_full_url":null,
+		"schedule_json_url":null,
+		"contact_info":[
+		],
+		"buttons":[
+			{"name":"More Details","value":"https://wavefarm.org/ta/works/87eejz"}
+		]
+	},
+	
+	{ 
+		"title":"All Together Now",
+		"subtitle":null,
+		"short_description":"The All Together Now! 24-hour news feed features local, regional and national news, weather updates, special segments, and interviews, every hour on the hour.",
+		"site":"wgxc",
+		"stream_url":"http://audio.wavefarm.org:8000/alltogethernow.mp3",
+		"schedule_full_url":null,
+		"schedule_json_url":null,
+		"contact_info":[
+		],
+		"buttons":[
+			{"name":"More Details","value":"https://wavefarm.org/wgxc/schedule/be1egs"}
+		]
+	}
+
+]}
+
