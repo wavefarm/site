@@ -164,20 +164,12 @@ header .search input {
   margin: 10px 38px 0 0;
 }
 .wf-logo-smaller {
-  background: url('/images/wf-logo-20.png') no-repeat;
-  background-size: 163px 100px;
-  float: left;
-  height: 100px;
-  width: 163px;
-  margin: 33px 0px 20px 0;
-	/*
   background: url('/images/wf-logo.png') no-repeat;
   background-size: 100px 100px;
   float: left;
   height: 100px;
   width: 100px;
   margin: 33px 38px 20px 0;
-  */
 }
 .wgxc .subicon {
   background-position: -60px -60px;
