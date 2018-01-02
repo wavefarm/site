@@ -22,7 +22,7 @@ module.exports = function (req, res) {
 		sitePath = 'wgxc/';
 	}
 	else if (site=='ta') {
-		title = 'Waver Farm Newsroom';
+		title = 'Wave Farm Newsroom';
 		sitePath = 'ta/';
 	}
 	
