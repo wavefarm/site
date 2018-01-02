@@ -162,14 +162,6 @@ header .search input {
   height: 220px;
   width: 220px;
   margin: 10px 38px 0 0;
-	/*
-  background: url('/images/wf-logo.png') no-repeat;
-  background-size: 220px 220px;
-  float: left;
-  height: 220px;
-  width: 220px;
-  margin: 10px 38px 0 0;
-  */
 }
 .wf-logo-smaller {
   background: url('/images/wf-logo-20.png') no-repeat;
