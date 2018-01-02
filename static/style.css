@@ -157,11 +157,11 @@ header .search input {
 }
 .wf-logo {
   background: url('/images/wf-logo.png') no-repeat;
-  background-size: 159px 159px;
+  background-size: 220px 220px;
   float: left;
-  height: 159px;
-  width: 159px;
-  margin: 30px 0 0 0;
+  height: 220px;
+  width: 220px;
+  margin: 10px 38px 0 0;
 	/*
   background: url('/images/wf-logo.png') no-repeat;
   background-size: 220px 220px;
