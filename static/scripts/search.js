@@ -66,7 +66,7 @@
   // note: this is in API search too but it needs to happen
   // before any other : elements added to q
   if (query.q && query.q.indexOf(':') == -1) {
-  	query.q = query.q+' OR main:('+query.q+')'
+  	query.q = '(' + query.q+' OR main:('+query.q+'))'
   }
   
   // stuff sites, type, and location into q if they are present

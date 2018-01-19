@@ -398,6 +398,7 @@ nav.wf2 {
   padding: 12px 0 8px 0;
   font-weight: 800;
   width: 180px;
+  min-height:48px;
 }
 .listen-tag {
 	margin-top:3px;
@@ -500,6 +501,12 @@ nav.wf2 {
   color: black;
   margin: 10px 0;
   padding: 10px 5px 10px 35px;
+}
+.listen-wf-partner {
+	background: #7B7B7B;
+	/*background: #FFCA64;*/
+	/*background: #f4f1f1;*/
+	color:white;
 }
 .listen-wf div, .listen-wgxc div {
   font-size: 18px;

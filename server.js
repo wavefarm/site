@@ -80,7 +80,9 @@ http.createServer(function (req, res) {
   // Listen Live Popup Window
   if (/^\/listen\/\w{4}$/.test(p)) return require('./routes/listen')(req, res)
   if (p === '/listen') return require('./routes/listen')(req, res)
-  
+
+  // partner streams status proxy
+  if (p === '/partneraudio/status') return require('./routes/partneraudio-status')(req, res)
 
   // Set head and nav sections
   sub = subRe.exec(p)
