@@ -818,6 +818,7 @@ a.wgxc.slide, a.mag.slide {
 	width:320px;
   margin: 0 0 0 640px;
   padding-top:40px;
+  vertical-align: top;
   
 }
 
