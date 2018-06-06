@@ -981,7 +981,7 @@ a.programs-header:hover {
   border-radius: 12px;
 }
 .announce-container {
-  background: #000000;
+  background: #ffffff;
   color: #000000;
   margin: 10px 0;
   padding: 10px 5px 10px 35px;
@@ -992,7 +992,7 @@ a.programs-header:hover {
 	
 }
 .announce-strong {
-	color: #ffffff;
+	color: #000000;
 	font-size: 120%;
 	line-height: 120%;
 	font-weight: 800;
