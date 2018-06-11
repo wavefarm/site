@@ -542,6 +542,10 @@ nav.wf2 {
 	font-weight: 400;
 }
 
+.partner-stream-list .listen-nowplaying a {
+	color: white;
+}
+
 .listen-news {
 		margin: 10px 0 0 0;
 }
