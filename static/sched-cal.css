@@ -458,23 +458,10 @@ h1 .podcast-icons {
 .podcast-icons div {
 	float:right;
 	clear:both;
-  	background:#d01201;
   	padding: 0px 0px;
   	margin: 0 0 4px 0;
-  	border-radius:5px;
-  	box-shadow: 3px 1px 2px #aaa;	
 } 
-.podcast-icons div.podcast-link {
-	width:120px;
-}
-.podcast-icons div a {
-	margin: 0;
-	padding:0 4px 0 4px;
-	font-weight: 500;
-  	font-size: 16px;
-  	line-height:30px;
-  	color:white;
-}
+
 
 
 /* newsroom */
