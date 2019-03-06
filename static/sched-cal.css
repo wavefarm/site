@@ -426,6 +426,56 @@ label.error {
 }
 
 
+/* show podcast icons */
+
+.podcast-instructions {
+	padding-left:100px;
+	/*background:white;*/
+	border-bottom: 2px solid #aaa;
+	padding:10px;
+	display:none;
+}
+.podcast-instructions h3 {
+	margin: 0 0 10px 0;
+	
+}
+.podcast-instructions p {
+	margin: 0px;
+}
+
+.podcast-instructions ol {
+	font-size:14px;
+	list-style-type: decimal;
+	padding-bottom:20px;
+}
+
+h1 .podcast-icons {
+	float:right;
+	position:relative;
+	top:-46px;
+	text-align:center;
+}
+.podcast-icons div {
+	float:right;
+	clear:both;
+  	background:#d01201;
+  	padding: 0px 0px;
+  	margin: 0 0 4px 0;
+  	border-radius:5px;
+  	box-shadow: 3px 1px 2px #aaa;	
+} 
+.podcast-icons div.podcast-link {
+	width:120px;
+}
+.podcast-icons div a {
+	margin: 0;
+	padding:0 4px 0 4px;
+	font-weight: 500;
+  	font-size: 16px;
+  	line-height:30px;
+  	color:white;
+}
+
 
 /* newsroom */
 

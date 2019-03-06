@@ -7,13 +7,24 @@
     <span class="icons">{{{icons}}}</span>
     
     	{{#podcastURL}}
-			<span class="newsroom-icons">
-				<span>Subscribe:</span><a href="{{{itunesPodcastURL}}}"><img src="/images/podcast_itunes.png" width="37" height="49"></a><a href="{{{podcastURL}}}"><img src="/images/podcast_other.png" width="37" height="40"></a>
+			<span class="podcast-icons">
+				<div class="podcast-link"><a href="{{{podcastURL}}}">PODCAST URL</a></div>
+				<div class="podcast-instructions-link"><a href="{{{podcastURL}}}">How to subscribe to this show</a></div>				
 			</span>		
     	{{/podcastURL}}
     
     <span class="subtitle">{{{subtitle}}}</span>
   </h1>
+		<div class="podcast-instructions">
+			<h3>How to subscribe to this show</h3>
+			<ol>
+				<li>Copy the show's RSS URL {{{podcastURL}}}</li>
+				<li>Open your favorite podcast player or app</li>
+				<li>Look for the “Add a Podcast by URL” option. (On the iPhone Podcast App, click Library and then Edit. In iTunes, go to File and select “Subscribe to Podcast" )</li>
+				<li>Paste the show’s RSS URL and you are subscribed!</li> 				
+			</ol>
+		</div>
+  
   <div class="item-dates"><strong>{{dates}}</strong></div>
   <div class="item-location">{{{locations}}}</div>
   <div class="item-detail"><strong>{{detail}}</strong></div>
@@ -23,3 +34,4 @@
   <div class="description">{{{description}}}</div>
   <div class="related-items-container">{{> relatedItems}}</div>
 </div>
+
