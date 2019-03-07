@@ -426,6 +426,43 @@ label.error {
 }
 
 
+/* show podcast icons */
+
+.podcast-instructions {
+	padding-left:100px;
+	/*background:white;*/
+	border-bottom: 2px solid #aaa;
+	padding:10px;
+	display:none;
+}
+.podcast-instructions h3 {
+	margin: 0 0 10px 0;
+	
+}
+.podcast-instructions p {
+	margin: 0px;
+}
+
+.podcast-instructions ol {
+	font-size:14px;
+	list-style-type: decimal;
+	padding-bottom:20px;
+}
+
+h1 .podcast-icons {
+	float:right;
+	position:relative;
+	top:-46px;
+	text-align:center;
+}
+.podcast-icons div {
+	float:right;
+	clear:both;
+  	padding: 0px 0px;
+  	margin: 0 0 4px 0;
+} 
+
+
 
 /* newsroom */
 

@@ -50,7 +50,7 @@ module.exports = function (req, res) {
     var podcastURL = ''
     var itunesPodcastURL = ''
     if (item.type=='show' && typeof(item.audio)!='undefined') {
-    	podcastURL = '/'+site+'schedule/'+item.id+'/rss'
+    	podcastURL = 'https://wavefarm.org/'+site+'schedule/'+item.id+'/rss'
     	/*
     	if (req.headers && req.headers.host)
     		itunesPodcastURL = 'itpc://' + req.headers.host + podcastURL
