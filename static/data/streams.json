@@ -37,7 +37,7 @@
 	{ 
 		"title":"Weather Warlock",
 		"subtitle":"Quintron",
-		"short_description":"*NOTE* Weather Warlock will soon return to its original sound. We are in the process of confirming a repair schedule with Quintron. Live stream of an analog drone synthesizer played by the weather.",
+		"short_description":"Live stream of an analog drone synthesizer played by the weather.",
 		"site":"transmissionarts",
 		"stream_url":"http://audio.wavefarm.org:8000/weatherwarlock.mp3",
 		"schedule_full_url":null,
