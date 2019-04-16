@@ -15,7 +15,7 @@
 	<itunes:subtitle><![CDATA[{{{feedSubtitle}}}]]></itunes:subtitle>
 	<itunes:author>{{feedAuthor}}</itunes:author>
 	<itunes:image href="{{{feedITunesImagePath}}}"/>
-	<itunes:category>Arts</itunes:category>
+	<itunes:category text="Arts" />
 	<itunes:explicit>no</itunes:explicit>
 	<image>
 		<url>{{{feedImagePath}}}</url>
